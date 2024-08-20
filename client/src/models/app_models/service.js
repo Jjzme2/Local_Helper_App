@@ -1,0 +1,15 @@
+class Service {
+	constructor(service) {
+		try {
+			this.serviceName = service.serviceName
+			this.description = service.description
+			this.price = service.price
+			this.image = service.image
+			this.notes = service.notes
+		} catch (e) {
+			console.error(e)
+		}
+	}
+}
+
+export default Service
