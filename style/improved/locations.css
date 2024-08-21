@@ -14,7 +14,7 @@
     border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 15px;
-    width: 250px;
+    max-width: 250px;
 }
 
 .location-list {
@@ -26,4 +26,25 @@
 .location-list li {
     color: #555;
     font-size: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .locations-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .location-card {
+    width: 45%;
+    margin-bottom: var(--gap);
+  }
+}
+
+@media (max-width: 480px) {
+  .location-card {
+    width: 100%;
+    margin-bottom: var(--gap);
+  }
 }
