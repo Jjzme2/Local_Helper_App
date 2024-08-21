@@ -1,0 +1,66 @@
+.primary-button {
+	background-color: var(--primary-button-color);
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	color: var(--button-text-color);
+	cursor: pointer;
+	font-size: 1rem;
+	margin: 1rem;
+	padding: 1rem;
+	text-decoration: none;
+}
+
+.primary-button:hover {
+	background-color: var(--primary-button-hover-color);
+	color: var(--primary-button-hover-text-color);
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.secondary-button {
+	background-color: var(--secondary-button-color);
+	border: none;
+	border-radius: 5px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	color: var(--button-text-color);
+	cursor: pointer;
+	font-size: 1rem;
+	margin: 1rem;
+	padding: 1rem;
+}
+
+.secondary-button:hover {
+	background-color: var(--secondary-button-hover-color);
+	color: var(--secondary-button-hover-text-color);
+	box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Consider moving to a more appropriate place. */
+.tab {
+	background-color: var(--primary-panel-color);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	margin: 0.5rem;
+	padding: 1rem;
+	max-width: 300px;
+}
+
+.tab:hover {
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.tabs {
+	background-color: var(--secondary-panel-color);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: space-evenly;
+	margin: 1rem auto;
+	padding: 0.25rem;
+}
+
+@media (max-width: 768px) {
+	.tabs {
+		flex-direction: column;
+	}
+}

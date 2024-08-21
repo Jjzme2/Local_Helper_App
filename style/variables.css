@@ -1,0 +1,32 @@
+/* Coolors.com might be a good place to get color schemes */
+/*
+PRIMARY: #FFFFFF - White
+SECONDARY: #243e36 - Dark Slate Gray
+TERTIARY: #32021f - Dark Purple
+QUATERNARY: #32021F - Eggplant
+QUINARY: #65b891 - Mint
+*/
+
+/* Font imports */
+/* (Add your font import statements here if needed) */
+
+:root {
+    /* Button colors */
+    --button-hover-color: #e0e0e0;
+    --button-text-color: #ffffff;
+
+    /* Primary color scheme */
+    --primary-background-color: #FFFFFF;
+    --primary-button-color: #65b891;
+    --primary-font-family: "Montserrat", serif;
+    --primary-panel-color: #32021F;
+    --primary-text-color: #243e36;
+    --primary-border-color: #65b891;
+
+    /* Secondary color scheme */
+    --secondary-background-color: #243e36;
+    --secondary-button-color: #32021F;
+    --secondary-font-family: "Oswald", sans-serif;
+    --secondary-panel-color: #32021F; /*  Change this */
+    --secondary-text-color: #FFFFFF;
+}

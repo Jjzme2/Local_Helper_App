@@ -1,0 +1,33 @@
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.services-table th,
+.services-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.services-table th {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.services-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.services-table tfoot td {
+  font-size: 0.875rem;
+  color: #666;
+  text-align: center;
+}
+
+.service-image {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
