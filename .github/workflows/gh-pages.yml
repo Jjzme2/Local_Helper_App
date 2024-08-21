@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Change this to your default branch if different
+      - main  # Adjust to your default branch if different
 
 jobs:
   build-and-deploy:
@@ -19,15 +19,17 @@ jobs:
         node-version: '18'
 
     - name: Install dependencies
-      working-directory: ./client  # Navigate to the client directory
       run: npm install
 
     - name: Build project
-      working-directory: ./client  # Navigate to the client directory
       run: npm run build
+      working-directory: ./client  # This runs the build inside the client directory
+
+    - name: Create CNAME file
+      run: echo "ilytat.com" > ./client/dist/CNAME
 
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./client/dist  # Point to the build output directory within client
+      run: npm run deploy
+      working-directory: ./client  # This runs the deploy script from within the client directory
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

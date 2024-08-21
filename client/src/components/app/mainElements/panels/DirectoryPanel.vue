@@ -26,10 +26,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.tabs {
-  display: flex;
-  justify-content: space-around;
-}
-</style>

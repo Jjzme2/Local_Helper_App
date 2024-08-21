@@ -1,18 +1,18 @@
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
 
-const domain = import.meta.env.VUE_APP_WEB_DOMAIN
-const serviceId = import.meta.env.VUE_APP_EMAILJS_SERVICE_ID
-const contactId = import.meta.env.VUE_APP_EMAILJS_CONTACT_TEMPLATE_ID
-const newServiceId = import.meta.env.VUE_APP_EMAILJS_NEW_SERVICE_TEMPLATE_ID
-const publicKey = import.meta.env.VUE_APP_EMAILJS_PUBLIC_KEY
+const domain = import.meta.env.VITE_WEB_DOMAIN
+const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const contactId = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID
+const newServiceId = import.meta.env.VITE_EMAILJS_NEW_SERVICE_TEMPLATE_ID
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
-function sendContactEmail(senderName, senderEmail, message) {
+function sendContactEmail(form) {
   // EmailJS
   const templateParams = {
     my_website_address: domain,
-    name: senderName,
-    email: senderEmail,
-    message: message
+    name: form.name,
+    email: form.email,
+    message: form.message
   }
 
   emailjs.send(serviceId, contactId, templateParams, publicKey)

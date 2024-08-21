@@ -40,7 +40,9 @@ export default {
     return {
       isNavVisible: false,
       customRoutes: [
-        new NavigationOption('Home', 'home')
+        new NavigationOption('Home', 'home'),
+        new NavigationOption('Contact Us', 'contact'),
+        new NavigationOption('Request new Service', 'unlistedService')
         // new NavigationOption('About', 'about'),
         // new NavigationOption('Blog', 'blog'),
         // new NavigationOption('Forums', 'forums'),
@@ -63,53 +65,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.layout-header {
-  background: rgba(39, 39, 39, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0.25rem 1rem;
-  border-radius: 15px;
-}
-
-.primary-button {
-  display: block;
-}
-
-.header-logo {
-  border-radius: 15px;
-  width: 150px;
-  height: 150px;
-}
-
-.nav-panel {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
-  gap: 1rem;
-  justify-content: end;
-  margin-right: 1rem;
-  width: 100%;
-}
-
-.nav-panel.is-visible {
-  display: flex;
-}
-
-@media (max-width: 768px) {
-  .nav-panel {
-    display: none;
-  }
-
-  .primary-button {
-    display: none;
-  }
-
-  .header-logo {
-    width: 50px;
-    height: 50px;
-  }
-}
-</style>

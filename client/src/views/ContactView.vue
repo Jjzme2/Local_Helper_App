@@ -48,7 +48,9 @@
 </template>
 
 <script>
+import { checkApiRateLimit } from '@/_services/limiterService'
 import BaseView from './BaseView.vue'
+import { sendContactEmail } from '@/_services/emailService'
 
 // import { sendEmail } from '@/services/emailService'
 
@@ -68,14 +70,20 @@ export default {
   },
   methods: {
     submitForm() {
-      console.log(this.form)
+      if (checkApiRateLimit(5)) {
+        try {
+          sendContactEmail(this.form)
+          alert('Your message has been sent. We will get back to you as soon as possible.')
+        } catch (error) {
+          alert('There was an error sending your message. Please try again later.')
+          console.log(error)
+        }
+      } else {
+        alert(
+          'You have reached the limit of requests you can make within an hour. Please try again later.'
+        )
+      }
     }
   }
 }
 </script>
-
-<style scoped>
-h1 {
-  margin-bottom: 1rem;
-}
-</style>
