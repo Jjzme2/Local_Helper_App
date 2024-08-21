@@ -8,6 +8,7 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
@@ -18,13 +19,15 @@ jobs:
         node-version: '18'
 
     - name: Install dependencies
+      working-directory: ./client  # Navigate to the client directory
       run: npm install
 
     - name: Build project
+      working-directory: ./client  # Navigate to the client directory
       run: npm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist
+        publish_dir: ./client/dist  # Point to the build output directory within client
