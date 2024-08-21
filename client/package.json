@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "npm run format && npm run lint && vite",
-    "build": "vite build",
+    "build": "npm run format && npm run lint && vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",

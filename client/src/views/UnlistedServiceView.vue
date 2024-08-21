@@ -118,7 +118,8 @@ import BaseView from '@/views/BaseView.vue'
 import useLocationStore from '@/stores/servicedLocations'
 import useServiceStore from '@/stores/services'
 
-// import { sendEmail } from '@/services/emailService'
+import { sendNewServiceEmail } from '@/_services/emailService'
+import { checkApiRateLimit } from '@/_services/limiterService'
 
 export default {
   name: 'UnlistedServiceView',
@@ -159,18 +160,24 @@ export default {
     // },
     submitForm() {
       // Handle form submission
-      alert('Form submission has not been implemented yet.')
+      //   alert('Form submission has not been implemented yet.')
       //   Validate form data
-      //   Send Email with form data
+
+      //   Add Limiter to prevent spamming
+      if (checkApiRateLimit(5)) {
+        try {
+          sendNewServiceEmail(this.form)
+          alert('Your message has been sent. We will get back to you as soon as possible.')
+        } catch (error) {
+          alert('An error occurred while sending your message. Please try again later.')
+          console.log(error)
+        }
+      } else {
+        alert(
+          'You have reached the limit of requests you can make within an hour. Please try again later.'
+        )
+      }
     }
   }
 }
 </script>
-
-<style scoped>
-h1 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #333;
-}
-</style>

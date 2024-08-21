@@ -25,6 +25,12 @@ const router = createRouter({
       path: '/unlisted',
       name: 'unlistedService',
       component: UnlistedServiceView
+    },
+
+    // Catch All
+    {
+      path: '/:catchAll(.*)',
+      redirect: { name: 'home' }
     }
   ]
 })

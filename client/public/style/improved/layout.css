@@ -1,0 +1,115 @@
+/* Global Styles */
+.body {
+  background-color: var(--primary-background-color);
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem;
+    flex: 1;
+  padding-top: 60px; /* Adjust based on header height */
+}
+
+.footer {
+  background-color: var(--secondary-background-color);
+  box-shadow: var(--primary-shadow);
+  display: flex;
+  justify-content: center;
+    margin-top: auto;
+
+  padding: 1rem;
+}
+
+.footer a {
+  color: var(--primary-button-color);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--primary-button-hover-color);
+  transition: var(--transition);
+}
+
+.footer-element {
+  align-items: center;
+  display: flex;
+  font-size: 0.9rem;
+  height: 5rem;
+  justify-content: center;
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+}
+
+.header {
+  background-color: var(--secondary-background-color);
+  box-shadow: var(--primary-shadow);
+  padding: 1rem;
+    position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.main-content {
+  background-color: var(--main-content-background-color);
+  padding: 3rem;
+
+}
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.nav-panel {
+  /* box-shadow: var(--primary-shadow); */
+  /* padding: 0.25rem; */
+}
+
+/* ----------------------------MEDIA---------------------- */
+
+/* Use media queries to adjust the layout and style of your elements based on the screen size and orientation of the device */
+@media (max-width: 1024px) {
+  .main-content {
+    padding: 2rem; /* Adjust padding for medium screens */
+  }
+
+  .footer-element {
+    font-size: 0.85rem; /* Adjust font size for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-wrap: wrap; /* Wrap the footer items into multiple rows */
+  }
+
+  .main-content {
+    padding: 1rem; /* Smaller padding for smaller screens */
+  }
+
+  .footer-element {
+    font-size: 0.8rem; /* Adjust font size for smaller screens */
+    height: auto; /* Adjust height for smaller screens */
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
+
+  .header {
+    padding: 0.5rem; /* Adjust padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 0.5rem; /* Even smaller padding for very small screens */
+  }
+
+  .footer-element {
+    font-size: 0.75rem; /* Adjust font size for very small screens */
+    height: auto; /* Adjust height for very small screens */
+    padding: 0.25rem; /* Adjust padding for very small screens */
+  }
+
+  .header {
+    padding: 0.25rem; /* Adjust padding for very small screens */
+  }
+}

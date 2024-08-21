@@ -46,27 +46,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.main-layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-.body {
-  flex: 1;
-  padding-top: 60px; /* Adjust based on header height */
-}
-
-.footer {
-  margin-top: auto;
-}
-</style>

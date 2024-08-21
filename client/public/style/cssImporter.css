@@ -1,10 +1,26 @@
-@import url("./buttons.css");
-@import url("./cards.css");
-@import url("./common.css");
-@import url("./formStyles.css");
-@import url("./layout.css");
-@import url("./locations.css");
-@import url("./markdown.css");
-@import url("./services.css");
-@import url("./socials.css");
-@import url("./variables.css");
+
+/* IMPROVED */
+@import url("./improved/buttons.css");
+@import url("./improved/cards.css");
+@import url("./improved/common.css");
+@import url("./improved/formStyles.css");
+@import url("./improved/grid.css");
+@import url("./improved/layout.css");
+@import url("./improved/locations.css");
+
+@import url("./improved/navigation.css");
+@import url("./improved/services.css");
+
+@import url("./improved/variables.css");
+
+/* OLD */
+/* @import url("./old/buttons.css"); */
+/* @import url("./old/cards.css"); */
+/* @import url("./old/common.css"); */
+/* @import url("./old/formStyles.css"); */
+/* @import url("./old/layout.css"); */
+/* @import url("./old/locations.css"); */
+@import url("./old/markdown.css");
+/* @import url("./old/services.css"); */
+@import url("./old/socials.css");
+/* @import url("./old/variables.css"); */

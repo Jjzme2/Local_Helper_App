@@ -34,15 +34,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.primary-button {
-  width: 10rem;
-  height: 3rem; /* Adjusted for better vertical alignment */
-  padding: 0; /* Reset padding */
-  display: flex; /* Use flexbox */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
-  text-align: center; /* Ensure text is centered */
-}
-</style>
