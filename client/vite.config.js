@@ -6,7 +6,7 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    base: '/Local_Helper_App/client/',
+    base: '/Local_Helper_App/',
 	plugins: [
     vue(),
     vueJsx(),

@@ -18,24 +18,20 @@ function sendContactEmail(senderName, senderEmail, message) {
   emailjs.send(serviceId, contactId, templateParams, publicKey)
 }
 
-		notes: '',
-        location: ''
-
-
 function sendNewServiceEmail(form) {
   // EmailJS
   const templateParams = {
     my_website_address: domain,
     name: form.name,
     category: form.category,
-	description: form.description,
-	notes: form.notes,
-	budget: form.budget,
-	time: form.time,
-	location: form.location,
-    email: form.email,
-	// consent: form.consent,
-	// attachment: form.attachment
+    description: form.description,
+    notes: form.notes,
+    budget: form.budget,
+    time: form.time,
+    location: form.location,
+    email: form.email
+    // consent: form.consent,
+    // attachment: form.attachment
   }
 
   emailjs.send(serviceId, newServiceId, templateParams, publicKey)

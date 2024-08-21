@@ -90,14 +90,14 @@
             ></textarea>
           </div>
 
-		  <!-- Attachment -->
+          <!-- Attachment -->
           <!-- <div class="form-group">
             <label for="attachment">Attach a file (Optional)</label>
             <input type="file" id="attachment" @change="handleFileUpload" />
           </div>
 		  -->
 
-		  <!-- Consent -->
+          <!-- Consent -->
           <!-- <div class="form-group">
             <input type="checkbox" id="consent" v-model="form.consent" required />
             <label for="consent">I agree to the terms and conditions</label>
@@ -144,19 +144,19 @@ export default {
         email: '',
         category: '',
         description: '',
-		notes: '',
+        notes: '',
         time: '',
         budget: '',
-        location: '',
-		// attachment: null,
-		// consent: false
+        location: ''
+        // attachment: null,
+        // consent: false
       }
     }
   },
   methods: {
-	// handleFileUpload(event) {
-	// 	this.form.attachment = event.target.files[0]
-	// },
+    // handleFileUpload(event) {
+    // 	this.form.attachment = event.target.files[0]
+    // },
     submitForm() {
       // Handle form submission
       alert('Form submission has not been implemented yet.')
