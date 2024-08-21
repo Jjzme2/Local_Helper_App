@@ -1,17 +1,13 @@
 <template>
   <div class="message">
-    <h1>Welcome to ILYTAT Services.</h1>
-
     <p>{{ timeOfDayMessage }}!</p>
-    <p>At last check, it was {{ currentTime }}</p>
-    <suspense>
-      <p>{{ weatherInfo }}</p>
-    </suspense>
+    <p>The current time is {{ currentTime }}</p>
+    <p>{{ weatherInfo }}</p>
   </div>
 </template>
 
 <script>
-import { computed, onBeforeMount } from 'vue'
+import { computed, onBeforeMount, ref, onMounted, onUnmounted } from 'vue'
 import { useWeatherStore } from '@/stores/weather'
 
 export default {
@@ -30,8 +26,22 @@ export default {
       }
     })
 
-    const currentTime = computed(() => {
-      return new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+    const currentTime = ref(
+      new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
+    )
+    const updateTime = () => {
+      currentTime.value = new Date().toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit'
+      })
+    }
+    let timer
+    onMounted(() => {
+      timer = setInterval(updateTime, 1000)
+    })
+
+    onUnmounted(() => {
+      clearInterval(timer)
     })
 
     onBeforeMount(() => {

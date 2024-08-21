@@ -1,6 +1,6 @@
 <template>
   <div class="main-layout">
-    <header class="header" v-if="$slots.header">
+    <header class="header" v-if="showHeader">
       <layoutHeader></layoutHeader>
     </header>
 
@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { ref, onMounted, onUnmounted } from 'vue'
 import layoutHeader from '@/components/app/layoutElements/LayoutHeader.vue'
 import layoutFooter from '@/components/app/layoutElements/LayoutFooter.vue'
 
@@ -23,6 +24,49 @@ export default {
   components: {
     layoutHeader,
     layoutFooter
+  },
+  setup() {
+    const showHeader = ref(false)
+
+    const handleScroll = () => {
+      showHeader.value = window.scrollY > 100 // Change 100 to the desired scroll position
+    }
+
+    onMounted(() => {
+      window.addEventListener('scroll', handleScroll)
+    })
+
+    onUnmounted(() => {
+      window.removeEventListener('scroll', handleScroll)
+    })
+
+    return {
+      showHeader
+    }
   }
 }
 </script>
+
+<style scoped>
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.body {
+  flex: 1;
+  padding-top: 60px; /* Adjust based on header height */
+}
+
+.footer {
+  margin-top: auto;
+}
+</style>

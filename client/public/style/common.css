@@ -57,7 +57,7 @@ p {
 	color: var(--secondary-text-color);
 }
 
-.container {
+/* .container {
 		align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -65,8 +65,17 @@ p {
     gap: 20px;
     justify-content: center;
 	width: 25%;
-}
+} */
 
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 .flex {
 	display: flex;
 }
@@ -147,7 +156,7 @@ p {
 	width: 50%;
 }
 
-.width-t {
+.width-third {
 	width: 33%;
 }
 

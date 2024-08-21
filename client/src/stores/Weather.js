@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia'
+import { checkApiRateLimit } from '../_services/limiterService'
 
 const apiKey = import.meta.env.VITE_WEATHER_API_KEY
 
@@ -13,14 +14,16 @@ export const useWeatherStore = defineStore('weather', {
       this.loading = true
       this.error = null
       try {
-        const response = await fetch(
-          `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`
-        )
-        if (!response.ok) {
-          throw new Error('Failed to fetch weather data')
+        if (checkApiRateLimit()) {
+          const response = await fetch(
+            `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`
+          )
+          if (!response.ok) {
+            throw new Error('Failed to fetch weather data')
+          }
+          const data = await response.json()
+          this.weatherData = data
         }
-        const data = await response.json()
-        this.weatherData = data
       } catch (error) {
         this.error = error.message
       } finally {

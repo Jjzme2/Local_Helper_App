@@ -29,7 +29,7 @@
 <script>
 import navigationPanel from '@/components/app/mainElements/panels/NavigationPanel.vue'
 
-import NavigationOption from '@/models/app_models/NavigationOption.js'
+import NavigationOption from '@/_models/app_models/NavigationOption.js'
 
 export default {
   name: 'LayoutHeader',
@@ -66,7 +66,7 @@ export default {
 
 <style scoped>
 .layout-header {
-  background: linear-gradient(to right, #cac4b6 40%, #b2a89c 70%);
+  background: rgba(39, 39, 39, 0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -90,6 +90,7 @@ export default {
   grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
   gap: 1rem;
   justify-content: end;
+  margin-right: 1rem;
   width: 100%;
 }
 

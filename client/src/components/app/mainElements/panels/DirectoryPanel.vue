@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import DirectoryTab from '@/models/app_models/DirectoryTab'
+import DirectoryTab from '@/_models/app_models/DirectoryTab'
 export default {
   data() {
     return {
