@@ -27,6 +27,6 @@ QUINARY: #65b891 - Mint
     --secondary-background-color: #243e36;
     --secondary-button-color: #32021F;
     --secondary-font-family: "Oswald", sans-serif;
-    --secondary-panel-color: #32021F;
+    --secondary-panel-color: #32021F; /*  Change this */
     --secondary-text-color: #FFFFFF;
 }
