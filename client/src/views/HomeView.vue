@@ -28,10 +28,13 @@
           <router-link to="/unlisted">Request new Service</router-link>
         </div>
       </div>
+
+	  
       <div class="grid-container-column">
         <contentCard class="card">
-          <div>
-            <!-- Service Table  -->
+
+		  <div>
+			<!-- Service Table  -->
             <h2>Services we offer:</h2>
 
             <table class="services-table">
@@ -71,8 +74,8 @@
             </table>
           </div>
 
-          <!-- Serviced Locations -->
-          <div class="grid-container-row">
+		  <!-- Serviced Locations -->
+		    <div class="grid-container-row">
             <h2>Currently servicing:</h2>
             <div
               v-for="location in servicedLocations"
@@ -83,7 +86,7 @@
                 <li>{{ location.townName }} {{ location.state }}, {{ location.zipCode }}</li>
               </ul>
             </div>
-          </div>
+					  </div>
         </contentCard>
       </div>
     </template>
