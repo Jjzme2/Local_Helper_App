@@ -39,13 +39,17 @@
 }
 
 .header {
-  background-color: var(--secondary-background-color);
+  background-color: var(--mint);
+  border: var(--dark-slate-gray) solid 3px;
+  border-radius: var(--border-radius);
   box-shadow: var(--primary-shadow);
-  padding: 1rem;
-    position: fixed;
+  padding: var(--padding-medium);
+  /* position: sticky; */
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
+  transition: var(--transition);
 }
 
 .main-content {
@@ -60,23 +64,14 @@
   min-height: 100vh;
 }
 
+
 .nav-panel {
-  /* box-shadow: var(--primary-shadow); */
-  /* padding: 0.25rem; */
+  box-shadow: var(--primary-shadow);
+  padding: 0.25rem;
 }
+
 
 /* ----------------------------MEDIA---------------------- */
-
-/* Use media queries to adjust the layout and style of your elements based on the screen size and orientation of the device */
-@media (max-width: 1024px) {
-  .main-content {
-    padding: 2rem; /* Adjust padding for medium screens */
-  }
-
-  .footer-element {
-    font-size: 0.85rem; /* Adjust font size for medium screens */
-  }
-}
 
 @media (max-width: 768px) {
   .footer {
@@ -95,21 +90,5 @@
 
   .header {
     padding: 0.5rem; /* Adjust padding for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
-  .main-content {
-    padding: 0.5rem; /* Even smaller padding for very small screens */
-  }
-
-  .footer-element {
-    font-size: 0.75rem; /* Adjust font size for very small screens */
-    height: auto; /* Adjust height for very small screens */
-    padding: 0.25rem; /* Adjust padding for very small screens */
-  }
-
-  .header {
-    padding: 0.25rem; /* Adjust padding for very small screens */
   }
 }

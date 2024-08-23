@@ -28,7 +28,6 @@
 
 <script>
 import navigationPanel from '@/components/app/mainElements/panels/NavigationPanel.vue'
-
 import NavigationOption from '@/_models/app_models/NavigationOption.js'
 
 export default {
@@ -43,19 +42,7 @@ export default {
         new NavigationOption('Home', 'home'),
         new NavigationOption('Contact Us', 'contact'),
         new NavigationOption('Request new Service', 'unlistedService')
-        // new NavigationOption('About', 'about'),
-        // new NavigationOption('Blog', 'blog'),
-        // new NavigationOption('Forums', 'forums'),
-        // new NavigationOption('Contact', 'contact')
       ]
-    }
-  },
-  watch: {
-    // Once the user is logged in, an option to logout should appear in the navigation panel.
-    isAuthenticated() {
-      if (this.$store.getters['auth/isAuthenticated']) {
-        this.customRoutes.push(new NavigationOption('Logout', 'logout'))
-      }
     }
   },
   methods: {
