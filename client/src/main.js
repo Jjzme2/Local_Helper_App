@@ -18,8 +18,8 @@ router.beforeEach((to, from, next) => {
 })
 
 router.onError((error, to, from) => {
-  const errorMessage = `There was an error loading the page ${ to.name } from ${ from.name }: ${ error.message }`
+  const errorMessage = `There was an error loading the page ${to.name} from ${from.name}: ${error.message}`
   console.error(errorMessage, error)
-});
+})
 
 app.use(createPinia()).use(router).mount('#app')
