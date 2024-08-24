@@ -1,6 +1,6 @@
 <template>
   <div class="main-layout">
-    <header class="header" v-if="showHeader">
+    <header class="header" v-if="showHeader && $slots.header">
       <layoutHeader></layoutHeader>
     </header>
 
@@ -29,7 +29,7 @@ export default {
     const showHeader = ref(false)
 
     const handleScroll = () => {
-      showHeader.value = window.scrollY > 100 // Change 100 to the desired scroll position
+      showHeader.value = window.scrollY > 100
     }
 
     onMounted(() => {
