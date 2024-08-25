@@ -1,10 +1,8 @@
 <template>
-  <div class="layout-header">
-    <div class="header-logo">
-      <img src="/images/logo.png" alt="logo" class="header-logo" />
-    </div>
+  <div>
+    <img src="/images/logo.png" alt="logo" class="header-logo" />
 
-    <button @click="toggleNav" class="primary-button">
+    <button @click="toggleNav" class="primary-button" style="float: right">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -20,7 +18,7 @@
       </svg>
     </button>
 
-    <div class="nav-panel" :class="{ 'is-visible': isNavVisible }">
+    <div class="centered" :class="{ 'is-visible': isNavVisible }">
       <navigationPanel v-if="isNavVisible" :routes="customRoutes"></navigationPanel>
     </div>
   </div>

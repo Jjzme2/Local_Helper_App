@@ -1,85 +1,64 @@
 <template>
   <BaseView :includeGoHomeButton="false">
     <template #default>
+      <!-- Developer Message Alert -->
       <alertBox
         v-if="developerMessage.show"
         :message="developerMessage.message"
         :type="developerMessage.type"
         :displayOnOpen="true"
+        class="alert-box"
       ></alertBox>
 
-      <h1>Welcome to ILYTAT Services.</h1>
+      <!-- Main Heading -->
+      <h1 class="main-heading">Welcome to ILYTAT Services</h1>
 
-      <h1 class="home-message">Connecting you with reliable local services.</h1>
+      <!-- Subheading with Description -->
+      <p class="subheading">Connecting you with reliable local services.</p>
+
+      <!-- Greeting Component -->
       <greeting></greeting>
+      <hr class="divider" />
 
-      <div class="grid-container-column">
-        <contentCard class="card">
+      <!-- Services Section -->
+      <section>
+        <div class="grid-container">
+          <contentCard>
+            <h2>Services We Offer</h2>
+            <serviceCard
+              v-for="service in services"
+              :key="service.id"
+              :service="service"
+            ></serviceCard>
+          </contentCard>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- Serviced Locations Section -->
+      <section class="grid-container">
+        <contentCard>
+          <h2>Currently Servicing</h2>
           <div>
-            <!-- Service Table  -->
-            <h2>Services we offer:</h2>
-
-            <table class="services-table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>Service</th>
-                  <th>Price/Hr</th>
-                  <th>Notes</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <tr v-for="service in services" :key="service.id">
-                  <td>
-                    <img
-                      class="service-image"
-                      v-if="service.image"
-                      :src="getImageByImageName(service.image)"
-                      :alt="`${service.serviceName} Image`"
-                    />
-                  </td>
-                  <td>{{ service.serviceName }}</td>
-                  <td>${{ service.price }}*</td>
-                  <td>{{ service.notes }}</td>
-                </tr>
-              </tbody>
-
-              <tfoot>
-                <tr>
-                  <td colspan="4">
-                    *All prices are provided as an estimate. A final quote will be provided before
-                    any work is done.
-                  </td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-
-          <!-- Serviced Locations -->
-          <div class="grid-container-row">
-            <h2>Currently servicing:</h2>
-            <div
-              v-for="location in servicedLocations"
-              :key="location.id"
-              class="location-card centered"
-            >
+            <div v-for="location in servicedLocations" :key="location.id" class="location-card">
               <ul class="location-list">
                 <li>{{ location.townName }} {{ location.state }}, {{ location.zipCode }}</li>
               </ul>
             </div>
           </div>
         </contentCard>
-      </div>
+      </section>
     </template>
   </BaseView>
 </template>
-
 <script>
 import BaseView from './BaseView.vue'
 import alertBox from '@/components/app/mainElements/alerts/alertBox.vue'
 import greeting from '@/components/app/mainElements/display/GreetingHome.vue'
 import contentCard from '@/components/app/mainElements/cards/Content_Cards/ContentCard.vue'
+
+import serviceCard from '@/components/app/mainElements/cards/Content_Cards/ServiceCard.vue'
 
 // Stores
 import useLocationStore from '@/stores/servicedLocations'
@@ -107,6 +86,7 @@ export default {
     BaseView,
     greeting,
     contentCard,
+    serviceCard
   },
   data() {
     return {

@@ -45,6 +45,11 @@ ACCENT: #65b891 - Mint
 	/* Main Content color scheme */
 	--main-content-background-color: var(--mint);
 
+	/* Padding  */
+	--padding-small: 0.5rem;
+	--padding-medium: 1rem;
+	--padding-large: 2rem;
+
 	/* Card color scheme */
 
 	/* Border radius */

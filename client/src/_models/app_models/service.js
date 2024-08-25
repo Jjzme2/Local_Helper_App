@@ -3,6 +3,7 @@ class Service {
     try {
       this.serviceName = service.serviceName
       this.description = service.description
+      this.category = service.category
       this.price = service.price
       this.image = service.image
       this.notes = service.notes
