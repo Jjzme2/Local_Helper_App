@@ -22,11 +22,19 @@ const services = [
     description:
       'We offer grocery delivery services for those who are unable to shop for themselves. Our team will deliver your groceries to your door! Feel comfortable knowing who is delivering your goods.',
     category: 'Recurring Services,',
-    price: 30,
-    image: 'grocery.png',
+    price: 100,
+    image: 'grocery_recurring.png',
     notes:
       'Additional charges may apply for larger orders and further distances. This is considered a monthly expense up to 4 times a month.'
-  }
+  },
+  {
+    serviceName: 'Grocery Delivery (One Time)',
+    description: 'We offer grocery delivery services for those who are unable to shop for themselves. Our team will deliver your groceries to your door! Feel comfortable knowing who is delivering your goods.',
+    category: 'General Services,',
+    price: 30,
+    image: 'grocery.png',
+    notes: 'Additional charges may apply for larger orders and further distances.'
+  },
 ]
 
 const categories = [
