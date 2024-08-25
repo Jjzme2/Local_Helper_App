@@ -27,6 +27,20 @@ const router = createRouter({
       component: UnlistedServiceView
     },
 
+    // Schedule Route
+    // {
+    // path: '/calendar',
+    // name: 'schedule',
+    // component: SchedulerView
+    // }
+
+    // Blog Route
+    // {
+    //   path: '/thoughts',
+    //   name: 'blog',
+    //   component: BlogView
+    // },
+
     // Catch All
     {
       path: '/:catchAll(.*)',

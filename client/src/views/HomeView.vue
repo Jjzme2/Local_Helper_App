@@ -106,7 +106,7 @@ export default {
     alertBox,
     BaseView,
     greeting,
-    contentCard
+    contentCard,
   },
   data() {
     return {
