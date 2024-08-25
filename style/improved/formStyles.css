@@ -36,7 +36,7 @@
 }
 
 .form-group input:focus,
-.form-group select:focus,
+.form-group select:focus
  {
   border-color: #007bff;
   outline: none;
