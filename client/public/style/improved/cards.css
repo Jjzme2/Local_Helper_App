@@ -1,10 +1,13 @@
 /* Base card styles */
 .content-card {
   background-color: var(--primary-panel-color);
-  border: 1px solid #ddd;
+    border: 1px solid #ddd;
   border-radius: 8px;
+  display: grid;
+  justify-content: center;
   padding: 16px;
-  max-width: 600px;
+  max-width: 100%;
+  width: 600px;
   margin: 0 auto;
 }
 
@@ -13,4 +16,6 @@
 	padding: 8px;
   }
 }
+
+
 
