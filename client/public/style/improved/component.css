@@ -1,0 +1,33 @@
+.alert-box { 
+/* Create an aesthetic alert box that will display in the center of the screen, taking attention from whatever else is on the screen, but isn't too obtrusive. */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-background-color);
+  color: var(--primary-text-color);
+  box-shadow: var(--box-shadow);
+  z-index: 1000;
+  
+}
+
+.component-heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.component-heading-main {
+  font-family: var(--font-secondary); 
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.component-heading-sub {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 400;
+}
