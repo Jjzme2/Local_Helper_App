@@ -1,0 +1,11 @@
+.clear {
+	background-color: transparent !important;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.no-shadow {
+  box-shadow: none !important;
+}
