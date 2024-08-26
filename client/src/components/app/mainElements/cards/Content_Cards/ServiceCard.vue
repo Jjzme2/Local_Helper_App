@@ -1,5 +1,5 @@
 <template>
-  <div class="service-card">
+  <div class="service-card" @click="handleClick">
     <div class="service-info">
       <img class="service-icon" :src="imagePath" />
       <h2>{{ service.serviceName }}</h2>
@@ -14,12 +14,23 @@
 </template>
 
 <script>
+import emitter from '@/_services/utilities/eventBus'
+
 export default {
   name: 'ServiceCard',
   props: {
     service: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    handleClick() {
+      this.$emit('service-clicked', this.service)
+      emitter.emit('trigger-alert', {
+        message: `You clicked on ${this.service.serviceName}`,
+        type: 'info'
+      })
     }
   },
   computed: {
@@ -30,8 +41,10 @@ export default {
         : this.service.description
     },
     imagePath() {
-      const path = `/images/app/full/${this.service.image}`
-      console.log(path)
+      let path = ''
+
+      if (this.service.image) path = `/images/app/full/${this.service.image}`
+      else path = '/images/app/full/default.jpg'
       return path
     }
   }
