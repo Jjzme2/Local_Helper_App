@@ -1,13 +1,12 @@
 <template>
   <div class="message">
-    <p>{{ timeOfDayMessage }}!</p>
-    <p>The current time is {{ currentTime }}</p>
+    <h3>{{ timeOfDayMessage }}!</h3>
     <p>{{ weatherInfo }}</p>
   </div>
 </template>
 
 <script>
-import { computed, onBeforeMount, ref, onMounted, onUnmounted } from 'vue'
+import { computed, onBeforeMount } from 'vue'
 import { useWeatherStore } from '@/stores/weather'
 
 export default {
@@ -26,24 +25,6 @@ export default {
       }
     })
 
-    const currentTime = ref(
-      new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
-    )
-    const updateTime = () => {
-      currentTime.value = new Date().toLocaleTimeString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit'
-      })
-    }
-    let timer
-    onMounted(() => {
-      timer = setInterval(updateTime, 1000)
-    })
-
-    onUnmounted(() => {
-      clearInterval(timer)
-    })
-
     onBeforeMount(() => {
       store.fetchWeather('60950')
     })
@@ -58,7 +39,6 @@ export default {
 
     return {
       timeOfDayMessage,
-      currentTime,
       weatherInfo
     }
   }

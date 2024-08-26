@@ -21,6 +21,10 @@ export const useServiceStore = defineStore('services', {
         return new modelAlt(item)
       })
       return items
+    },
+    getItemById: (state) => (id) => {
+      const item = state.items.find((item) => item.id === id)
+      return new model(item)
     }
   }
 })

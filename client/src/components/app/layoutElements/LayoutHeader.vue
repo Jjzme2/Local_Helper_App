@@ -39,7 +39,8 @@ export default {
       customRoutes: [
         new NavigationOption('Home', 'home'),
         new NavigationOption('Contact Us', 'contact'),
-        new NavigationOption('Request new Service', 'unlistedService')
+        new NavigationOption('Request new Service', 'unlistedService'),
+        new NavigationOption('About Us', 'about')
       ]
     }
   },

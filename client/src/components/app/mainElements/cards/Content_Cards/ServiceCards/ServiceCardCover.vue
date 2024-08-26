@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import emitter from '@/_services/utilities/eventBus'
+// import emitter from '@/_services/utilities/eventBus'
 
 export default {
-  name: 'ServiceCard',
+  name: 'ServiceCardCover',
   props: {
     service: {
       type: Object,
@@ -27,10 +27,6 @@ export default {
   methods: {
     handleClick() {
       this.$emit('service-clicked', this.service)
-      emitter.emit('trigger-alert', {
-        message: `You clicked on ${this.service.serviceName}`,
-        type: 'info'
-      })
     }
   },
   computed: {
