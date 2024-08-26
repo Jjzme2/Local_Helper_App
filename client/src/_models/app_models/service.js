@@ -1,6 +1,7 @@
 class Service {
   constructor(service) {
     try {
+      this.id = service.id
       this.serviceName = service.serviceName
       this.description = service.description
       this.category = service.category

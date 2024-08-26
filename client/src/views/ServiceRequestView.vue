@@ -2,7 +2,7 @@
   <BaseView>
     <template #default>
       <div class="container">
-        <h1>Unlisted Service</h1>
+        <h1>{{ serviceRequested.serviceName }} Service</h1>
         <form @submit.prevent="submitForm" class="form">
           <div class="form-group">
             <label for="name">Your Name</label>
@@ -32,39 +32,8 @@
           </div> -->
 
           <div class="form-group">
-            <label for="category">Service Category</label>
-            <select id="category" v-model="form.category" required>
-              <option disabled>--- Select a category ---</option>
-              <option v-for="category in categories" :key="category.id" :value="category.value">
-                {{ category.categoryName }}
-              </option>
-            </select>
-          </div>
-
-          <!-- Set a max width for this -->
-          <div class="form-group">
-            <label for="description">Service Description</label>
-            <textarea
-              id="description"
-              v-model="form.description"
-              required
-              placeholder="Describe the task or service you need"
-            ></textarea>
-          </div>
-
-          <div class="form-group">
             <label for="datetime">Preferred Date & Time</label>
             <input type="datetime-local" id="datetime" v-model="form.time" />
-          </div>
-
-          <div class="form-group">
-            <label for="budget">Budget (Optional)</label>
-            <input
-              type="number"
-              id="budget"
-              v-model="form.budget"
-              placeholder="Enter your budget (in USD)"
-            />
           </div>
 
           <div class="form-group">
@@ -112,6 +81,7 @@
 
 <script>
 import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import BaseView from '@/views/BaseView.vue'
 
 // Stores
@@ -127,15 +97,18 @@ export default {
     BaseView
   },
   setup() {
+    const route = useRoute()
     const locationStore = useLocationStore()
     const serviceStore = useServiceStore()
 
     const categories = computed(() => serviceStore.getCategories)
     const servicedLocations = computed(() => locationStore.getItems)
+    const serviceRequested = computed(() => serviceStore.getItemById(route.params.serviceId))
 
     return {
       servicedLocations,
-      categories
+      categories,
+      serviceRequested
     }
   },
   data() {
@@ -143,11 +116,11 @@ export default {
       form: {
         name: '',
         email: '',
-        category: '',
-        description: '',
+        category: this.serviceRequested.category,
+        description: this.serviceRequested.serviceName,
         notes: '',
         time: '',
-        budget: '',
+        budget: this.serviceRequested.price,
         location: ''
         // attachment: null,
         // consent: false
@@ -160,13 +133,12 @@ export default {
     // },
     submitForm() {
       // Handle form submission
-      //   alert('Form submission has not been implemented yet.')
       //   Validate form data
 
       //   Add Limiter to prevent spamming
       if (checkApiRateLimit(5)) {
         try {
-          sendNewServiceEmail(this.form, 'You have received a request for a new service')
+          sendNewServiceEmail(this.form, 'You have recieved a new request!')
           alert('Your message has been sent. We will get back to you as soon as possible.')
         } catch (error) {
           alert('An error occurred while sending your message. Please try again later.')

@@ -11,7 +11,7 @@
       ></alertBox>
 
       <section class="component-heading-container">
-        <h1 class="component-heading-main">Welcome to ILYTAT Services</h1>
+        <h1 class="component-heading-main">ILYTAT Services</h1>
 
         <p class="component-heading-sub">Connecting you with reliable local services.</p>
 

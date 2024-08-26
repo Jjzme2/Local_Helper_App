@@ -1,6 +1,9 @@
 class ServiceCategory {
   constructor(category) {
-    this.name = category.name
+    this.id = category.id
+    this.categoryName = category.categoryName
+    this.description = category.description
+    this.value = category.value
   }
 }
 

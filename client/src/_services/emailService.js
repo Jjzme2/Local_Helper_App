@@ -20,9 +20,11 @@ function sendContactEmail(form) {
   emailjs.send(serviceId, contactId, templateParams, publicKey)
 }
 
-function sendNewServiceEmail(form) {
+function sendNewServiceEmail(form, introductoryMessage) {
   // EmailJS
   const templateParams = {
+    introductory_message:
+      introductoryMessage || 'You have received a message from a potential client.',
     my_website_address: domain,
     to_email: servicesEmail,
     name: form.name,
