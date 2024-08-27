@@ -1,41 +1,36 @@
-.grid-container-column {
+
+.grid-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr); /* Creates a grid with 3 equal-width columns */
+  grid-gap: 10px; /* Adds a gap between grid items */
 }
 
-.grid-container-row {
+.grid-container-lg {
   display: grid;
-  grid-template-rows: auto;
-  gap: 2rem;
+  grid-template-columns: repeat(1, 1fr); /* Creates a grid with 4 equal-width columns */
+  grid-gap: 10px; /* Adds a gap between grid items */
 }
 
-.grid {
-  display: grid;
-  gap: 2rem;
-}
-
-.grid-default {
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+.grid-item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
 }
 
 @media screen and (max-width: 768px) {
-  .grid-container-column {
-	grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+  .grid-container {
+	grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-container-row {
-	grid-template-rows: auto;
+  .grid-item {
+	margin: 0 auto;
   }
+}
 
-  .grid {
-	background-color: var(--secondary-background-color);
-	gap: 1rem;
-	z-index: 100;
+@media screen and (max-width: 480px) {
+  .grid-container {
+	grid-template-columns: repeat(1, 1fr);
   }
-
-  .grid-default {
-	grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  }
-
 }

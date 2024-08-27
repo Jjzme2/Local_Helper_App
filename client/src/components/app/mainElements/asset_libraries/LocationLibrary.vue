@@ -1,12 +1,17 @@
 <template>
-  <section class="grid-container">
+  <section>
     <contentCard>
       <h2>Currently Servicing</h2>
-      <div>
-        <div v-for="location in servicedLocations" :key="location.id" class="location-card">
-          <ul class="location-list">
-            <li>{{ location.townName }} {{ location.state }}, {{ location.zipCode }}</li>
-          </ul>
+      <hr class="divider" />
+
+      <div class="grid-container">
+        <div
+          v-for="location in servicedLocations"
+          :key="location.id"
+          class="location-card grid-item"
+        >
+          <p class="location-info">{{ location.townName }} {{ location.state }},</p>
+          <p class="location-info">{{ location.zipCode }}</p>
         </div>
       </div>
     </contentCard>
