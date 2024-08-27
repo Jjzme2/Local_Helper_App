@@ -1,47 +1,197 @@
-.services-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
+.service-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--light-gray), var(--mint));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: 400px;
+  margin: 20px auto;
 }
 
-.services-table th,
-.services-table td {
-  padding: 0.75rem;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+.service-card-cover {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 15px;
+  overflow: hidden;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 3rem auto;
 }
 
-.services-table th {
-  background-color: var(--primary-color);
-  color: #fff;
+.service-card-cover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.services-table tbody tr:hover {
-  background-color: #f9f9f9;
-}
-
-.services-table tfoot td {
-  font-size: 0.875rem;
-  color: #666;
+.hover-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 1rem;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.service-image {
-  width: 25px;
-  height: 25px;
+.service-card-cover:hover .hover-info {
+  opacity: 1;
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.service-image-full {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.service-info {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.service-info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.service-info p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+.service-name {
+  font-size: 1.6em;
+  color: #333;
+  font-weight: 600;
+}
+
+.service-price {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #0025c94b;
+  background: #e0f7fa;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.service-description {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.service-note {
+  font-size: 0.85em;
+  color: #999;
+  margin-top: 10px;
+  line-height: 1.4;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .services-table th,
-  .services-table td {
-    font-size: 12px;
-    padding: 0.5rem;
+  .service-card {
+    padding: 15px;
+    max-width: 100%;
+    margin: 10px;
+  }
+    .service-card-cover {
+    max-width: 100%; /* Full width on small screens */
+    margin: 1rem auto; /* Adjust margin for smaller screens */
   }
 
-  .service-image {
-    width: 40px;
-    height: 40px;
+  .service-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .service-name {
+    font-size: 1.4em;
+  }
+
+  .service-price {
+    font-size: 1.2em;
+    margin-top: 5px;
+  }
+
+  .service-description {
+    font-size: 0.95em;
+  }
+
+  .service-note {
+    font-size: 0.8em;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    padding: 10px;
+    margin: 5px;
+  }
+
+    .service-card-cover {
+    max-width: 200px; /* Full width on very small screens */
+    margin: 0.5rem auto; /* Adjust margin for very small screens */
+  }
+
+  .service-name {
+    font-size: 1.2em;
+  }
+
+  .service-price {
+    font-size: 1em;
+  }
+
+  .service-description {
+    font-size: 0.9em;
+  }
+
+  .service-note {
+    font-size: 0.75em;
   }
 }
