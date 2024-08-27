@@ -11,8 +11,7 @@
 /* Base location card */
 .location-card {
   position: relative;
-  width: 100%;
-  max-width: 350px; /* Set a maximum width */
+  width: 150px;
   height: auto; /* Adjust height automatically */
   background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%); /* Gradient background */
   border-radius: 15px; /* Rounded corners */
@@ -20,22 +19,16 @@
   transition: transform 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   margin: 2rem auto; /* Center the card with margin */
-  padding: 1rem; /* Add padding inside the card */
+  padding: .15rem; /* Add padding inside the card */
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.location-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.location-list li {
-    color: #555;
-    font-size: 18px;
+.location-info {
+	font-family: var(--font-secondary);
+  margin: 0;
 }
 
 /* Responsive Design */

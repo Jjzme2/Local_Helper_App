@@ -18,10 +18,8 @@
         <greeting></greeting>
       </section>
 
-      <hr class="divider" />
       <serviceLibrary></serviceLibrary>
 
-      <hr class="divider" />
       <locationLibrary></locationLibrary>
     </template>
   </BaseView>

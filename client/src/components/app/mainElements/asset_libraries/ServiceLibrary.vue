@@ -1,21 +1,21 @@
 <template>
   <section>
-    <div class="grid-container">
-      <contentCard>
-        <h2>Services We Offer</h2>
-        <serviceCard
-          v-for="service in services"
-          :key="service.id"
-          :service="service"
-          @service-clicked="goToServicePage"
-        ></serviceCard>
-      </contentCard>
+    <h2>Services We Offer</h2>
+    <hr class="divider" />
+
+    <div class="container grid-container clear no-shadow">
+      <serviceCard
+        v-for="service in services"
+        :key="service.id"
+        :service="service"
+        @service-clicked="goToServicePage"
+        class="grid-item"
+      ></serviceCard>
     </div>
   </section>
 </template>
 
 <script>
-import contentCard from '@/components/app/mainElements/cards/Content_Cards/ContentCard.vue'
 import serviceCard from '@/components/app/mainElements/cards/Content_Cards/ServiceCards/ServiceCardCover.vue'
 
 import useServiceStore from '@/stores/services'
@@ -43,7 +43,6 @@ export default {
     }
   },
   components: {
-    contentCard,
     serviceCard
   }
 }
