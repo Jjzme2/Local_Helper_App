@@ -1,10 +1,10 @@
 .employee-card {
+	display: flex;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    padding: 20px;
 }
 
 .employee-card:hover {
@@ -13,8 +13,8 @@
 }
 
 .employee-icon {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
