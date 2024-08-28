@@ -95,4 +95,8 @@ height: 150px;
   .header {
     padding: 0.5rem; /* Adjust padding for smaller screens */
   }
+
+  .body {
+	background-color: var(--mint);
+  }
 }
