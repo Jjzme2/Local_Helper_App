@@ -9,6 +9,7 @@
         <img class="product-icon" :src="product.linkToImage" :alt="product.name" />
         <div class="product-details">
           <p class="product-name">{{ product.name }}</p>
+          <p>{{ product.category }}</p>
           <button class="primary-button" @click="sendToURL(product)">View Details</button>
         </div>
       </div>
@@ -29,11 +30,13 @@ export default {
     const productStore = useProductStore()
 
     const products = computed(() => productStore.getItems)
+    const categories = computed(() => productStore.getCategories)
     const shopURL = import.meta.env.VITE_PRODUCT_URL
 
     return {
       products,
-      shopURL
+      shopURL,
+      categories
     }
   },
   methods: {
