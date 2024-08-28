@@ -68,6 +68,7 @@ const router = createRouter({
     // Catch All
     {
       path: '/:catchAll(.*)',
+      name: 'error',
       redirect: { name: 'home' }
     }
   ]

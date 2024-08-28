@@ -170,7 +170,7 @@ export default {
           alert('Your message has been sent. We will get back to you as soon as possible.')
         } catch (error) {
           alert('An error occurred while sending your message. Please try again later.')
-          console.log(error)
+          console.error(error)
         }
       } else {
         alert(

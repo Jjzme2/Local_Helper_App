@@ -44,7 +44,7 @@ const showCaseItems = [
   // ID: 55758f18-2e80-425a-b098-c3f0a0a33e3f
   {
     serviceId: '55758f18-2e80-425a-b098-c3f0a0a33e3f',
-    directory: '/src/_assets/images/showcase/resumes/',
+    directory: '/images/app/showcase/resumes/',
     showcaseImages: [
       {
         title: 'Sample Resume 1',
@@ -61,7 +61,7 @@ const showCaseItems = [
   // ID: e6b4c5d8-7d6b-4e5a-9c9e-1c1e6e7d6b4c
   {
     serviceId: 'e6b4c5d8-7d6b-4e5a-9c9e-1c1e6e7d6b4c',
-    directory: '/src/_assets/images/showcase/book-covers/',
+    directory: '/images/app/showcase/book-covers/',
     showcaseImages: [
       {
         title: 'Daily Affirmations for personal Growth',
@@ -77,7 +77,7 @@ const showCaseItems = [
   },
   {
     serviceId: 'e6b4c5d8-7d6b-4e5a-9c9e-1c1e6e7d6b4c',
-    directory: '/src/_assets/images/showcase/business-cards/',
+    directory: '/images/app/showcase/business-cards/',
     showcaseImages: [
       {
         title: 'Business Card',

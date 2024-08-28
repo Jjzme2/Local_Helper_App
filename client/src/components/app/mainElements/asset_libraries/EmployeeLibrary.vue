@@ -5,7 +5,11 @@
       <hr class="divider" />
 
       <div class="grid-container">
-        <div v-for="employee in employees" :key="employee.id" class="employee-card grid-item">
+        <div
+          v-for="employee in employees"
+          :key="employee.id"
+          class="employee-card grid-item clear no-border no-shadow"
+        >
           <img class="employee-icon" :src="getImagePath(employee)" alt="Profile Pic" />
           <div class="employee-details">
             <p class="employee-name">{{ employee.goByName }} {{ employee.lastName }}</p>
@@ -20,7 +24,7 @@
 <script>
 import contentCard from '../cards/Content_Cards/ContentCard.vue'
 import { computed } from 'vue'
-import useEmployeeStore from '@/stores/employees'
+import { useEmployeeStore } from '@/stores/employees'
 
 export default {
   name: 'EmployeeLibrary',
@@ -31,10 +35,10 @@ export default {
     const employeeStore = useEmployeeStore()
 
     const employees = computed(() => employeeStore.getItems)
-    const directory = '/src/_assets/images/employees/'
+    const employeeImageDirectory = 'images/app/employees/'
 
     const getImagePath = (employee) => {
-      return directory + employee.imageFileName
+      return employeeImageDirectory + employee.imageFileName
     }
 
     return {

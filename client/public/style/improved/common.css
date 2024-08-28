@@ -185,6 +185,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Media Queries */
 @media screen and (max-width: 768px) {
+ #app {
+	background-color: var(--mint);
+ }
+
   .container {
     padding: 1rem;
   }
@@ -221,6 +225,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 
   .container {
-    padding: 0.5rem;
+    padding: 3rem;
   }
 }

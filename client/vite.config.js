@@ -13,7 +13,10 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)), // Example: import { employees, imageDirectory } from '@/_assets/employees'
+	  '@assets': fileURLToPath(new URL('./src/_assets', import.meta.url)), // Example: import { employees, imageDirectory } from '@assets/employees'
+	  '@models': fileURLToPath(new URL('./src/_models', import.meta.url)), // Example: import { employees, imageDirectory } from '@models/employees'
+	  '@services': fileURLToPath(new URL('./src/_services', import.meta.url)), // Example: import { employees, imageDirectory } from '@services/employees'
     }
   }
 })

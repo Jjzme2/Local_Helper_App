@@ -1,10 +1,10 @@
 import { defineStore } from 'pinia'
-import { employees } from '../_assets/employees.js'
-import model from '../_models/app_models/employee.js'
+import { products } from '../_assets/products.js'
+import model from '../_models/app_models/product.js'
 
-export const useEmployeeStore = defineStore('employees', {
+export const useProductStore = defineStore('products', {
   state: () => ({
-    items: employees
+    items: products
   }),
   getters: {
     getItems: (state) => {
@@ -20,4 +20,4 @@ export const useEmployeeStore = defineStore('employees', {
   }
 })
 
-export default useEmployeeStore
+export default useProductStore

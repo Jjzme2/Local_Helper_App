@@ -18,6 +18,8 @@
         <greeting></greeting>
       </section>
 
+      <productLibrary></productLibrary>
+
       <serviceLibrary></serviceLibrary>
 
       <locationLibrary></locationLibrary>
@@ -32,6 +34,7 @@ import greeting from '@/components/app/mainElements/display/GreetingHome.vue'
 // Libraries
 import serviceLibrary from '@/components/app/mainElements/asset_libraries/ServiceLibrary.vue'
 import locationLibrary from '@/components/app/mainElements/asset_libraries/LocationLibrary.vue'
+import productLibrary from '@/components/app/mainElements/asset_libraries/ProductLibrary.vue'
 
 export default {
   name: 'HomeView',
@@ -40,7 +43,8 @@ export default {
     BaseView,
     greeting,
     serviceLibrary,
-    locationLibrary
+    locationLibrary,
+    productLibrary
   },
   data() {
     return {
