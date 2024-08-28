@@ -1,6 +1,7 @@
 <template>
   <section>
     <h2>Our Products</h2>
+
     <hr class="divider" />
 
     <div class="container grid-container clear no-shadow">
@@ -11,6 +12,9 @@
           <button class="primary-button" @click="sendToURL(product)">View Details</button>
         </div>
       </div>
+    </div>
+    <div class="container clear no-shadow">
+      <a class="primary-button" :href="shopURL" target="_blank">View our store</a>
     </div>
   </section>
 </template>
@@ -25,9 +29,11 @@ export default {
     const productStore = useProductStore()
 
     const products = computed(() => productStore.getItems)
+    const shopURL = import.meta.env.VITE_PRODUCT_URL
 
     return {
-      products
+      products,
+      shopURL
     }
   },
   methods: {
