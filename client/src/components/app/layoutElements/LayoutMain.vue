@@ -8,7 +8,7 @@
       <slot></slot>
     </main>
 
-    <footer class="footer" v-if="$slots.footer">
+    <footer v-if="$slots.footer">
       <layoutFooter></layoutFooter>
     </footer>
   </div>

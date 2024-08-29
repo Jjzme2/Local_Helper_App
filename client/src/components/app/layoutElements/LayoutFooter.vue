@@ -1,14 +1,17 @@
 <template>
-  <div class="footer-element">
-    <socials :links="socials"></socials>
-  </div>
+  <div class="footer">
+    <div class="footer-element">
+      <router-link to="/contact" class="footer-text">Feedback</router-link>
+      <socials :links="socials"></socials>
+    </div>
 
-  <div class="footer-element">
-    <strong>&copy; {{ yearTag }} &nbsp; ILYTAT.com &nbsp; All rights reserved.</strong>
-  </div>
+    <div class="footer-element">
+      <strong>&copy; {{ yearTag }} &nbsp; ILYTAT.com &nbsp; All rights reserved.</strong>
+    </div>
 
-  <div class="footer-element">
-    <p>Application developed by Jj Zettler (ILYTAT)</p>
+    <div class="footer-element">
+      <p>Application developed by Jj Zettler (ILYTAT)</p>
+    </div>
   </div>
 </template>
 
@@ -26,11 +29,18 @@ export default {
       socials: [
         {
           link: 'https://www.linkedin.com/in/jjilytatgames/',
-          network: 'linkedin'
+          network: 'linkedin',
+          displayText: 'LinkedIn'
         },
         {
           link: 'https://www.github.com/jjzme2',
-          network: 'github'
+          network: 'github',
+          displayText: 'GitHub'
+        },
+        {
+          link: 'https://www.tiktok.com/@positive_echoes?lang=en',
+          network: 'tiktok',
+          displayText: 'Positive Echoes'
         }
       ]
     }

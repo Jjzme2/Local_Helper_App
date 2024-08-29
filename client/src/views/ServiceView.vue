@@ -5,6 +5,8 @@
         <!-- Showcase items here -->
         <showcase :items="showcaseItems" />
         <serviceCardFull :service="resource" />
+        <locationLibrary></locationLibrary>
+
         <button class="primary-button centered" @click="openRequest">Request Service</button>
       </section>
     </template>
@@ -21,13 +23,15 @@ import useShowcaseStore from '@/stores/showcases'
 import BaseView from '@/views/BaseView.vue'
 import serviceCardFull from '@/components/app/mainElements/cards/Content_Cards/ServiceCards/ServiceCardFull.vue'
 import showcase from '@/components/app/mainElements/panels/ShowcasePanel.vue'
+import locationLibrary from '@/components/app/mainElements/asset_libraries/LocationLibrary.vue'
 
 export default {
   name: 'ServiceView',
   components: {
     showcase,
     serviceCardFull,
-    BaseView
+    BaseView,
+    locationLibrary
   },
   setup() {
     const route = useRoute()

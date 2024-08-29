@@ -1,10 +1,11 @@
 import { defineStore } from 'pinia'
-import { products } from '../_assets/products.js'
+import { products, categories } from '../_assets/products.js'
 import model from '../_models/app_models/product.js'
 
 export const useProductStore = defineStore('products', {
   state: () => ({
-    items: products
+    items: products,
+    categories: categories
   }),
   getters: {
     getItems: (state) => {
@@ -12,6 +13,9 @@ export const useProductStore = defineStore('products', {
         return new model(item)
       })
       return items
+    },
+    getCategories: (state) => {
+      return state.categories
     },
     getItemById: (state) => (id) => {
       const item = state.items.find((item) => item.id === id)
