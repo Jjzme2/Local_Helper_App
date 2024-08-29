@@ -27,15 +27,6 @@ a {
   text-decoration: none;
 }
 
-footer {
-  align-items: center;
-  background-color: var(--secondary-background-color);
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0;
-  margin: .5rem;
-  padding: .5rem .8rem;
-}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--secondary-font-family);
@@ -79,7 +70,6 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 600px;
   margin: 0 auto;
   padding: 2rem;
-  background-color: #f9f9f9;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }

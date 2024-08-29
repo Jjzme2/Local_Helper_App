@@ -1,31 +1,51 @@
 .social-links {
-  align-items: center;
   display: flex;
-  justify-content: flex-start;
-  padding-top: 1rem;
-  width: 50%;
-}
-
-.social-links a {
   align-items: center;
-  display: flex;
-  text-decoration: none;
-  width: 3em;
-}
-
-.social-links a img {
-  width: 30px; /* Set a standard icon size */
-  max-height: 30px;
-  max-width: 100%; /* Ensure icons never exceed container size */
-}
-
-.social-links a:hover {
-  opacity: 0.8; /* Subtle hover effect */
-  border-radius: 50%; /* Round corners for icons */
+  flex-direction: column;
+  padding: 0.5rem 0;
+  width: 100%;
+  max-width: 300px;
+  margin-left: auto; /* Align to the left side of the footer */
 }
 
 .social-links li {
   list-style-type: none;
-  padding: 0;
-  margin: 0;
+  margin: 0 1rem; /* Add some spacing between icons */
+  width: 20em;
+}
+
+.social-links a {
+  text-decoration: none;
+}
+
+.social-links a img {
+  width: 24px; /* Set a standard icon size */
+  height: 24px;
+  max-width: 100%; /* Ensure icons never exceed container size */
+}
+
+.social-links a:hover {
+  background-color: #e0e0e0; /* Slightly darker background on hover */
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    justify-content: center; /* Center align on smaller screens */
+    width: 100%;
+  }
+
+  .social-links li {
+    margin: 0 0.25rem; /* Reduce spacing between icons on smaller screens */
+  }
+
+  .social-links a {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .social-links a img {
+    width: 20px; /* Adjust icon size for smaller screens */
+    height: 20px;
+  }
 }

@@ -5,7 +5,7 @@ class Product {
       this.name = product.name
       this.category = product.category
       this.url = product.url
-      this.linkToImage = product.linkToImage
+      this.imageName = product.imageName
     } catch (e) {
       console.error
     }
