@@ -15,9 +15,14 @@
       />
     </div>
     <div class="grid-container clear no-shadow">
-      <div v-for="product in products" :key="product.id" class="small-card grid-item silver-gradient" @click="sendToURL(product)">
+      <div
+        v-for="product in products"
+        :key="product.id"
+        class="small-card grid-item silver-gradient"
+        @click="sendToURL(product)"
+      >
         <img class="product-icon" :src="getImagePath(product)" :alt="product.name" />
-        </div>
+      </div>
     </div>
     <div class="container clear no-shadow">
       <a class="primary-button" :href="shopURL" target="_blank">View our store</a>

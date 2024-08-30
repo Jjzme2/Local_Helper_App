@@ -20,16 +20,14 @@
 
       <productLibrary></productLibrary>
 
-      
       <div class="container">
         <serviceLibrary :idsToInclude="idsToShow"></serviceLibrary>
 
-
-    <div class="container clear no-shadow">
-      <a class="primary-button" @click="showAllServices = !showAllServices">
-          {{ showAllServices ? 'View Featured Services' : 'View All Services' }}</a>
-    </div>
-
+        <div class="container clear no-shadow">
+          <a class="primary-button" @click="showAllServices = !showAllServices">
+            {{ showAllServices ? 'View Featured Services' : 'View All Services' }}</a
+          >
+        </div>
       </div>
     </template>
   </BaseView>
