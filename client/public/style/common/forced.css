@@ -14,7 +14,19 @@
   padding: 0 !important;
 }
 
+.no-grid-gap {
+  grid-gap: 0 !important;
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
 .align-right-spaced {
 	position: fixed;
 	right: 5px;
+}
+
+.silver-gradient {
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(192,192,192,1) 100%) !important;
 }

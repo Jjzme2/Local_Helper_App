@@ -3,7 +3,7 @@
     <h2>Services We Offer</h2>
     <hr class="divider" />
 
-    <div class="container grid-container clear no-shadow">
+    <div class="grid-container clear no-shadow">
       <serviceCard
         v-for="service in filteredServices"
         :key="service.id"
