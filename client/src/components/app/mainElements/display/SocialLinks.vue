@@ -1,7 +1,7 @@
 <template>
-  <div class="social-links grid-container">
+  <div class="social-links grid-container-lg no-grid-gap">
     <div v-for="link in links" :key="link.network" class="grid-item no-padding no-shadow">
-      <a :href="link.link" target="_blank">
+      <a :href="link.link" target="_blank" class="footer-text">
         <!-- <img :src="getImageUrl(link.network)" :alt="link.network" /> -->
         {{ link.displayText }}
       </a>

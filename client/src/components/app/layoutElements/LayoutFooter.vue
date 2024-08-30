@@ -1,5 +1,5 @@
 <template>
-  <div class="grid-container footer">
+  <div class="grid-container grid-3 footer">
     <div class="grid-item footer-element no-shadow">
       <router-link to="/contact" class="footer-text">Feedback</router-link>
       <socials :links="socials"></socials>
@@ -40,7 +40,7 @@ export default {
         {
           link: 'https://www.tiktok.com/@positive_echoes?lang=en',
           network: 'tiktok',
-          displayText: 'Positive Echoes'
+          displayText: 'TikTok'
         }
       ]
     }

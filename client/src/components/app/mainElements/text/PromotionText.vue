@@ -62,7 +62,7 @@ export default {
 .promotion-text {
   background-color: #ff9800;
   color: #fff;
-  padding: 20px;
+  padding: 5px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
@@ -71,14 +71,14 @@ export default {
 }
 
 .promotion-message {
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: bold;
   margin-bottom: 10px;
   animation: bounce 1.5s infinite;
 }
 
 .promotion-details {
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   color: #fff;
 }
 

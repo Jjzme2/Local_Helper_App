@@ -3,6 +3,7 @@
     <h2>Our Products</h2>
 
     <hr class="divider" />
+
     <div class="container clear no-shadow">
       <PromotionText
         v-if="promotion.active"
@@ -13,14 +14,14 @@
         :category="promotion.category"
       />
     </div>
-    <div class="container grid-container clear no-shadow">
-      <div v-for="product in products" :key="product.id" class="product-card grid-item">
+    <div class="grid-container clear no-shadow">
+      <div
+        v-for="product in products"
+        :key="product.id"
+        class="small-card grid-item silver-gradient"
+        @click="sendToURL(product)"
+      >
         <img class="product-icon" :src="getImagePath(product)" :alt="product.name" />
-        <div class="product-details">
-          <p class="product-name">{{ truncatedName(product) }}</p>
-          <p>{{ product.category }}</p>
-          <button class="primary-button" @click="sendToURL(product)">View Details</button>
-        </div>
       </div>
     </div>
     <div class="container clear no-shadow">

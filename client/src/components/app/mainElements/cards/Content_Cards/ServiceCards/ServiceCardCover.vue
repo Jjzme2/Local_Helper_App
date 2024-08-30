@@ -1,10 +1,11 @@
 <template>
   <div class="small-card">
-    <div>
+    <div class="small-card-header">
       <h3>{{ service.serviceName }}</h3>
+      <p class="small-card-sub-info">${{ service.price }}</p>
     </div>
-    <p class="small-card-sub-info">${{ service.price }}</p>
-    <button class="details-button" @click="handleClick">View Details</button>
+
+    <button class="primary-button no-padding" @click="handleClick">View Details</button>
   </div>
 </template>
 
