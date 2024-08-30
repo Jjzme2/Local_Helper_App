@@ -1,15 +1,15 @@
 <template>
-  <div class="footer">
-    <div class="footer-element">
+  <div class="grid-container footer">
+    <div class="grid-item footer-element no-shadow">
       <router-link to="/contact" class="footer-text">Feedback</router-link>
       <socials :links="socials"></socials>
     </div>
 
-    <div class="footer-element">
+    <div class="grid-item footer-element no-shadow">
       <strong>&copy; {{ yearTag }} &nbsp; ILYTAT.com &nbsp; All rights reserved.</strong>
     </div>
 
-    <div class="footer-element">
+    <div class="grid-item footer-element no-shadow">
       <p>Application developed by Jj Zettler (ILYTAT)</p>
     </div>
   </div>

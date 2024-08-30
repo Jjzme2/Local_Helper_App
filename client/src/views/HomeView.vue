@@ -20,7 +20,12 @@
 
       <productLibrary></productLibrary>
 
-      <serviceLibrary></serviceLibrary>
+      <div class="container">
+        <serviceLibrary :idsToInclude="idsToShow"></serviceLibrary>
+        <button class="primary-button" @click="showAllServices = !showAllServices">
+          {{ showAllServices ? 'View Featured Services' : 'View All Services' }}
+        </button>
+      </div>
     </template>
   </BaseView>
 </template>
@@ -48,7 +53,19 @@ export default {
         show: 0,
         message: 'Welcome to the Home View',
         type: 'info'
-      }
+      },
+      showAllServices: false,
+      featuredServiceIds: [
+        'bbcf0e3f-41b5-4383-b480-d1db3fa9a3fd',
+        '3e7d1e2b-1f3b-4e2b-8c5e-7b4e7d2f3b6c',
+        'e6b4c5d8-7d6b-4e5a-9c9e-1c1e6e7d6b4c'
+      ]
+    }
+  },
+  computed: {
+    idsToShow() {
+      if (!this.showAllServices) return this.featuredServiceIds
+      else return []
     }
   }
 }

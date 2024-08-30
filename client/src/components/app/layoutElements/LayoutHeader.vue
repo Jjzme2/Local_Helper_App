@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <section>
     <img src="/images/logo.png" alt="logo" class="header-logo" />
 
-    <button @click="toggleNav" class="primary-button" style="float: right">
+    <button @click="toggleNav" class="primary-button no-padding" style="float: right; width: 15%">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -17,10 +17,10 @@
         />
       </svg>
     </button>
+  </section>
 
-    <div class="centered" :class="{ 'is-visible': isNavVisible }">
-      <navigationPanel v-if="isNavVisible" :routes="customRoutes"></navigationPanel>
-    </div>
+  <div :class="{ 'is-visible': isNavVisible }">
+    <navigationPanel v-if="isNavVisible" :routes="customRoutes"></navigationPanel>
   </div>
 </template>
 
@@ -39,7 +39,7 @@ export default {
       customRoutes: [
         new NavigationOption('Home', 'home'),
         new NavigationOption('Contact Us', 'contact'),
-        new NavigationOption('Request new Service', 'unlistedService'),
+        new NavigationOption('Request Service', 'unlistedService'),
         new NavigationOption('About Us', 'about')
       ]
     }

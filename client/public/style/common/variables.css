@@ -16,7 +16,9 @@ ACCENT: #65b891 - Mint
     --dark-purple: #32021f;
     --mint: #65b891;
     --light-gray: #e0e0e0;
+
 	--transparent-green: rgba(101, 184, 145, 0.5);
+	--transparent-mint: rgba(101, 184, 145, 0.85);
 
 
    /* Typography */

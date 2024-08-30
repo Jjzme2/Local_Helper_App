@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-panel grid grid-default">
+  <div class="nav-panel align-right-spaced">
     <button
       v-for="route in routes"
       :key="route.name"
