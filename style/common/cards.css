@@ -65,11 +65,4 @@
   color: var(--primary-button-color)
 }
 
-@media screen and (max-width: 768px) {
-  .content-card {
-	padding: 8px;
-  }
-}
-
-
 

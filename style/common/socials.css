@@ -1,0 +1,38 @@
+.social-links {
+  max-width: 15em;
+  height: 3em;
+}
+
+
+.social-links a {
+  text-decoration: none;
+  font-size: 12px;
+  width: 3em;
+}
+
+.social-links a img {
+  width: 12px; /* Set a standard icon size */
+  height: 12px;
+  max-width: 100%; /* Ensure icons never exceed container size */
+}
+
+.social-links li:hover {
+  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+@media (max-width: 768px) {
+  .social-links {
+    justify-content: center; /* Center align on smaller screens */
+    width: 100%;
+  }
+
+  .social-links a {
+    width: 2.5em;
+    height: 2.5em;
+  }
+
+  .social-links a img {
+    width: 20px; /* Adjust icon size for smaller screens */
+    height: 20px;
+  }
+}
