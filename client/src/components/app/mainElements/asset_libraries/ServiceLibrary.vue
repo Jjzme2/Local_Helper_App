@@ -5,7 +5,7 @@
 
     <div class="container grid-container clear no-shadow">
       <serviceCard
-        v-for="service in services"
+        v-for="service in filteredServices"
         :key="service.id"
         :service="service"
         @service-clicked="goToServicePage"
@@ -17,18 +17,31 @@
 
 <script>
 import serviceCard from '@/components/app/mainElements/cards/Content_Cards/ServiceCards/ServiceCardCover.vue'
-
 import useServiceStore from '@/stores/services'
 import { computed } from 'vue'
 
 export default {
   name: 'ServiceLibrary',
-  setup() {
+  setup(props) {
     const serviceStore = useServiceStore()
     const services = computed(() => serviceStore.getItems)
 
+    const filteredServices = computed(() => {
+      if (props.idsToInclude.length === 0) {
+        return services.value
+      }
+      return services.value.filter((service) => props.idsToInclude.includes(service.id))
+    })
+
     return {
-      services
+      services,
+      filteredServices
+    }
+  },
+  props: {
+    idsToInclude: {
+      type: Array,
+      default: () => []
     }
   },
   methods: {

@@ -1,29 +1,28 @@
 
-/* IMPROVED */
-@import url("./improved/buttons.css");
-@import url("./improved/cards.css");
-@import url("./improved/common.css");
-@import url("./improved/employees.css");
-@import url("./improved/forced.css");
-@import url("./improved/formStyles.css");
-@import url("./improved/grid.css");
-@import url("./improved/layout.css");
-@import url("./improved/locations.css");
+/* COMMON */
+@import url("./common/buttons.css");
+@import url("./common/cards.css");
+@import url("./common/common.css");
+@import url("./common/employees.css");
+@import url("./common/forced.css");
+@import url("./common/formStyles.css");
+@import url("./common/grid.css");
+@import url("./common/layout.css");
+@import url("./common/locations.css");
+@import url("./common/markdown.css");
+@import url("./common/navigation.css");
+@import url("./common/products.css");
+@import url("./common/services.css");
+@import url("./common/socials.css");
+@import url("./common/variables.css");
 
-@import url("./improved/navigation.css");
-@import url("./improved/products.css");
-@import url("./improved/services.css");
-
-@import url("./improved/variables.css");
-
-/* OLD */
-/* @import url("./old/buttons.css"); */
-/* @import url("./old/cards.css"); */
-/* @import url("./old/common.css"); */
-/* @import url("./old/formStyles.css"); */
-/* @import url("./old/layout.css"); */
-/* @import url("./old/locations.css"); */
-@import url("./old/markdown.css");
-/* @import url("./old/services.css"); */
-@import url("./old/socials.css");
-/* @import url("./old/variables.css"); */
+/* RESPONSIVE */
+@import url("./responsive/buttons.css");
+@import url("./responsive/cards.css");
+@import url("./responsive/common.css");
+@import url("./responsive/grid.css");
+@import url("./responsive/layout.css");
+@import url("./responsive/locations.css");
+@import url("./responsive/navigation.css");
+@import url("./responsive/products.css");
+@import url("./responsive/services.css");

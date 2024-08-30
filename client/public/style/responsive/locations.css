@@ -1,0 +1,20 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+  .locations-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .location-card {
+    width: 45%;
+    margin-bottom: var(--gap);
+  }
+}
+
+@media (max-width: 480px) {
+  .location-card {
+    width: 60%;
+    margin-bottom: var(--gap);
+  }
+}

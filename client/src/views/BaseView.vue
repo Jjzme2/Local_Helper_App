@@ -1,14 +1,17 @@
 <template>
   <mainLayout>
     <template #header v-if="includeHeader"></template>
+
     <template #default>
-      <div class="main-content">
+      <div>
         <goBackButton v-if="includeGoHomeButton" />
         <slot></slot>
       </div>
     </template>
+
     <template #footer v-if="includeFooter"></template>
   </mainLayout>
+
   <!-- <alertBox
     v-if="alertVisible"
     :message="alertMessage"

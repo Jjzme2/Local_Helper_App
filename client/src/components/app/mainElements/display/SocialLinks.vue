@@ -1,10 +1,11 @@
 <template>
-  <div class="social-links">
-    <li v-for="link in links" :key="link.network">
+  <div class="social-links grid-container">
+    <div v-for="link in links" :key="link.network" class="grid-item no-padding no-shadow">
       <a :href="link.link" target="_blank">
-        <img :src="getImageUrl(link.network)" :alt="link.network" />{{ link.displayText }}
+        <!-- <img :src="getImageUrl(link.network)" :alt="link.network" /> -->
+        {{ link.displayText }}
       </a>
-    </li>
+    </div>
   </div>
 </template>
 

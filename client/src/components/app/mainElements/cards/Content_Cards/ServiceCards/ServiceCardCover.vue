@@ -2,7 +2,6 @@
   <div class="small-card">
     <div>
       <h3>{{ service.serviceName }}</h3>
-      <p>{{ service.category }}</p>
     </div>
     <p class="small-card-sub-info">${{ service.price }}</p>
     <button class="details-button" @click="handleClick">View Details</button>

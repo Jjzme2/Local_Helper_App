@@ -1,0 +1,35 @@
+.header-logo {
+  position: fixed;
+  left: 15px;
+  top: 15px;
+  width: 50px; /* Adjusted width for better visibility */
+  height: 50px; /* Adjusted height for better visibility */
+  border-radius: 50%; /* Rounded corners for a circular logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Ensure the logo image fits within the circle */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.header-logo img {
+  width: 100%; /* Ensure the image fits the container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.header-logo:hover {
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.nav-panel {
+	border-radius: 15px;
+  display: flex;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.nav-panel.is-visible {
+box-shadow: var(--box-shadow);
+}
