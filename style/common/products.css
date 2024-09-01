@@ -7,6 +7,7 @@
     box-shadow 0.3s ease;
   text-align: center;
   padding: 20px;
+  height: 350px;
 }
 
 .product-card:hover {
@@ -15,9 +16,9 @@
 }
 
 .product-icon {
-  width: 150px;
+  width: 100px;
   height: 100px;
-  object-fit: cover;
+  object-fit: fill;
   margin-bottom: 15px;
 }
 
@@ -28,7 +29,7 @@
 }
 
 .product-name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
   color: #333;
   margin-bottom: 10px;

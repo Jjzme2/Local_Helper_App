@@ -18,7 +18,7 @@
   background: linear-gradient(135deg, var(--transparent-green), var(--white));
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
-  width: 150px;
+  max-width: 300px;
   margin: 20px auto;
   text-align: center;
 }
@@ -26,11 +26,6 @@
 .small-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.small-card .primary-button {
-  padding: 1rem;
-  width: 75%;
 }
 
 .small-card-header {

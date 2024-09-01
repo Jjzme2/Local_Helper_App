@@ -24,12 +24,6 @@
   .nav-panel .primary-button {
 	font-size: small;
 	height: 50px;
-  width: 90%;
-  }
-
-  .nav-panel .primary-button {
-    text-align: center;
-    font-size: 10px;
   }
 }
 
@@ -38,16 +32,15 @@
 	width: 30px; /* Adjust width for smaller screens */
 	height: 30px; /* Adjust height for smaller screens */
 	left: 5px; /* Adjust position for smaller screens */
+	top: 5px; /* Adjust position for smaller screens */
   }
 
   .nav-panel {
-	width: 33%;
+	width: 25%;
 	padding: 1rem; /* Adjust padding for smaller screens */
   }
 
   .nav-panel .primary-button {
 	font-size: 8px;
-  height: 40px;
-  width: 90%;
 }
 }
