@@ -2,4 +2,54 @@
   .content-card {
 	padding: 8px;
   }
+
+  .small-card {
+    height: 15vh;
+    width: 45%;
+  }
+
+  .small-card h3 {
+    font-size: .75rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .small-card p {
+    font-size: .5rem;
+    margin: 0;
+  }
+
+  .small-card .primary-button {
+    font-size: .5rem;
+    padding: 5px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-card {
+  padding: 8px;
+  }
+
+  .small-card {
+    height: 8vh;
+    width: 45%;
+  }
+
+  .small-card h3 {
+    font-size: .75rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .small-card p {
+    font-size: .5rem;
+    margin: 0;
+  }
+
+  .small-card .primary-button {
+    font-size: .5rem;
+    padding: 5px;
+    margin: 0;
+  }
 }

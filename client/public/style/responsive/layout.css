@@ -1,14 +1,11 @@
-/* ----------------------------MEDIA---------------------- */
-
 @media (max-width: 768px) {
-  .footer-element {
-    flex-direction: column;
-    padding: 0.5rem;
-	margin: 5px;
-  }
+.footer-element {
+  padding: 0.5rem;
+}
 
   .footer-text {
     margin: 0.5rem 0;
+    font-size: 8px;
   }
 
 
@@ -43,6 +40,11 @@
 	font-size: 0.5rem; /* Adjust font size for smaller screens */
 	height: auto; /* Adjust height for smaller screens */
 	padding: 0; /* Adjust padding for smaller screens */
+  }
+
+  .footer-text {
+    margin: 0.5rem 0;
+    font-size: 6px;
   }
 
   .header {
