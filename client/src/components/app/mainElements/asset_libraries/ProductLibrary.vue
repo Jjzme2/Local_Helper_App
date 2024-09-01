@@ -5,7 +5,7 @@
     <hr class="divider" />
     <div class="container clear no-shadow">
       <PromotionText
-        v-if="promotion.active"
+        v-if="promotionActive"
         :percentOff="promotion.discount"
         :startDate="promotion.startDate"
         :endDate="promotion.endDate"
@@ -14,7 +14,7 @@
       />
     </div>
     <div class="container grid-container clear no-shadow">
-      <div v-for="product in products" :key="product.id" class="product-card grid-item">
+      <div v-for="product in filteredProducts" :key="product.id" class="product-card grid-item">
         <img class="product-icon" :src="getImagePath(product)" :alt="product.name" />
         <div class="product-details">
           <p class="product-name">{{ truncatedName(product) }}</p>
@@ -42,7 +42,6 @@ export default {
   data() {
     return {
       promotion: {
-        active: true,
         discount: 10,
         startDate: '2024-09-01',
         endDate: '2024-09-07',
@@ -51,7 +50,13 @@ export default {
       }
     }
   },
-  setup() {
+  props: {
+    idsToInclude: {
+      type: Array,
+      default: () => []
+    }
+  },
+  setup(props) {
     const productStore = useProductStore()
 
     const products = computed(() => productStore.getItems)
@@ -60,11 +65,19 @@ export default {
 
     const getImagePath = (product) => `images/app/products/${product.imageName}.png`
 
+    const filteredProducts = computed(() => {
+      if (props.idsToInclude.length === 0) {
+        return products.value
+      }
+      return products.value.filter((product) => props.idsToInclude.includes(product.id))
+    })
+
     return {
       products,
       shopURL,
       categories,
-      getImagePath
+      getImagePath,
+      filteredProducts
     }
   },
   methods: {
@@ -82,6 +95,13 @@ export default {
         }
         return product.name
       }
+    },
+    promotionActive() {
+      const today = new Date()
+      const startDate = new Date(this.promotion.startDate)
+      const endDate = new Date(this.promotion.endDate)
+
+      return today >= startDate && today <= endDate
     }
   }
 }

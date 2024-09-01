@@ -5,7 +5,14 @@
         <!-- Showcase items here -->
         <showcase :items="showcaseItems" />
         <serviceCardFull :service="resource" />
-        <locationLibrary></locationLibrary>
+
+        <locationLibrary
+          v-if="
+            resource.category == 'Seasonal' ||
+            resource.category == 'Other' ||
+            resource.category == 'General'
+          "
+        ></locationLibrary>
 
         <button class="primary-button centered" @click="openRequest">Request Service</button>
       </section>
