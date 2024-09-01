@@ -15,7 +15,12 @@
       />
     </div>
     <div class="container grid-container clear no-shadow">
-      <div v-for="product in filteredProducts" :key="product.id" class="product-card grid-item" @click="sendToURL(product)>
+      <div
+        v-for="product in filteredProducts"
+        :key="product.id"
+        class="product-card grid-item"
+        @click="sendToURL(product)"
+      >
         <img class="product-icon" :src="getImagePath(product)" :alt="product.name" />
       </div>
     </div>
@@ -26,7 +31,7 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { useProductStore } from '@/stores/products'
 import PromotionText from '../text/PromotionText.vue'
 
@@ -52,12 +57,12 @@ export default {
       default: () => []
     }
   },
-  setup(props) {
+  setup(props, data) {
     const productStore = useProductStore()
 
     const products = computed(() => productStore.getItems)
     const categories = computed(() => productStore.getCategories)
-    const shopURL = import.meta.env.VITE_PRODUCT_URL
+    const shopURL = ref(import.meta.env.VITE_PRODUCT_URL)
 
     const getImagePath = (product) => `images/app/products/${product.imageName}.png`
 
@@ -68,12 +73,21 @@ export default {
       return products.value.filter((product) => props.idsToInclude.includes(product.id))
     })
 
+    const promotionActive = computed(() => {
+      const today = new Date()
+      const startDate = new Date(data.promotion.value.startDate)
+      const endDate = new Date(data.promotion.value.endDate)
+
+      return today >= startDate && today <= endDate
+    })
+
     return {
       products,
       shopURL,
       categories,
       getImagePath,
-      filteredProducts
+      filteredProducts,
+      promotionActive
     }
   },
   methods: {
@@ -91,13 +105,6 @@ export default {
         }
         return product.name
       }
-    },
-    promotionActive() {
-      const today = new Date()
-      const startDate = new Date(this.promotion.startDate)
-      const endDate = new Date(this.promotion.endDate)
-
-      return today >= startDate && today <= endDate
     }
   }
 }
