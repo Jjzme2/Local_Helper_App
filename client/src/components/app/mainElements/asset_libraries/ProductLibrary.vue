@@ -6,7 +6,9 @@
 
     <div class="container clear no-shadow">
       <PromotionText
-        v-if="promotionActive"
+        v-if="
+          new Date() >= new Date(promotion.startDate) && new Date() <= new Date(promotion.endDate)
+        "
         :percentOff="promotion.discount"
         :startDate="promotion.startDate"
         :endDate="promotion.endDate"
@@ -57,7 +59,7 @@ export default {
       default: () => []
     }
   },
-  setup(props, data) {
+  setup(props) {
     const productStore = useProductStore()
 
     const products = computed(() => productStore.getItems)
@@ -73,21 +75,12 @@ export default {
       return products.value.filter((product) => props.idsToInclude.includes(product.id))
     })
 
-    const promotionActive = computed(() => {
-      const today = new Date()
-      const startDate = new Date(data.promotion.value.startDate)
-      const endDate = new Date(data.promotion.value.endDate)
-
-      return today >= startDate && today <= endDate
-    })
-
     return {
       products,
       shopURL,
       categories,
       getImagePath,
-      filteredProducts,
-      promotionActive
+      filteredProducts
     }
   },
   methods: {
