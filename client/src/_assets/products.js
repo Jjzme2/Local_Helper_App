@@ -14,6 +14,10 @@ const categories = [
   {
     id: '9e0585d7-6b7a-47dc-a988-5c59d8c78db4',
     name: 'Books'
+  },
+  {
+    id: '8db11860-ec53-40a3-8def-53b2d5df20a2',
+    name: 'Candles'
   }
 ]
 
@@ -37,6 +41,20 @@ const products = [
     category: categoryMap['Apparel'].name,
     url: 'https://ilytat-design.printify.me/product/12512339/magic-stirrer-witchy-raccoon-t-shirt',
     imageName: 'unisex-soft-t-magic-raccoon'
+  },
+  {
+    id: '7511b0ff-75e4-4d90-a825-f35252c1f353',
+    name: 'Patriotic Tee with Eagle - Unisex',
+    category: categoryMap['Apparel'].name,
+    url: 'https://ilytat-design.printify.me/product/12722172/patriotic-tee-with-eagle-unisex',
+    imageName: 'patriotic-t-unisex'
+  },
+  {
+    id: '367e68b0-8ea4-4a18-aed2-ebe25a02fa53',
+    name: 'Christmas Crewneck Sweatshirt - Simple Holiday Design',
+    category: categoryMap['Apparel'].name,
+    url: 'https://ilytat-design.printify.me/product/12737758/christmas-crewneck-sweatshirt-simple-holiday-design',
+    imageName: 'christmas-crewneck-sweatshirt'
   },
 
   //   Phone Cases
@@ -76,6 +94,29 @@ const products = [
     category: categoryMap['Blankets'].name,
     url: 'https://ilytat-design.printify.me/product/12596160/plush-blanket-winter-vibes-cabin-mountains-fleece',
     imageName: 'chill-outside-cozy-inside'
+  },
+  {
+    id: '5115ca5d-ddac-44b8-aea9-84f702009196',
+    name: 'Sweet Dreams Swaddle Blanket',
+    category: categoryMap['Blankets'].name,
+    url: 'https://ilytat-design.printify.me/product/12747498/sweet-dreams-swaddle-blanket',
+    imageName: 'sweet-dreams-swaddle-blanket'
+  },
+
+  // Candles
+  {
+    id: '5d81fa70-0e52-455d-bc6c-9030b6da4816',
+    name: 'Soy Candle',
+    category: categoryMap['Candles'].name,
+    url: 'https://ilytat-design.printify.me/product/12748557/soy-candle',
+    imageName: 'soy-candle'
+  },
+  {
+    id: 'c6ef9a21-c6f3-4ec3-b96c-d8b9d5d04f8d',
+    name: 'Yuletide Glow Christmas Candle',
+    category: categoryMap['Candles'].name,
+    url: 'https://ilytat-design.printify.me/product/12673230/yuletide-glow-christmas-candle',
+    imageName: 'glow-christmas-candle'
   },
 
   //   Notebooks

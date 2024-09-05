@@ -1,8 +1,12 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .product-card {
-	height: 300px;
+	height: auto;
     padding: 15px;
+  }
+
+  .product-card {
+	padding: 5px;
   }
 
   .product-icon {
@@ -25,7 +29,6 @@
 
 @media (max-width: 480px) {
   .product-card {
-	height: 250px;
     padding: 10px;
   }
 

@@ -1,0 +1,51 @@
+.newsletter-signup {
+  padding: 20px;
+  background-color: var(--secondary-background-color);
+  border-radius: 10px;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-signup h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--mint);
+}
+
+.newsletter-signup p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input[type="email"] {
+  width: 95%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.trust-indicator {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+}
+
+.trust-indicator p {
+  margin-bottom: 0.5rem;
+}
+
+.trust-indicator sub {
+	  font-size: 0.75rem;
+	  color: var(--white);
+}

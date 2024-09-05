@@ -1,14 +1,12 @@
 <template>
-  <section>
+  <section class="product-library" id="productLibrary">
     <h2>Our Products</h2>
 
     <hr class="divider" />
 
     <div class="container clear no-shadow">
       <PromotionText
-        v-if="
-          new Date() >= new Date(promotion.startDate) && new Date() <= new Date(promotion.endDate)
-        "
+        v-if="promotionActive"
         :percentOff="promotion.discount"
         :startDate="promotion.startDate"
         :endDate="promotion.endDate"
@@ -16,16 +14,19 @@
         :category="promotion.category"
       />
     </div>
-    <div class="container grid-container clear no-shadow">
-      <div
-        v-for="product in filteredProducts"
-        :key="product.id"
-        class="product-card grid-item"
-        @click="sendToURL(product)"
-      >
-        <img class="product-icon" :src="getImagePath(product)" :alt="product.name" />
+
+    <div class="product-highlights">
+      <h3>Product Highlights</h3>
+      <div class="grid-container">
+        <div v-for="product in filteredProducts" :key="product.id" class="product-card">
+          <a :href="product.url" target="_blank">
+            <img class="product-icon" :src="getImagePath(product)" :alt="product.name" />
+          </a>
+          <p class="product-details">{{ product.description }}</p>
+        </div>
       </div>
     </div>
+
     <div class="container clear no-shadow">
       <a class="primary-button" :href="shopURL" target="_blank">View our store</a>
     </div>
@@ -42,17 +43,6 @@ export default {
   components: {
     PromotionText
   },
-  data() {
-    return {
-      promotion: {
-        discount: 10,
-        startDate: '2024-09-01',
-        endDate: '2024-09-07',
-        message: 'September Special',
-        category: 'apparel'
-      }
-    }
-  },
   props: {
     idsToInclude: {
       type: Array,
@@ -66,13 +56,29 @@ export default {
     const categories = computed(() => productStore.getCategories)
     const shopURL = ref(import.meta.env.VITE_PRODUCT_URL)
 
+    const promotion = ref({
+      discount: 10,
+      startDate: '2024-09-01',
+      endDate: '2024-09-07',
+      message: 'September Special',
+      category: 'apparel'
+    })
+
     const getImagePath = (product) => `images/app/products/${product.imageName}.png`
 
     const filteredProducts = computed(() => {
-      if (props.idsToInclude.length === 0) {
-        return products.value
+      if (props.idsToInclude.length === 0 || props.idsToInclude.length > 6) {
+        return products.value.slice(0, 6) // Show only the top 6 products
       }
       return products.value.filter((product) => props.idsToInclude.includes(product.id))
+    })
+
+    const promotionActive = computed(() => {
+      const today = new Date()
+      const startDate = new Date(promotion.value.startDate)
+      const endDate = new Date(promotion.value.endDate)
+
+      return today >= startDate && today <= endDate
     })
 
     return {
@@ -80,23 +86,18 @@ export default {
       shopURL,
       categories,
       getImagePath,
-      filteredProducts
+      filteredProducts,
+      promotionActive,
+      promotion
     }
   },
   methods: {
     sendToURL(product) {
       const addressToNavigateTo = product.url
-      console.log(product)
-      window.open(addressToNavigateTo, '_blank')
-    }
-  },
-  computed: {
-    truncatedName() {
-      return (product) => {
-        if (product.name.length > 20) {
-          return product.name.substring(0, 20) + '...'
-        }
-        return product.name
+      if (product.url.includes('https')) {
+        window.open(addressToNavigateTo, '_blank')
+      } else {
+        window.open(import.meta.env.VITE_PRODUCT_URL)
       }
     }
   }
