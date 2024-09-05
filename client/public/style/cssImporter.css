@@ -7,10 +7,12 @@
 @import url("./common/forced.css");
 @import url("./common/formStyles.css");
 @import url("./common/grid.css");
+@import url("./common/hero.css");
 @import url("./common/layout.css");
 @import url("./common/locations.css");
 @import url("./common/markdown.css");
 @import url("./common/navigation.css");
+@import url("./common/newsletter.css");
 @import url("./common/products.css");
 @import url("./common/services.css");
 @import url("./common/socials.css");
@@ -21,8 +23,10 @@
 @import url("./responsive/cards.css");
 @import url("./responsive/common.css");
 @import url("./responsive/grid.css");
+@import url("./responsive/hero.css");
 @import url("./responsive/layout.css");
 @import url("./responsive/locations.css");
 @import url("./responsive/navigation.css");
+/* @import url("./responsive/newsletter.css"); */
 @import url("./responsive/products.css");
 @import url("./responsive/services.css");

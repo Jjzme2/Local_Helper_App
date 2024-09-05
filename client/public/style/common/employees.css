@@ -1,3 +1,12 @@
+.contact-details li {
+	list-style: none;
+	margin: 10px 0;
+}
+
+.contact-details p {
+	margin: 0;
+}
+
 .employee-card {
 	display: flex;
     border-radius: 10px;

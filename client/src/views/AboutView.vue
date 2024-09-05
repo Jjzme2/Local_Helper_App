@@ -1,32 +1,57 @@
 <template>
   <BaseView>
     <template #default>
-      <div class="container clear no-shadow">
+      <section class="container clear no-shadow">
+        <h1 class="main-heading">About Us</h1>
+
         <p class="body-text">
-          At <ImpactText>ILYTAT Services</ImpactText>, we believe that everyone deserves access to
-          quality services tailored to their unique needs. Whether you're looking for professional
-          assistance, reliable support, or specialized solutions, we're here to help you achieve
-          your goals efficiently and affordably.
+          At <ImpactText>{{ appName }}</ImpactText
+          >, we believe in creating unique, thoughtful designs that add beauty and meaning to your
+          everyday life. Whether you're looking for creative fashion, stylish home decor, or unique
+          accessories, each product is crafted with care and intention to resonate with your
+          individuality.
         </p>
 
         <p class="body-text">
-          <ImpactText>Our mission is simple</ImpactText>: to provide a range of high-quality
-          services that deliver real value. From seasonal yard work and car detailing to recurring
-          grocery delivery and one-time tasks, we offer everything you need to keep your life
-          running smoothly. We understand that your time and resources are precious, which is why we
-          strive to offer competitive pricing and transparent estimates, ensuring you get the best
-          service without any hidden surprises.
+          <ImpactText>Our mission</ImpactText> is to provide high-quality, artistic products that
+          allow you to express yourself and bring more inspiration into your world. From
+          eco-friendly t-shirts and distinctive phone cases to elegant home accents, our designs are
+          meant to help you make a statement in every facet of your life.
         </p>
 
         <p class="body-text">
-          With a focus on customer satisfaction, our team is dedicated to meeting your needs with
-          <ItalicizedText>professionalism</ItalicizedText>,
-          <ItalicizedText>integrity</ItalicizedText>, and a
-          <ItalicizedText>commitment to excellence</ItalicizedText>. We're passionate about helping
-          you succeed, whether it’s through keeping your landscape pristine, your car spotless, or
-          your pantry stocked. We're here to support you every step of the way.
+          We're committed to delivering more than just products—we offer a piece of art and
+          self-expression. Guided by <ItalicizedText>quality</ItalicizedText>,
+          <ItalicizedText>creativity</ItalicizedText>, and <ItalicizedText>purpose</ItalicizedText>,
+          our team works passionately to ensure that every design reflects our dedication to
+          craftsmanship and aesthetic beauty.
         </p>
-      </div>
+
+        <p class="body-text">
+          Want to learn more? Follow our journey on <ImpactText>TikTok</ImpactText> at
+          <a :href="tiktokLink" target="_blank">@Positive Echoes</a>, where we echo positivity and
+          creativity in every post. We can't wait to share our story with you!
+        </p>
+
+        <p class="button-group">
+          <a href="your-shop-link" class="primary-button">Shop Now</a>
+          <a href="#contact-section" class="secondary-button">Contact Us</a>
+        </p>
+      </section>
+
+      <section id="contact-section" class="container clear no-shadow">
+        <h2>Get in Touch</h2>
+        <p>
+          If you have any questions or want to learn more about our products and services, feel free
+          to reach out.
+        </p>
+        <ul class="contact-details">
+          <li>
+            Email: <a :href="`mailto:${mailingAddress}`">{{ mailingAddress }}</a>
+          </li>
+          <!-- <li>Phone: {{ contactNumber }}</li> -->
+        </ul>
+      </section>
       <EmployeeLibrary />
     </template>
   </BaseView>
@@ -48,7 +73,12 @@ export default {
     EmployeeLibrary
   },
   data() {
-    return {}
+    return {
+      appName: import.meta.env.VITE_APP_NAME,
+      mailingAddress: import.meta.env.VITE_SERVICES_EMAIL,
+      tiktokLink: import.meta.env.VITE_TIKTOK_LINK,
+      contactNumber: import.meta.env.VITE_CONTACT_NUMBER
+    }
   }
 }
 </script>

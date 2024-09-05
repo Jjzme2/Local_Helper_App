@@ -19,6 +19,7 @@
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   transition: var(--transition);
+  width: 50%;
 }
 
 .primary-button:hover {
@@ -28,7 +29,6 @@
 }
 
 /* Secondary Button */
-/* ! Not Yet Used. */
 .secondary-button {
   background-color: var(--secondary-button-color);
   border: none;
@@ -39,7 +39,9 @@
   font-size: 1rem;
   margin: 0.5rem;
   padding: 0.75rem 1.5rem;
+  text-decoration: none;
   transition: var(--transition);
+  width: 50%;
 }
 
 .secondary-button:hover {

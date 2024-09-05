@@ -1,7 +1,6 @@
 <template>
   <BaseView :includeGoHomeButton="false">
     <template #default>
-      <!-- Developer Message Alert -->
       <alertBox
         v-if="developerMessage.show"
         :message="developerMessage.message"
@@ -11,71 +10,55 @@
       ></alertBox>
 
       <section class="component-heading-container">
-        <h1 class="component-heading-main">ILYTAT Services</h1>
-
-        <p class="component-heading-sub">Connecting you with reliable local services.</p>
-
-        <greeting></greeting>
+        <HeroImage />
       </section>
 
       <productLibrary :idsToInclude="featuredProducts"></productLibrary>
 
-      <div class="container">
-        <serviceLibrary :idsToInclude="featuredServices"></serviceLibrary>
-        <button class="primary-button" @click="showAllServices = !showAllServices">
-          {{ showAllServices ? 'View Featured Services' : 'View All Services' }}
-        </button>
-      </div>
+      <NewsLetter />
     </template>
   </BaseView>
 </template>
 <script>
 import BaseView from './BaseView.vue'
 import alertBox from '@/components/app/mainElements/alerts/alertBox.vue'
-import greeting from '@/components/app/mainElements/display/GreetingHome.vue'
 
 // Libraries
-import serviceLibrary from '@/components/app/mainElements/asset_libraries/ServiceLibrary.vue'
 import productLibrary from '@/components/app/mainElements/asset_libraries/ProductLibrary.vue'
+
+import HeroImage from '@/components/app/mainElements/cards/HeroImage.vue'
+import NewsLetter from '@/components/app/mainElements/tools/NewsLetter.vue'
 
 export default {
   name: 'HomeView',
   components: {
     alertBox,
     BaseView,
-    greeting,
-    serviceLibrary,
-    productLibrary
+    HeroImage,
+    productLibrary,
+    NewsLetter
   },
   data() {
     return {
+      appName: import.meta.env.VITE_APP_NAME,
       developerMessage: {
         show: 0,
         message: 'Welcome to the Home View',
         type: 'info'
       },
-      //   Services
-      showAllServices: false,
-      featuredServiceIds: [
-        'bbcf0e3f-41b5-4383-b480-d1db3fa9a3fd',
-        '3e7d1e2b-1f3b-4e2b-8c5e-7b4e7d2f3b6c',
-        'e6b4c5d8-7d6b-4e5a-9c9e-1c1e6e7d6b4c'
-      ],
-
       // Products
       showAllProducts: false,
       featuredProductIds: [
-        '45131698-321d-4f29-8dd4-08eb2d8cf839',
-        'bce78e90-cec6-4e6a-909b-8028d80bdc62',
-        'd91e79fd-d1a1-4ff0-869b-15fccd4ab172'
+        '7511b0ff-75e4-4d90-a825-f35252c1f353', // Patriotic Tee with Eagle - Unisex
+        'bce78e90-cec6-4e6a-909b-8028d80bdc62', // Galactic Constellations Tough Phone Case
+        'd91e79fd-d1a1-4ff0-869b-15fccd4ab172', // Plush Blanket Winter Vibes Cabin Mountains Fleece
+        '5115ca5d-ddac-44b8-aea9-84f702009196', // Sweet Dreams Swaddle Blanket
+        'c6ef9a21-c6f3-4ec3-b96c-d8b9d5d04f8d', // Yuletide Glow Christmas Candle
+        '45131698-321d-4f29-8dd4-08eb2d8cf839' // Magic Stirrer: Witchy Raccoon T-Shirt
       ]
     }
   },
   computed: {
-    featuredServices() {
-      if (!this.showAllServices) return this.featuredServiceIds
-      else return []
-    },
     featuredProducts() {
       if (!this.showAllProducts) return this.featuredProductIds
       else return []

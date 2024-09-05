@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ContactView from '../views/ContactView.vue'
-import UnlistedServiceView from '../views/UnlistedServiceView.vue'
+// import UnlistedServiceView from '../views/UnlistedServiceView.vue'
 import AboutView from '@/views/AboutView.vue'
 import ServiceView from '@/views/ServiceView.vue'
 import ServiceRequestView from '@/views/ServiceRequestView.vue'
@@ -28,13 +28,6 @@ const router = createRouter({
       path: '/contact',
       name: 'contact',
       component: ContactView
-    },
-
-    // Unlisted Service Page
-    {
-      path: '/unlisted',
-      name: 'unlistedService',
-      component: UnlistedServiceView
     },
 
     // Service Page
