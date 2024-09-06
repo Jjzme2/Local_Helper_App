@@ -1,9 +1,13 @@
 import emailjs from '@emailjs/browser'
 
-const domain = import.meta.env.VITE_WEB_DOMAIN
+// IDs
 const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+
 const contactId = import.meta.env.VITE_EMAILJS_CONTACT_TEMPLATE_ID
-const newServiceId = import.meta.env.VITE_EMAILJS_NEW_SERVICE_TEMPLATE_ID
+const newSubId = import.meta.env.VITE_EMAILJS_NEW_SUBSCRIBER_ID
+
+// Variables
+const domain = import.meta.env.VITE_WEB_DOMAIN
 const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 const servicesEmail = import.meta.env.VITE_SERVICES_EMAIL
 
@@ -20,26 +24,15 @@ function sendContactEmail(form) {
   emailjs.send(serviceId, contactId, templateParams, publicKey)
 }
 
-function sendNewServiceEmail(form, introductoryMessage) {
+function sendNewSubscriberEmail(email) {
   // EmailJS
   const templateParams = {
-    introductory_message:
-      introductoryMessage || 'You have received a message from a potential client.',
     my_website_address: domain,
     to_email: servicesEmail,
-    name: form.name,
-    category: form.category,
-    description: form.description,
-    notes: form.notes,
-    budget: form.budget,
-    time: form.time,
-    location: form.location,
-    email: form.email
-    // consent: form.consent,
-    // attachment: form.attachment
+    email: email
   }
 
-  emailjs.send(serviceId, newServiceId, templateParams, publicKey)
+  emailjs.send(serviceId, newSubId, templateParams, publicKey)
 }
 
-export { sendContactEmail, sendNewServiceEmail }
+export { sendContactEmail, sendNewSubscriberEmail }

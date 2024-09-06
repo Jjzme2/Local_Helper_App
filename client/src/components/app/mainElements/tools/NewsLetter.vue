@@ -22,6 +22,8 @@
 import { ref, computed } from 'vue'
 import useProductStore from '@/stores/products'
 
+import { sendNewSubscriberEmail } from '@/_services/emailService'
+
 export default {
   name: 'NewsLetter',
   setup() {
@@ -38,8 +40,14 @@ export default {
   methods: {
     handleSubmit() {
       // Handle form submission logic here
-      console.log('Email:', this.email)
-      alert('Thank you for signing up!')
+      //   console.log('Email:', this.email)
+      try {
+        sendNewSubscriberEmail(this.email)
+        alert('Thank you for signing up!')
+      } catch (error) {
+        console.error(error)
+        alert('There was an error signing you up. Please try again later.')
+      }
     }
   }
 }
