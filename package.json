@@ -4,8 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "start": "node ../server/server.js",
     "dev": "npm run format && npm run lint && vite",
     "build": "npm run format && npm run lint && vite build",
+    "heroku-postbuild": "npm run build",
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
@@ -13,14 +15,21 @@
     "format": "prettier --write src/",
     "deploy": "npm run build && gh-pages -d dist"
   },
-  "homepage": "https://Jjzme2.github.io/Local_Helper_App/",
+  "githubHomepage": "https://Jjzme2.github.io/Local_Helper_App/",
+  "herokuHomepage": "https://ilytat-designs-e7ccab479755.herokuapp.com/",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@highlightjs/vue-plugin": "^2.1.0",
     "gh-pages": "^6.1.1",
+    "highlight.js": "^11.10.0",
+    "markdown-it": "^14.1.0",
     "mitt": "^3.0.1",
+    "nodemon": "^3.1.4",
     "pinia": "^2.1.7",
     "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "vue-router": "^4.3.3",
+	    "express": "^4.20.0"
+
   },
   "devDependencies": {
     "@playwright/test": "^1.44.1",

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { products, categories } from '../_assets/products.js'
-import model from '../_models/app_models/product.js'
+import { products, categories } from '@assets/products.js'
+import model from '@models/app_models/product.js'
 
 export const useProductStore = defineStore('products', {
   state: () => ({

@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 
-import { services, categories } from '../_assets/services.js'
-import model from '../_models/app_models/service.js'
-import modelAlt from '../_models/app_models/ServiceCategory.js'
+import { services, categories } from '@assets/services.js'
+import model from '@models/app_models/service.js'
+import modelAlt from '@models/app_models/ServiceCategory.js'
 
 export const useServiceStore = defineStore('services', {
   state: () => ({

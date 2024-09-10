@@ -20,7 +20,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
-import Blog from '@/_models/app_models/BlogModel'
+import Blog from '@models/app_models/BlogModel'
 
 export default defineComponent({
   name: 'BlogCover',

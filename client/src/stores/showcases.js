@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 
-import { showCaseItems } from '../_assets/showcases.js'
+import { showCaseItems } from '@assets/showcases.js'
 
-import model from '../_models/app_models/showcase.js'
+import model from '@models/app_models/showcase.js'
 // import modelAlt from '../_models/app_models/_ALT_MODEL_NAME.js'
 
 export const useShowcaseStore = defineStore('showcases', {

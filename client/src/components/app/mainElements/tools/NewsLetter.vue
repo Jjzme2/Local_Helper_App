@@ -22,7 +22,7 @@
 import { ref, computed } from 'vue'
 import useProductStore from '@/stores/products'
 
-import { sendNewSubscriberEmail } from '@/_services/emailService'
+import { sendNewSubscriberEmail } from '@services/emailService'
 
 export default {
   name: 'NewsLetter',

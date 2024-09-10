@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Service from '@/_models/app_models/service'
+import Service from '@models/app_models/service'
 
 export default {
   name: 'ServiceCardFull',
