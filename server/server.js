@@ -7,10 +7,6 @@ const parentDirectory = path.dirname(fileURLToPath(import.meta.url));
 const clientDirectory = path.join(parentDirectory, "client", "dist");
 const serverDirectory = path.join(parentDirectory, "server");
 
-// const parentDirectory = path.join(__dirname, "..");
-// const clientDirectory = path.join(parentDirectory, "client", "dist");
-// const serverDirectory = path.join(__dirname, "server");
-
 
 // Serve static files from the 'client/dist' directory
 app.use(express.static(path.join(parentDirectory, "client", "dist")));
