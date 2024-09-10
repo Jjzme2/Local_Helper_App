@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node ../server/server.js",
+    "start": "node /server/server.js",
     "dev": "npm run format && npm run lint && vite",
     "build": "npm run format && npm run lint && vite build",
     "heroku-postbuild": "npm run build",
@@ -12,7 +12,7 @@
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "format": "prettier --write src/",
+    "format": "prettier --write /**/*.{vue,js,jsx,cjs,mjs}",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "githubHomepage": "https://Jjzme2.github.io/Local_Helper_App/",
