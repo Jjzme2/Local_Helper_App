@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node /server/server.js",
+    "start": "node ./server/server.js",
     "dev": "npm run format && npm run lint && vite",
     "build": "npm run format && npm run lint && vite build",
     "heroku-postbuild": "npm run build",
