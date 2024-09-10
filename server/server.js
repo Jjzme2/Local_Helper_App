@@ -3,7 +3,8 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 const app = express();
-const parentDirectory = path.dirname(fileURLToPath(import.meta.url));
+const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
+const parentDirectory = path.join(currentDirectory, "..");
 const clientDirectory = path.join(parentDirectory, "client", "dist");
 const serverDirectory = path.join(parentDirectory, "server");
 
