@@ -1,9 +1,15 @@
-const express = require("express");
-const path = require("path");
+import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+
 const app = express();
-const parentDirectory = path.join(__dirname, "..");
+const parentDirectory = path.dirname(fileURLToPath(import.meta.url));
 const clientDirectory = path.join(parentDirectory, "client", "dist");
-const serverDirectory = path.join(__dirname, "server");
+const serverDirectory = path.join(parentDirectory, "server");
+
+// const parentDirectory = path.join(__dirname, "..");
+// const clientDirectory = path.join(parentDirectory, "client", "dist");
+// const serverDirectory = path.join(__dirname, "server");
 
 
 // Serve static files from the 'client/dist' directory
