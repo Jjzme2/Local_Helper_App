@@ -48,9 +48,9 @@
 </template>
 
 <script>
-import { checkApiRateLimit } from '@/_services/limiterService'
+import { checkApiRateLimit } from '@services/limiterService'
 import BaseView from './BaseView.vue'
-import { sendContactEmail } from '@/_services/emailService'
+import { sendContactEmail } from '@services/emailService'
 
 // import { sendEmail } from '@/services/emailService'
 

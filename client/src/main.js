@@ -3,6 +3,9 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
+// import hljs from 'highlight.js'
+import hljsVuePlugin from '@highlightjs/vue-plugin'
+
 const app = createApp(App)
 
 const appName = import.meta.env.VITE_APP_NAME || 'ILYTAT'
@@ -22,4 +25,4 @@ router.onError((error, to, from) => {
   console.error(errorMessage, error)
 })
 
-app.use(createPinia()).use(router).mount('#app')
+app.use(createPinia()).use(router).use(hljsVuePlugin).mount('#app')

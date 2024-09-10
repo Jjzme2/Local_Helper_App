@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
-import { employees } from '../_assets/employees.js'
-import model from '../_models/app_models/employee.js'
+import { employees } from '@assets/employees.js'
+import model from '@models/app_models/employee.js'
 
 export const useEmployeeStore = defineStore('employees', {
   state: () => ({

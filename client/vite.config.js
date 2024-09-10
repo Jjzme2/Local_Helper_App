@@ -6,17 +6,18 @@ import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-    // base: '/Local_Helper_App/',
-	plugins: [
-    vue(),
-    vueJsx(),
-  ],
+  // base: '/Local_Helper_App/',
+  plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url)), // Example: import { employees, imageDirectory } from '@/_assets/employees'
-	  '@assets': fileURLToPath(new URL('./src/_assets', import.meta.url)), // Example: import { employees, imageDirectory } from '@assets/employees'
-	  '@models': fileURLToPath(new URL('./src/_models', import.meta.url)), // Example: import { employees, imageDirectory } from '@models/employees'
-	  '@services': fileURLToPath(new URL('./src/_services', import.meta.url)), // Example: import { employees, imageDirectory } from '@services/employees'
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      // Example: import { employees, imageDirectory } from '@/_assets/employees'
+      '@assets': fileURLToPath(new URL('../server/_assets', import.meta.url)),
+      // Example: import { employees, imageDirectory } from '@assets/employees'
+      '@models': fileURLToPath(new URL('../server/_models', import.meta.url)),
+      // Example: import { employees, imageDirectory } from '@models/employees'
+      '@services': fileURLToPath(new URL('../server/_services', import.meta.url))
+      // Example: import { employees, imageDirectory } from '@services/employees'
     }
   }
 })

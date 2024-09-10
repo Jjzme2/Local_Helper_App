@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 
-import { servicedLocations } from '../_assets/servicedLocations.js'
-import model from '../_models/app_models/ServicedLocation.js'
+import { servicedLocations } from '@assets/servicedLocations.js'
+import model from '@models/app_models/ServicedLocation.js'
 
 export const useLocationStore = defineStore('servicedLocations', {
   state: () => ({

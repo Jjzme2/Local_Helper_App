@@ -26,7 +26,7 @@
 
 <script>
 import navigationPanel from '@/components/app/mainElements/panels/NavigationPanel.vue'
-import NavigationOption from '@/_models/app_models/NavigationOption.js'
+import NavigationOption from '@models/app_models/NavigationOption.js'
 
 export default {
   name: 'LayoutHeader',
@@ -38,6 +38,7 @@ export default {
       isNavVisible: false,
       customRoutes: [
         new NavigationOption('Home', 'home'),
+        new NavigationOption('Blog', 'blog'),
         new NavigationOption('Contact Us', 'contact'),
         new NavigationOption('About Us', 'about')
       ]
