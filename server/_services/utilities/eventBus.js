@@ -1,5 +1,5 @@
 // src/eventBus.js
-import mitt from 'mitt'
+const mitt = require('mitt')
 const emitter = mitt()
 
 const eventBus = {
