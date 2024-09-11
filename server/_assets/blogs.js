@@ -6,3 +6,13 @@
 //         path.join(this.blogsDirectory, file),
 //         'utf-8'
 //       );
+
+const blogs = [
+  {
+    id: 1,
+    title: 'First Blog Post',
+    slug: 'first-blog-post'
+  }
+]
+
+export { blogs }

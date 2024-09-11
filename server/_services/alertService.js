@@ -1,19 +1,20 @@
-const emitter = require('./utilities/eventBus');
+// const emitter = require('./utilities/eventBus')
+import emitter from './utilities/eventBus'
 
 function sendAlert(message) {
-  emitter.emit('alert', message);
+  emitter.emit('alert', message)
 }
 
 function listen(event, handler) {
-  emitter.on(event, handler);
+  emitter.on(event, handler)
 }
 
 function removeListener(event, handler) {
-  emitter.off(event, handler);
+  emitter.off(event, handler)
 }
 
-module.exports = {
+export default {
   sendAlert,
   listen,
   removeListener
-};
+}

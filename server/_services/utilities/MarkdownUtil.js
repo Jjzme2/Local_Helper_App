@@ -1,8 +1,8 @@
-// import MarkdownIt from 'markdown-it'
-// import hljs from 'highlight.js'
+import MarkdownIt from 'markdown-it'
+import hljs from 'highlight.js'
 
-const MarkdownIt = require('markdown-it')
-const hljs = require('highlight.js')
+// const MarkdownIt = require('markdown-it')
+// const hljs = require('highlight.js')
 
 class MarkdownUtil {
   constructor() {
@@ -107,4 +107,4 @@ class MarkdownUtil {
   }
 }
 
-module.exports = MarkdownUtil
+export default MarkdownUtil

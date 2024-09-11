@@ -4,7 +4,9 @@
   border-radius: 10px;
   background: linear-gradient(135deg, var(--light-gray), var(--mint));
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   max-width: 400px;
   margin: 20px auto;
 }
@@ -132,4 +134,3 @@
   margin-top: 10px;
   line-height: 1.4;
 }
-

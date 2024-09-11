@@ -1,13 +1,12 @@
 @media (max-width: 768px) {
-.footer-element {
-  padding: 0.5rem;
-}
+  .footer-element {
+    padding: 0.5rem;
+  }
 
   .footer-text {
     margin: 0.5rem 0;
     font-size: 8px;
   }
-
 
   .main-content {
     padding: 1rem; /* Smaller padding for smaller screens */
@@ -25,21 +24,21 @@
 
 @media (max-width: 480px) {
   .footer-element {
-	font-size: 0.6rem; /* Adjust font size for smaller screens */
-	height: auto; /* Adjust height for smaller screens */
-	padding: 0 0.5rem; /* Adjust padding for smaller screens */
+    font-size: 0.6rem; /* Adjust font size for smaller screens */
+    height: auto; /* Adjust height for smaller screens */
+    padding: 0 0.5rem; /* Adjust padding for smaller screens */
   }
 
   .header {
-	padding: 0.5rem; /* Adjust padding for smaller screens */
+    padding: 0.5rem; /* Adjust padding for smaller screens */
   }
 }
 
 @media (max-width: 400px) {
   .footer-element {
-	font-size: 0.5rem; /* Adjust font size for smaller screens */
-	height: auto; /* Adjust height for smaller screens */
-	padding: 0; /* Adjust padding for smaller screens */
+    font-size: 0.5rem; /* Adjust font size for smaller screens */
+    height: auto; /* Adjust height for smaller screens */
+    padding: 0; /* Adjust padding for smaller screens */
   }
 
   .footer-text {
@@ -48,7 +47,7 @@
   }
 
   .header {
-	padding: 0.35rem; /* Adjust padding for smaller screens */
-	width: 60%;
+    padding: 0.35rem; /* Adjust padding for smaller screens */
+    width: 60%;
   }
 }

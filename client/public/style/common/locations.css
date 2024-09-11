@@ -1,11 +1,11 @@
 .locations-container {
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-	width: 25%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  width: 25%;
 }
 
 /* Base location card */
@@ -16,10 +16,12 @@
   background: linear-gradient(135deg, #e0f7fa 0%, #80deea 100%); /* Gradient background */
   border-radius: 15px; /* Rounded corners */
   overflow: hidden;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   margin: 2rem auto; /* Center the card with margin */
-  padding: .15rem; /* Add padding inside the card */
+  padding: 0.15rem; /* Add padding inside the card */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +29,6 @@
 }
 
 .location-info {
-	font-family: var(--font-secondary);
+  font-family: var(--font-secondary);
   margin: 0;
 }

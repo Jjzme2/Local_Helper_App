@@ -1,6 +1,6 @@
 @media screen and (max-width: 768px) {
   .content-card {
-	padding: 8px;
+    padding: 8px;
   }
 
   .small-card {
@@ -9,18 +9,18 @@
   }
 
   .small-card h3 {
-    font-size: .75rem;
+    font-size: 0.75rem;
     margin: 0;
     padding: 0;
   }
 
   .small-card p {
-    font-size: .5rem;
+    font-size: 0.5rem;
     margin: 0;
   }
 
   .small-card .primary-button {
-    font-size: .5rem;
+    font-size: 0.5rem;
     padding: 5px;
     margin: 0;
   }
@@ -28,7 +28,7 @@
 
 @media (max-width: 480px) {
   .content-card {
-  padding: 8px;
+    padding: 8px;
   }
 
   .small-card {
@@ -37,18 +37,18 @@
   }
 
   .small-card h3 {
-    font-size: .75rem;
+    font-size: 0.75rem;
     margin: 0;
     padding: 0;
   }
 
   .small-card p {
-    font-size: .5rem;
+    font-size: 0.5rem;
     margin: 0;
   }
 
   .small-card .primary-button {
-    font-size: .5rem;
+    font-size: 0.5rem;
     padding: 5px;
     margin: 0;
   }

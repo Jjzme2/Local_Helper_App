@@ -9,16 +9,17 @@
     "npm": "10.8.1"
   },
   "scripts": {
-    "start": "node ./server/server.js",
-    "dev": "npm run format && npm run lint && vite",
-    "build": "npm run format && npm run lint && vite build",
+    "start": "npm run build && node ./server/server.js",
+    "code-cleanup": "npm run lint && npm run format",
+    "dev": "npm run code-cleanup && cd client && vite",
+    "build": "npm run code-cleanup && cd client && vite build",
     "heroku-postbuild": "npm run build",
-    "preview": "vite preview",
+    "preview": "cd client && vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write .",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d client/dist"
   },
   "githubHomepage": "https://Jjzme2.github.io/Local_Helper_App/",
   "herokuHomepage": "https://ilytat-designs-e7ccab479755.herokuapp.com/",
@@ -26,7 +27,6 @@
     "@emailjs/browser": "^4.4.1",
     "@highlightjs/vue-plugin": "^2.1.0",
     "express": "^4.20.0",
-    "gh-pages": "^6.1.1",
     "highlight.js": "^11.10.0",
     "markdown-it": "^14.1.0",
     "mitt": "^3.0.1",

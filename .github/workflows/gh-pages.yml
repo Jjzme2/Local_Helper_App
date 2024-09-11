@@ -3,33 +3,33 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main  # Adjust to your default branch if different
+      - main # Adjust to your default branch if different
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build project
-      run: npm run build
-      working-directory: ./client  # This runs the build inside the client directory
+      - name: Build project
+        run: npm run build
+        working-directory: ./client # This runs the build inside the client directory
 
-    - name: Create CNAME file
-      run: echo "ilytat.com" > ./client/dist/CNAME
+      - name: Create CNAME file
+        run: echo "ilytat.com" > ./client/dist/CNAME
 
-    - name: Deploy to GitHub Pages
-      run: npm run deploy
-      working-directory: ./client  # This runs the deploy script from within the client directory
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Deploy to GitHub Pages
+        run: npm run deploy
+        working-directory: ./client # This runs the deploy script from within the client directory
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

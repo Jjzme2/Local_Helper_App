@@ -1,7 +1,9 @@
 .markdown-content {
   background-color: #fff;
   border-radius: 0.5em;
-  box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow:
+    0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
   color: #4a4a4a;
   font-size: 1rem;
   line-height: 1.6;
@@ -14,7 +16,9 @@
 }
 
 .markdown-content:hover {
-  box-shadow: 0 1em 2em -0.375em rgba(10, 10, 10, 0.2), 0 0px 0 1px rgba(10, 10, 10, 0.02);
+  box-shadow:
+    0 1em 2em -0.375em rgba(10, 10, 10, 0.2),
+    0 0px 0 1px rgba(10, 10, 10, 0.02);
 }
 
 .markdown-content H1 {
@@ -78,7 +82,6 @@
 .markdown-content table td:last-child {
   border-right: none;
 }
-
 
 .markdown-content table tr:nth-child(even) {
   background-color: #f5f5f5;

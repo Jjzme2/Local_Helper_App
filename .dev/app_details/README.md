@@ -12,9 +12,9 @@ With a focus on customer satisfaction, our team is dedicated to meeting your nee
 
 - **General Services**: We offer a wide range of general services to meet your everyday needs, from home maintenance and repair to personal assistance and support.
 - **Recurring Services**: We provide recurring services to help you maintain your property, manage your schedule, and stay organized.
-- **Seasonal Services**:  Our seasonal services are designed to help you prepare for the changing weather and keep your property in top condition year-round.
+- **Seasonal Services**: Our seasonal services are designed to help you prepare for the changing weather and keep your property in top condition year-round.
 - **Specialty Services**: We offer specialty services for unique projects and specific requirements, including custom solutions and expert advice.
-- **Other Services**:  If you need a service that's not listed on our website, please contact us to discuss your needs and find out how we can help.
+- **Other Services**: If you need a service that's not listed on our website, please contact us to discuss your needs and find out how we can help.
 
 ## Installation
 
@@ -25,3 +25,4 @@ To install and run the ILYTAT Service application, follow these steps:
    ```sh
    git clone https://github.com/yourusername/ilytat-service.git
    cd ilytat-service
+   ```
