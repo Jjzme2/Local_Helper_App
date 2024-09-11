@@ -13,7 +13,6 @@
     "code-cleanup": "npm run lint && npm run format",
     "dev": "npm run code-cleanup && cd client && vite",
     "build": "npm run code-cleanup && cd client && vite build",
-    "heroku-postbuild": "npm run build",
     "preview": "cd client && vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
