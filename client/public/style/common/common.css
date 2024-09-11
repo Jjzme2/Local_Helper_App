@@ -11,8 +11,12 @@ a {
   text-decoration: none;
 }
 
-
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--secondary-font-family);
   font-weight: 400;
   margin: 1rem 0;
@@ -59,16 +63,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .divider {
- border: none; /* Remove the default border */
+  border: none; /* Remove the default border */
   height: 3px; /* Increase the thickness */
-  margin: 2rem auto; /* Adjust the margin for better spacing */  background: linear-gradient(to right, var(--mint), var(--dark-slate-gray)); /* Gradient effect */
+  margin: 2rem auto; /* Adjust the margin for better spacing */
+  background: linear-gradient(to right, var(--mint), var(--dark-slate-gray)); /* Gradient effect */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
   border-radius: 2px; /* Slightly round the edges */
   position: relative;
   width: 45%;
 }
-
-
 
 .flex {
   display: flex;

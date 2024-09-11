@@ -28,7 +28,7 @@
   margin-bottom: 0.5rem;
 }
 
-.form-group input[type="email"] {
+.form-group input[type='email'] {
   width: 95%;
   padding: 10px;
   font-size: 1rem;
@@ -46,6 +46,6 @@
 }
 
 .trust-indicator sub {
-	  font-size: 0.75rem;
-	  color: var(--white);
+  font-size: 0.75rem;
+  color: var(--white);
 }

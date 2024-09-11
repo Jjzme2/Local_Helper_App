@@ -9,6 +9,6 @@
 @media (max-width: 480px) {
   .primary-button,
   .secondary-button {
-	padding: 0.75rem;
+    padding: 0.75rem;
   }
 }

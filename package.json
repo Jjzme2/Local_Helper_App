@@ -5,19 +5,20 @@
   "main": "./server/server.js",
   "type": "module",
   "engines": {
-	"node": ">=14.17.0"
+    "node": "18.17.1",
+    "npm": "10.8.1"
   },
   "scripts": {
-    "start": "node ./server/server.js",
-    "dev": "npm run format && npm run lint && vite",
-    "build": "npm run format && npm run lint && vite build",
-    "heroku-postbuild": "npm run build",
-    "preview": "vite preview",
+    "start": "npm run build && node ./server/server.js",
+    "code-cleanup": "npm run lint && npm run format",
+    "dev": "npm run code-cleanup && cd client && vite",
+    "build": "cd client && npm run code-cleanup && vite build",
+    "preview": "cd client && vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write .",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d client/dist"
   },
   "githubHomepage": "https://Jjzme2.github.io/Local_Helper_App/",
   "herokuHomepage": "https://ilytat-designs-e7ccab479755.herokuapp.com/",
@@ -25,12 +26,13 @@
     "@emailjs/browser": "^4.4.1",
     "@highlightjs/vue-plugin": "^2.1.0",
     "express": "^4.20.0",
-    "gh-pages": "^6.1.1",
     "highlight.js": "^11.10.0",
     "markdown-it": "^14.1.0",
     "mitt": "^3.0.1",
     "nodemon": "^3.1.4",
     "pinia": "^2.1.7",
+    "serve": "^14.2.3",
+    "vite": "^5.3.1",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
@@ -41,12 +43,10 @@
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/test-utils": "^2.4.6",
-    "eslint": "^8.57.0",
     "eslint-plugin-playwright": "^1.6.2",
     "eslint-plugin-vue": "^9.23.0",
     "jsdom": "^24.1.0",
     "prettier": "^3.2.5",
-    "vite": "^5.3.1",
     "vitest": "^1.6.0"
   }
 }

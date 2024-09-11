@@ -9,7 +9,6 @@
   color: var(--primary-text-color);
   box-shadow: var(--box-shadow);
   z-index: 1000;
-
 }
 
 .component-heading-container {

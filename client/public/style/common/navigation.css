@@ -9,7 +9,9 @@
   align-items: center;
   justify-content: center;
   overflow: hidden; /* Ensure the logo image fits within the circle */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s; /* Smooth transitions */
 }
 
 .header-logo img {
@@ -23,7 +25,7 @@
 }
 
 .nav-panel {
-	border-radius: 15px;
+  border-radius: 15px;
   display: flex;
   gap: 1.5rem;
   margin: 2rem 0;
@@ -31,5 +33,5 @@
 }
 
 .nav-panel.is-visible {
-box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow);
 }

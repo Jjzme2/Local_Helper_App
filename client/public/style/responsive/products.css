@@ -1,12 +1,12 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .product-card {
-	height: auto;
+    height: auto;
     padding: 15px;
   }
 
   .product-card {
-	padding: 5px;
+    padding: 5px;
   }
 
   .product-icon {

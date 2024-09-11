@@ -1,9 +1,9 @@
 .form-container {
-	border-radius: 5px;
-	margin: 0 auto;
-	max-width: 500px;
-	padding: 1rem;
-	width: 60%;
+  border-radius: 5px;
+  margin: 0 auto;
+  max-width: 500px;
+  padding: 1rem;
+  width: 60%;
 }
 
 .form {
@@ -12,8 +12,8 @@
 }
 
 .form-group {
-	margin: 1rem auto;
-	max-width: 100%;
+  margin: 1rem auto;
+  max-width: 100%;
 }
 
 .form-group label {
@@ -36,8 +36,7 @@
 }
 
 .form-group input:focus,
-.form-group select:focus
- {
+.form-group select:focus {
   border-color: #007bff;
   outline: none;
 }
