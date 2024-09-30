@@ -16,7 +16,7 @@ Mark your calendars because October 5th, 2024, is a day you don’t want to miss
 
 ## Why October 5th is Special 🗓️
 
-Here at Ilytat Designs, we’re excited to unveil our very first Halloween Chibi Collection! This new range features adorable and spooky designs that perfectly capture the spirit of Halloween. Picture chibi witches, playful pumpkins, and vampires with a twist! 😈🧛‍♀️
+Here at ILYTAT Designs, we’re excited to unveil our very first Halloween Chibi Collection! This new range features adorable and spooky designs that perfectly capture the spirit of Halloween. Picture chibi witches, playful pumpkins, and vampires with a twist! 😈🧛‍♀️
 
 Our designs are perfect for your apparel, home decor, and even seasonal accessories. From hoodies and t-shirts to decorative mugs and candles, we’re bringing unique, custom artwork to celebrate the Halloween season.
 
@@ -47,14 +47,14 @@ We know that Halloween is a time for creativity, and what better way to celebrat
 
 ### Early Promo Alert! 🎁
 
-To celebrate the upcoming release, we’re running a special Pre-Release Sale! From now until October 5th, enjoy 10% off all current products in our store. Simply visit our shop at Ilytat Designs to take advantage of this deal.
+To celebrate the upcoming release, we’re running a special Pre-Release Sale! From now until October 5th, enjoy 10% off all current products in our store. Simply visit our shop at ILYTAT Designs to take advantage of this deal.
 
 <hr>
 Stay Tuned for the Big Reveal!
 
 Keep your eyes peeled for more updates in the days leading up to October 5th. We’ve got some sneak peeks coming your way, along with a few surprises. Trust us—you won’t want to miss this!
 
-Thank you for supporting Ilytat Designs, and we can’t wait to share this special collection with you. Be sure to let us know what you think in the comments, and don’t hesitate to reach out if you have any questions or ideas for future designs!
+Thank you for supporting ILYTAT Designs, and we can’t wait to share this special collection with you. Be sure to let us know what you think in the comments, and don’t hesitate to reach out if you have any questions or ideas for future designs!
 
 <hr>
-#Halloween2024 #ChibiSquad #SpookySeason #OctoberIsHere #IlytatDesigns #PreReleasePromo
+#Halloween2024 #ChibiSquad #SpookySeason #OctoberIsHere #ILYTATDesigns #PreReleasePromo
