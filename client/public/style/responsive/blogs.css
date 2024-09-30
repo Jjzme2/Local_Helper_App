@@ -1,0 +1,37 @@
+/* Media Queries for Responsive Design */
+@media (max-width: 1200px) {
+  .post-cover {
+    width: calc(50% - 2rem); /* Two columns on tablet screens */
+  }
+
+  .post-body {
+    padding: 1.5rem; /* Adjusted padding for medium screens */
+    width: 90%; /* Wider for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .post-cover {
+    width: calc(100% - 2rem); /* One column on mobile screens */
+  }
+
+  .cover-image {
+    height: 150px; /* Reduce image height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .post-title {
+    font-size: 1.5rem; /* Adjust title size for mobile */
+  }
+
+  .post-description {
+    font-size: 0.9rem; /* Slightly smaller description text */
+  }
+
+  .post-body {
+    padding: 1rem; /* Less padding for small screens */
+    width: 95%; /* Maximize width for mobile */
+    font-size: 0.9em; /* Slightly smaller text for mobile readability */
+  }
+}

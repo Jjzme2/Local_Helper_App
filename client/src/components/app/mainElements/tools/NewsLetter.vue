@@ -1,13 +1,13 @@
 <template>
   <section class="newsletter-signup" id="newsletterSignup">
-    <h2>Be the First to Know!</h2>
+    <h2>Stay Updated!</h2>
     <p>Sign up to get exclusive offers, product updates, and early access to new designs.</p>
     <form @submit.prevent="handleSubmit">
       <div class="form-group">
         <label for="email">Email Address</label>
         <input type="email" id="email" v-model="email" required />
       </div>
-      <button type="submit" class="primary-button">Stay Updated</button>
+      <button type="submit" class="primary-button">Enroll</button>
       <div class="trust-indicator">
         <p>No spam, unsubscribe anytime.</p>
         <sub

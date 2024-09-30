@@ -1,25 +1,44 @@
 <template>
-  <div class="social-links grid-container-lg no-grid-gap">
-    <div v-for="link in links" :key="link.network" class="grid-item no-padding no-shadow">
-      <a :href="link.link" target="_blank" class="footer-text">
-        <!-- <img :src="getImageUrl(link.network)" :alt="link.network" /> -->
-        {{ link.displayText }}
-      </a>
-    </div>
+  <div v-for="link in links" :key="link.network" class="grid-item no-padding no-shadow">
+    <a :href="link.link" target="_blank" class="footer-text">
+      <!-- <img :src="getImageUrl(link.network)" :alt="link.network" /> -->
+      {{ link.displayText }}
+    </a>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    links: {
-      type: Array,
-      required: true,
-      default: () => [
+  //   props: {
+  //     links: {
+  //       type: Array,
+  //       required: true,
+  //       default: () => [
+  //         {
+  //           link: '',
+  //           network: '',
+  //           displayText: ''
+  //         }
+  //       ]
+  //     }
+  //   },
+  data() {
+    return {
+      links: [
         {
-          link: '',
-          network: '',
-          displayText: ''
+          link: 'https://www.linkedin.com/in/jjilytatgames/',
+          network: 'linkedin',
+          displayText: 'LinkedIn'
+        },
+        {
+          link: 'https://www.github.com/jjzme2',
+          network: 'github',
+          displayText: 'GitHub'
+        },
+        {
+          link: 'https://www.tiktok.com/@positive_echoes?lang=en',
+          network: 'tiktok',
+          displayText: 'TikTok'
         }
       ]
     }
