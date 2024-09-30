@@ -1,0 +1,81 @@
+@media (max-width: 768px) {
+  .countdown-display {
+    font-size: 1.5em;
+    padding: 15px;
+    width: 90%;
+  }
+
+  .time-unit {
+    min-width: 50px; /* Adjust the width of the time units */
+  }
+
+  .time-value {
+    font-size: 1.3em;
+  }
+
+  .time-label {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 480px) {
+  .countdown-display {
+    font-size: 1.2em;
+    padding: 10px;
+    width: 95%;
+  }
+
+  .time-left {
+    flex-direction: column; /* Stack time units vertically */
+    gap: 10px;
+  }
+
+  .time-unit {
+    min-width: 40px; /* Further adjust the width */
+    padding: 8px;
+  }
+
+  .time-value {
+    font-size: 1.1em;
+  }
+
+  .time-label {
+    font-size: 0.6em;
+  }
+}
+
+.display-text {
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.time-left {
+  display: flex;
+  gap: 15px;
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 60px;
+}
+
+.time-value {
+  font-size: 1.5em;
+}
+
+.time-label {
+  font-size: 0.75em;
+}
+
+.time-up {
+  margin-top: 15px;
+  color: #d9534f;
+  font-weight: bold;
+}

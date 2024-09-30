@@ -4,7 +4,7 @@
 
     <template #default>
       <div>
-        <goBackButton v-if="includeGoHomeButton" />
+        <goBackButton v-if="includeGoHomeButton" :destination="targetDestination" />
         <slot></slot>
       </div>
     </template>
@@ -46,6 +46,10 @@ export default {
     includeGoHomeButton: {
       type: Boolean,
       default: true
+    },
+    targetDestination: {
+      type: String,
+      default: '/'
     }
   }
 }

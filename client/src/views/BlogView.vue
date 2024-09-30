@@ -1,28 +1,34 @@
 <template>
   <BaseView>
     <template #default>
-      <BlogCover :blog="blog" @blog-clicked="emitThis" />
+      <div v-for="post in posts" :key="post.id">
+        <BlogCover :post="post" />
+      </div>
     </template>
   </BaseView>
 </template>
 
 <script>
+import { computed } from 'vue'
 import BaseView from './BaseView.vue'
 import BlogCover from '@/components/app/mainElements/cards/BlogCover.vue'
-import useBlogStore from '@/stores/blogs'
+import usePostStore from '@/stores/posts'
 
 export default {
   name: 'BlogView',
   setup() {
-    const store = useBlogStore()
+    const store = usePostStore()
 
-    const blogs = store.items
-    console.log(blogs)
+    const posts = computed(() => store.getItems)
+
+    if (posts.value.length === 0) {
+      store.fetchAll()
+    }
 
     return {
-      blogs,
-      emitThis(blog) {
-        this.$router.push({ name: 'blog', params: { id: blog.id } })
+      posts,
+      emitThis(post) {
+        this.$router.push({ name: 'thoughts', params: { id: post.id } })
       }
     }
   },
