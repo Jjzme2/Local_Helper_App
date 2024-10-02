@@ -1,8 +1,11 @@
 <template>
-  <div class="social-links grid-container-lg no-grid-gap">
-    <div v-for="link in links" :key="link.network" class="grid-item no-padding no-shadow">
-      <a :href="link.link" target="_blank" class="footer-text">
-        <!-- <img :src="getImageUrl(link.network)" :alt="link.network" /> -->
+  <div class="grid-container">
+    <div
+      v-for="link in links"
+      :key="link.network"
+      class="grid-item no-padding no-shadow"
+    >
+      <a :href="link.link" target="_blank" rel="noopener noreferrer" class="footer-text">
         {{ link.displayText }}
       </a>
     </div>
@@ -11,26 +14,34 @@
 
 <script>
 export default {
-  props: {
-    links: {
-      type: Array,
-      required: true,
-      default: () => [
+  data() {
+    return {
+      links: [
         {
-          link: '',
-          network: '',
-          displayText: ''
-        }
-      ]
-    }
+          link: 'https://www.linkedin.com/in/jjilytatgames/',
+          network: 'linkedin',
+          displayText: 'LinkedIn',
+        },
+        {
+          link: 'https://www.github.com/jjzme2',
+          network: 'github',
+          displayText: 'GitHub',
+        },
+        {
+          link: 'https://www.tiktok.com/@ilytat_designs',
+          network: 'tiktok',
+          displayText: 'TikTok',
+        },
+      ],
+    };
   },
-  methods: {
-    getImageUrl(iconName) {
-      const images = import.meta.glob('/public/images/social/*.png', { eager: true })
-      const imagePath = `/public/images/social/${iconName}.png`
-      console.log(images)
-      return images[imagePath]?.default || ''
-    }
-  }
-}
+};
 </script>
+
+<style scoped>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+  gap: 1rem; /* Space between items */
+}
+</style>

@@ -1,12 +1,18 @@
 <template>
   <section class="product-library" id="productLibrary">
-    <h2>Our Products</h2>
-
     <hr class="divider" />
+
+	<!-- !Potentially move to a popup type display --Sticky-- -->
+	 <StickyElement>
+    <CountdownTimer
+      :targetDate="new Date('2024-10-05T10:00:00')"
+      displayText="Something Spooky (and cute) is coming October 5th, 2024!"
+    />
+	</StickyElement>
 
     <div class="container clear no-shadow">
       <PromotionText
-        v-if="promotionActive"
+        v-if="isPromotionActive"
         :percentOff="promotion.discount"
         :startDate="promotion.startDate"
         :endDate="promotion.endDate"
@@ -15,46 +21,57 @@
       />
     </div>
 
-    <div class="product-highlights">
-      <h3>Product Highlights</h3>
+    <div class="product-highlights" v-if="products.length > 0">
+      <h3>Products</h3>
       <div class="grid-container">
-        <div v-for="product in filteredProducts" :key="product.id" class="product-card">
-          <a :href="product.url" target="_blank">
-            <img class="product-icon" :src="getImagePath(product)" :alt="product.name" />
-          </a>
-          <p class="product-details">{{ product.description }}</p>
-        </div>
+        <ProductCard
+          v-for="product in products"
+          :key="product.id"
+          :product="product"
+          :imagePath="getImagePath(product)"
+          @navigate="sendToURL(product)"
+        />
+      </div>
+
+      <div class="container clear no-shadow">
+        <a class="primary-button" :href="shopURL" target="_blank">View full store</a>
       </div>
     </div>
-
-    <div class="container clear no-shadow">
-      <a class="primary-button" :href="shopURL" target="_blank">View our store</a>
+    <div v-else class="loading-message">
+      <LoadingIcon />
+      <p>Loading products...</p>
     </div>
   </section>
 </template>
 
 <script>
-import { computed, ref } from 'vue'
+import { computed, ref, watch, onBeforeMount } from 'vue'
 import { useProductStore } from '@/stores/products'
 import PromotionText from '../text/PromotionText.vue'
+import CountdownTimer from '@/components/app/mainElements/display/CountdownDisplay.vue'
+import ProductCard from '@/components/app/mainElements/cards/ProductCard.vue'
+import LoadingIcon from '@/components/app/mainElements/display/LoadingIcon.vue'
+import StickyElement from '@/components/app/mainElements/display/StickyElement.vue'
 
 export default {
   name: 'ProductLibrary',
   components: {
-    PromotionText
+    PromotionText,
+    CountdownTimer,
+    ProductCard,
+    LoadingIcon,
+	StickyElement
   },
-  props: {
-    idsToInclude: {
-      type: Array,
-      default: () => []
-    }
-  },
-  setup(props) {
+  setup() {
     const productStore = useProductStore()
+    const products = computed(() => productStore.getVisibleItems)
+    const shopURL = import.meta.env.VITE_PRODUCT_URL
 
-    const products = computed(() => productStore.getItems)
-    const categories = computed(() => productStore.getCategories)
-    const shopURL = ref(import.meta.env.VITE_PRODUCT_URL)
+    onBeforeMount(() => {
+      if (products.value.length === 0) {
+        productStore.fetchVisible()
+      }
+    })
 
     const promotion = ref({
       discount: 10,
@@ -66,40 +83,45 @@ export default {
 
     const getImagePath = (product) => `images/app/products/${product.imageName}.png`
 
-    const filteredProducts = computed(() => {
-      if (props.idsToInclude.length === 0 || props.idsToInclude.length > 6) {
-        return products.value.slice(0, 6) // Show only the top 6 products
-      }
-      return products.value.filter((product) => props.idsToInclude.includes(product.id))
-    })
-
-    const promotionActive = computed(() => {
+    const isPromotionActive = computed(() => {
       const today = new Date()
-      const startDate = new Date(promotion.value.startDate)
-      const endDate = new Date(promotion.value.endDate)
-
-      return today >= startDate && today <= endDate
+      return (
+        today >= new Date(promotion.value.startDate) && today <= new Date(promotion.value.endDate)
+      )
     })
+
+    // Fetch products if they are not already loaded
+    watch(
+      products,
+      (newProducts) => {
+        if (newProducts.length === 0) {
+          productStore.fetchItems()
+        }
+      },
+      { immediate: true }
+    )
+
+    const sendToURL = (product) => {
+      const addressToNavigateTo = product.url || shopURL
+      window.open(addressToNavigateTo.includes('https') ? addressToNavigateTo : shopURL, '_blank')
+    }
 
     return {
       products,
       shopURL,
-      categories,
       getImagePath,
-      filteredProducts,
-      promotionActive,
-      promotion
-    }
-  },
-  methods: {
-    sendToURL(product) {
-      const addressToNavigateTo = product.url
-      if (product.url.includes('https')) {
-        window.open(addressToNavigateTo, '_blank')
-      } else {
-        window.open(import.meta.env.VITE_PRODUCT_URL)
-      }
+      isPromotionActive,
+      promotion,
+      sendToURL
     }
   }
 }
 </script>
+
+<style scoped>
+.loading-message {
+  text-align: center;
+  font-size: 1.2em;
+  color: #666;
+}
+</style>

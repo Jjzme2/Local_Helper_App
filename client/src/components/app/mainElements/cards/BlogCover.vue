@@ -1,38 +1,76 @@
 <template>
-  <div class="blog-cover" @click="emitThis">
-    <img :src="blog.coverImage" alt="Cover Image" class="cover-image" />
+  <div class="post-cover" @click="emitThis">
+    <img :src="coverImage" alt="Cover Image" class="cover-image" />
 
-    <div class="blog-details">
-      <h1 class="blog-title">{{ blog.title }}</h1>
-      <p class="blog-author">By {{ blog.author }}</p>
-      <p class="blog-date">{{ blog.date }}</p>
+    <div class="post-details">
+      <h1 class="post-title">{{ post.title }}</h1>
+
+      <h3>Links</h3>
+      <hr />
+      <div class="post-elements">
+        <!-- Links -->
+        <span v-for="link in post.elements.links" :key="link">
+          <span>Links</span>
+          <MarkdownLink :href="link.href" :text="link.text" />
+        </span>
+      </div>
     </div>
 
-    <div class="blog-description">
-      <p>{{ blog.description }}</p>
+    <h3>Description</h3>
+    <hr />
+    <div class="post-description">
+      <p>{{ concatenatedDescription }}</p>
+    </div>
+
+    <div class="post-meta">
+      <div class="post-author">
+        <span>By {{ post.author }}</span>
+      </div>
+      <div class="post-date">
+        <span>{{ post.date }}</span>
+      </div>
     </div>
 
     <div class="primary-button">
-      <router-link :to="{ name: 'blog', params: { id: blog.id } }">Read More</router-link>
+      <router-link :to="{ name: 'post', params: { postId: post.id } }">Read More</router-link>
     </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import { defineComponent } from 'vue'
-import Blog from '@models/app_models/BlogModel'
+import Post from '@models/app_models/post.js'
+// MarkdownElement Components
+// import MarkdownHeader from '@/components/app/subElements/markdownElements/MarkdownHeader.vue'
+import MarkdownLink from '@/components/app/subElements/markdownElements/MarkdownLink.vue'
+// import MarkdownTable from '@/components/app/subElements/markdownElements/MarkdownTable.vue'
+// import MarkdownList from '@/components/app/subElements/markdownElements/MarkdownList.vue'
 
 export default defineComponent({
   name: 'BlogCover',
+  components: {
+    // MarkdownHeader,
+    MarkdownLink
+    // MarkdownTable,
+    // MarkdownList
+  },
   props: {
-    blog: {
-      type: Blog,
+    post: {
+      type: Post,
       required: true
     }
   },
-  methods: {
-    emitThis() {
-      this.$emit('blog-clicked', this.blog)
+  computed: {
+    concatenatedDescription() {
+      return this.post.description.slice(0, 100) + '...'
+    },
+    coverImage() {
+      return `/images/app/posts/${this.post.coverImage}`
+    },
+    methods: {
+      emitThis() {
+        this.$emit('post-clicked', this.post)
+      }
     }
   }
 })

@@ -2,9 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import AboutView from '@/views/AboutView.vue'
 import BlogView from '@/views/BlogView.vue'
+import BlogRenderView from '@/views/BlogRenderView.vue'
 import ContactView from '../views/ContactView.vue'
 import HomeView from '../views/HomeView.vue'
-import ServiceView from '@/views/ServiceView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -30,18 +30,18 @@ const router = createRouter({
       component: ContactView
     },
 
-    // Service Page
-    {
-      path: '/service/:serviceId',
-      name: 'service',
-      component: ServiceView
-    },
-
     // Blog Route
     {
       path: '/thoughts',
       name: 'blog',
       component: BlogView
+    },
+
+    // Specific Post Route
+    {
+      path: '/thoughts/:postId',
+      name: 'post',
+      component: BlogRenderView
     },
 
     // Catch All

@@ -9,7 +9,7 @@ class MarkdownUtil {
     this.defaultMd = new MarkdownIt({
       html: true,
       breaks: true,
-      // linkify: true,
+      linkify: true,
       typographer: true,
       highlight: function (str, lang) {
         if (lang && hljs.getLanguage(lang)) {
@@ -25,7 +25,7 @@ class MarkdownUtil {
   }
 
   // Function to create a metadata object from a metadata block
-  CreateMetaDataFromMetaBlock(metaBlockMatch) {
+  createMetaDataFromMetaBlock(metaBlockMatch) {
     const lines = metaBlockMatch.split('\n').filter((line) => line !== '---')
     let metaObject = {}
     lines.forEach((line) => {
@@ -66,6 +66,14 @@ class MarkdownUtil {
     }
   }
 
+  /*
+ 		===================================================
+
+  				Access Functions
+
+   		===================================================
+  */
+
   getMetaDataFromMarkdown(markdown) {
     const content = markdown
 
@@ -85,10 +93,87 @@ class MarkdownUtil {
       return
     }
 
-    const metaObject = this.CreateMetaDataFromMetaBlock(metaBlockMatch)
+    const metaObject = this.createMetaDataFromMetaBlock(metaBlockMatch)
 
     return metaObject
   }
+
+  // New function to extract headers, links, and other elements
+  extractElementsFromMarkdown(markdown) {
+    const content = this.removeMetaDataFromMarkdown(markdown)
+    const tokens = this.defaultMd.parse(content, {})
+
+    const elements = {
+      headers: [],
+      links: [],
+      lists: [],
+      tables: []
+    }
+
+    let currentList = null
+
+    tokens.forEach((token, index) => {
+      // Extract headers
+      if (token.type === 'heading_open') {
+        const level = token.tag.replace('h', '') // h1, h2, h3, etc.
+        const text = tokens[index + 1].content
+        elements.headers.push({ level: parseInt(level), text })
+      }
+
+      // Extract links
+      if (token.type === 'link_open') {
+        const href = token.attrGet('href')
+        const text = tokens[index + 1].content
+        elements.links.push({ href, text })
+      }
+
+      // Extract lists (both ordered and unordered)
+      if (token.type === 'bullet_list_open' || token.type === 'ordered_list_open') {
+        currentList = []
+      }
+      if (token.type === 'list_item_open') {
+        const listItem = tokens[index + 2].content
+        currentList.push(listItem)
+      }
+      if (token.type === 'bullet_list_close' || token.type === 'ordered_list_close') {
+        elements.lists.push(currentList)
+        currentList = null
+      }
+
+      // Extract tables
+      if (token.type === 'table_open') {
+        let table = []
+        for (let i = index; i < tokens.length; i++) {
+          if (tokens[i].type === 'tr_open') {
+            let row = []
+            for (let j = i + 1; j < tokens.length; j++) {
+              if (tokens[j].type === 'td_open' || tokens[j].type === 'th_open') {
+                row.push(tokens[j + 1].content)
+              }
+              if (tokens[j].type === 'tr_close') {
+                table.push(row)
+                break
+              }
+            }
+          }
+          if (tokens[i].type === 'table_close') {
+            elements.tables.push(table)
+            break
+          }
+        }
+      }
+    })
+
+    return elements
+  }
+
+  /*
+ 	===================================================
+
+  		Markdown Conversion Functions
+
+   	===================================================
+  */
 
   // Function to convert markdown to HTML
   markdownToHTML(markdown) {
@@ -107,4 +192,5 @@ class MarkdownUtil {
   }
 }
 
-export default MarkdownUtil
+const markdownUtil = new MarkdownUtil()
+export default markdownUtil

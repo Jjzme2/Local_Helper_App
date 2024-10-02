@@ -1,0 +1,54 @@
+.countdown-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-family: 'Arial', sans-serif;
+  color: #444;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 80%;
+}
+
+.display-text {
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.time-left {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
+  gap: 15px;
+  align-items: start;
+  justify-items: start;
+  height: auto; /* Ensures content fits dynamically */
+}
+
+.time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  min-width: 60px; /* Ensures uniform width for time units */
+}
+
+.time-value {
+  font-size: 1.5em;
+}
+
+.time-label {
+  font-size: 0.75em;
+}
+
+.time-up {
+  margin-top: 15px;
+  color: #d9534f;
+  font-weight: bold;
+}

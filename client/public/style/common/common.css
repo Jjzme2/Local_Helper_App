@@ -159,3 +159,32 @@ h6 {
 .horizontal {
   flex-direction: row;
 }
+
+/* Loading Icon */
+.loading-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loading-icon__spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #333;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1.5s linear infinite;
+}
+
+.top-margin-1 {
+  margin-top: 1rem;
+}
+
+.top-margin-2 {
+  margin-top: 2rem;
+}
+
+.top-margin-3 {
+  margin-top: 3rem;
+}

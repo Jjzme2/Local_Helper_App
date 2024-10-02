@@ -1,7 +1,9 @@
 /* COMMON */
+@import url('./common/blogs.css');
 @import url('./common/buttons.css');
 @import url('./common/cards.css');
 @import url('./common/common.css');
+@import url('./common/countdown.css');
 @import url('./common/employees.css');
 @import url('./common/forced.css');
 @import url('./common/formStyles.css');
@@ -18,9 +20,11 @@
 @import url('./common/variables.css');
 
 /* RESPONSIVE */
+@import url('./responsive/blogs.css');
 @import url('./responsive/buttons.css');
 @import url('./responsive/cards.css');
 @import url('./responsive/common.css');
+@import url('./responsive/countdown.css');
 @import url('./responsive/grid.css');
 @import url('./responsive/hero.css');
 @import url('./responsive/layout.css');
