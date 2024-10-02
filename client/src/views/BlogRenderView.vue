@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { computed } from 'vue'
+import { computed, onBeforeMount } from 'vue'
 import { useRoute } from 'vue-router' // Import useRoute to access route params
 import BaseView from './BaseView.vue'
 import usePostStore from '@/stores/posts'
@@ -18,16 +18,25 @@ export default {
     const store = usePostStore()
     const route = useRoute() // Access the current route
 
+    // !Router is not found on page refresh with post ID.
+    // !t.push is not a function
+    // !e.getPosts is undefined
+    // !s.post is undefined
+
     // Get the post from the store
     const post = computed(() => store.getItemById(route.params.postId))
 
-    // // Fetch the post by the route parameter (e.g., id)
-    // onMounted(() => {
-    //   const postId = route.params.id // Get the 'id' param from the route
-    //   if (postId) {
-    //     store.getItemById(postId) // Fetch the post by ID from the store
-    //   }
-    // })
+    // If the posts have not been fetched, fetch them
+    onBeforeMount(() => {
+      if (!store.getPosts.length) {
+        store.fetchPosts()
+      }
+    })
+
+    // If the post is not found still, go back to thoughts
+    if (!post.value) {
+      route.push('/thoughts')
+    }
 
     return {
       post

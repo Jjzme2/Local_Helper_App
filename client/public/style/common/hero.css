@@ -1,19 +1,21 @@
 .hero {
   background: url('/path-to-your-image.jpg') no-repeat center center/cover;
-  height: 80vh;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--primary-text-color);
   position: relative;
+  margin-top: a.25rem;
 }
 
 .hero-content {
   max-width: 600px;
-  padding: 20px;
+  padding: 10px;
   background: var(--mint);
   border-radius: 10px;
+  height: auto;
 }
 
 .hero h1 {
@@ -27,7 +29,7 @@
 }
 
 .hero img {
-  width: 80%;
+  width: 15%;
   height: auto;
   border-radius: 10px;
 }

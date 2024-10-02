@@ -1,3 +1,4 @@
+/* Responsive styles for tablets */
 @media (max-width: 768px) {
   .countdown-display {
     font-size: 1.5em;
@@ -18,20 +19,16 @@
   }
 }
 
+/* Responsive styles for mobile screens */
 @media (max-width: 480px) {
   .countdown-display {
     font-size: 1.2em;
-    padding: 10px;
+    padding: 1.25rem;
     width: 95%;
   }
 
-  .time-left {
-    flex-direction: column; /* Stack time units vertically */
-    gap: 10px;
-  }
-
   .time-unit {
-    min-width: 40px; /* Further adjust the width */
+    min-width: 40px; /* Reduce the width of the units for mobile */
     padding: 8px;
   }
 
@@ -48,11 +45,6 @@
   margin-bottom: 15px;
   font-weight: bold;
   color: #007bff;
-}
-
-.time-left {
-  display: flex;
-  gap: 15px;
 }
 
 .time-unit {

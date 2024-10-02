@@ -1,12 +1,8 @@
-/* Responsive Design */
+/* For tablets and medium screens (768px and below) */
 @media (max-width: 768px) {
   .product-card {
     height: auto;
     padding: 15px;
-  }
-
-  .product-card {
-    padding: 5px;
   }
 
   .product-icon {
@@ -25,8 +21,11 @@
   .product-price {
     font-size: 1.1rem;
   }
+
+
 }
 
+/* For mobile and small screens (480px and below) */
 @media (max-width: 480px) {
   .product-card {
     padding: 10px;

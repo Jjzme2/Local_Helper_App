@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import navigationPanel from '@/components/app/mainElements/panels/NavigationPanel.vue'
+import navigationPanel from '@/components/app/mainElements/general/panels/NavigationPanel.vue'
 import NavigationOption from '@models/app_models/NavigationOption.js'
 
 export default {

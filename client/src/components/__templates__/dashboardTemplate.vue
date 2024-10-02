@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import DashboardCard from '@/components/app/common/cards/dashboard/dashboardCard.vue'
-import goToButton from '@/components/app/common/buttons/goToButton.vue'
+import DashboardCard from '@/components/app/mainElements/general/cards/dashboard/dashboardCard.vue'
+import goToButton from '@/components/app/mainElements/general/buttons/GoToButton.vue'
 
 export default {
   name: 'COMPONENTNAME',

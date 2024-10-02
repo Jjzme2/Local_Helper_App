@@ -23,7 +23,7 @@
 
 <script>
 import mainLayout from '@/components/app/layoutElements/LayoutMain.vue'
-import goBackButton from '@/components/app/mainElements/buttons/GoToButton.vue'
+import goBackButton from '@/components/app/mainElements/general/buttons/GoToButton.vue'
 
 // import alertBox from '@/components/app/mainElements/alerts/alertBox.vue'
 

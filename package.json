@@ -11,10 +11,11 @@
   "scripts": {
     "build": "npm run clean && npm run lint && npm run format && cd client && vite build",
     "clean": "rimraf client/dist",
+    "cleanInstall": "rimraf node_modules && npm install",
     "start": "npm run build && npm run server",
-    "server": "nodemon --watch server --watch client ./server/server.js",
+    "server": "nodemon ./server/server.js",
     "client": "cd client && vite",
-    "dev": "npm run build && concurrently \"npm run server\" \"npm run client\"",
+    "dev": "npm run server && cd . && npm run client",
     "preview": "vite preview",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "vitest",

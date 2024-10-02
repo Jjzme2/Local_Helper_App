@@ -2,12 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
 
-/* Color Palette
-PRIMARY: #FFFFFF - White
-SECONDARY: #243e36 - Dark Slate Gray
-TERTIARY: #32021f - Dark Purple (Eggplant)
-ACCENT: #65b891 - Mint
-*/
 :root {
   /* General colors */
   --white: #ffffff;
@@ -15,7 +9,10 @@ ACCENT: #65b891 - Mint
   --dark-purple: #32021f;
   --mint: #65b891;
   --light-gray: #e0e0e0;
+  --med-gray: #7e7e7e;
+  --dark-gray: #333333;
 
+  /* Transparent Colors */
   --transparent-green: rgba(101, 184, 145, 0.5);
   --transparent-mint: rgba(101, 184, 145, 0.85);
 
@@ -30,7 +27,7 @@ ACCENT: #65b891 - Mint
   --button-text-color: var(--white);
 
   /* Primary color scheme */
-  --primary-background-color: var(--white);
+  --primary-background-color: var(--med-gray);
   --primary-font-family: var(--font-primary);
   --primary-panel-color: var(transparent-green);
   --primary-text-color: var(--dark-slate-gray);

@@ -59,8 +59,8 @@
 
 <script>
 import BaseView from './BaseView.vue'
-import ImpactText from '@/components/app/mainElements/text/ImpactText.vue'
-import ItalicizedText from '@/components/app/mainElements/text/ItalicizedText.vue'
+import ImpactText from '@/components/app/subElements/text/ImpactText.vue'
+import ItalicizedText from '@/components/app/subElements/text/ItalicizedText.vue'
 
 import EmployeeLibrary from '@/components/app/mainElements/asset_libraries/EmployeeLibrary.vue'
 

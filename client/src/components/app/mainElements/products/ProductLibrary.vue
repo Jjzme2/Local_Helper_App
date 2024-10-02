@@ -1,15 +1,9 @@
 <template>
   <section class="product-library" id="productLibrary">
-    <hr class="divider" />
 
-    <CountdownTimer
-      :targetDate="new Date('2024-10-05T10:00:00')"
-      displayText="Something Spooky (and cute) is coming October 5th, 2024!"
-    />
-
-    <div class="container clear no-shadow">
+    <div class="container clear no-shadow" v-if="isPromotionActive">
       <PromotionText
-        v-if="isPromotionActive"
+
         :percentOff="promotion.discount"
         :startDate="promotion.startDate"
         :endDate="promotion.endDate"
@@ -20,7 +14,7 @@
 
     <div class="product-highlights" v-if="products.length > 0">
       <h3>Products</h3>
-      <div class="grid-container">
+      <div class="library-grid-container">
         <ProductCard
           v-for="product in products"
           :key="product.id"
@@ -44,10 +38,11 @@
 <script>
 import { computed, ref, watch, onBeforeMount } from 'vue'
 import { useProductStore } from '@/stores/products'
-import PromotionText from '../text/PromotionText.vue'
-import CountdownTimer from '@/components/app/mainElements/display/CountdownDisplay.vue'
-import ProductCard from '@/components/app/mainElements/cards/ProductCard.vue'
-import LoadingIcon from '@/components/app/mainElements/display/LoadingIcon.vue'
+import PromotionText from '@/components/app/subElements/text/PromotionText.vue'
+import CountdownTimer from '@/components/app/mainElements/general/display/CountdownDisplay.vue'
+import ProductCard from '@/components/app/mainElements/products/ProductCard.vue'
+import LoadingIcon from '@/components/app/mainElements/general/display/LoadingIcon.vue'
+import StickyElement from '@/components/app/mainElements/general/display/StickyElement.vue'
 
 export default {
   name: 'ProductLibrary',
@@ -55,7 +50,8 @@ export default {
     PromotionText,
     CountdownTimer,
     ProductCard,
-    LoadingIcon
+    LoadingIcon,
+    StickyElement
   },
   setup() {
     const productStore = useProductStore()
@@ -101,13 +97,18 @@ export default {
       window.open(addressToNavigateTo.includes('https') ? addressToNavigateTo : shopURL, '_blank')
     }
 
+    const handleClose = () => {
+      console.log('Closing sticky element')
+    }
+
     return {
       products,
       shopURL,
       getImagePath,
       isPromotionActive,
       promotion,
-      sendToURL
+      sendToURL,
+      handleClose
     }
   }
 }

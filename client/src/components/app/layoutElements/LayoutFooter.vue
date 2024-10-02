@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import socials from '@/components/app/mainElements/display/SocialLinks.vue'
+import socials from '@/components/app/mainElements/general/display/SocialLinks.vue'
 
 export default {
   data() {
