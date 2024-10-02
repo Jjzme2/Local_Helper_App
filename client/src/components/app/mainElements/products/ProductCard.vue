@@ -7,18 +7,18 @@
       <img :src="getDefaultImage()" alt="Product Image" class="product-icon" />
     </div>
 
-	<div class="product-body">
-    <div class="product-details">
-      <!-- Product description (safely rendering HTML) -->
-      <p v-html="evaluatedDescription"></p>
-    </div>
+    <div class="product-body">
+      <div class="product-details">
+        <!-- Product description (safely rendering HTML) -->
+        <p v-html="evaluatedDescription"></p>
+      </div>
 
-    <div class="product-price">From ${{ priceMin }}</div>
+      <div class="product-price">From ${{ priceMin }}</div>
 
-    <div class="cta-buttons">
-      <button @click="navigateToProduct" class="primary-button">View Product</button>
+      <div class="cta-buttons">
+        <button @click="navigateToProduct" class="primary-button">View Product</button>
+      </div>
     </div>
-	</div>
   </div>
 </template>
 
@@ -36,10 +36,10 @@ export default {
       const prices = this.product.variants.map((variant) => variant.price)
       return Math.min(...prices).toFixed(2) / 100
     },
-    evaluatedDescription(){
-      const description = this.product.description;
-      const trimmedValue = description.slice(0,250);
-      return trimmedValue + "...";
+    evaluatedDescription() {
+      const description = this.product.description
+      const trimmedValue = description.slice(0, 250)
+      return trimmedValue + '...'
     }
   },
   methods: {

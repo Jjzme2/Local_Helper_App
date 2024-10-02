@@ -21,8 +21,8 @@
 
 .time-left {
   display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns, two rows */
-    gap: 15px;
+  grid-template-columns: repeat(2, 1fr); /* Two columns, two rows */
+  gap: 15px;
   align-items: start;
   justify-items: start;
   height: auto; /* Ensures content fits dynamically */
