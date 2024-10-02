@@ -1,9 +1,7 @@
 <template>
   <section class="product-library" id="productLibrary">
-
     <div class="container clear no-shadow" v-if="isPromotionActive">
       <PromotionText
-
         :percentOff="promotion.discount"
         :startDate="promotion.startDate"
         :endDate="promotion.endDate"
@@ -39,19 +37,16 @@
 import { computed, ref, watch, onBeforeMount } from 'vue'
 import { useProductStore } from '@/stores/products'
 import PromotionText from '@/components/app/subElements/text/PromotionText.vue'
-import CountdownTimer from '@/components/app/mainElements/general/display/CountdownDisplay.vue'
+
 import ProductCard from '@/components/app/mainElements/products/ProductCard.vue'
 import LoadingIcon from '@/components/app/mainElements/general/display/LoadingIcon.vue'
-import StickyElement from '@/components/app/mainElements/general/display/StickyElement.vue'
 
 export default {
   name: 'ProductLibrary',
   components: {
     PromotionText,
-    CountdownTimer,
     ProductCard,
-    LoadingIcon,
-    StickyElement
+    LoadingIcon
   },
   setup() {
     const productStore = useProductStore()

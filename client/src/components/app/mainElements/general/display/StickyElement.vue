@@ -9,7 +9,9 @@
     >
       <header class="sticky-header">
         <h2 id="popup-title" class="header-title"><slot name="header"></slot></h2>
-        <button class="close-button" @click="closeElement" aria-label="Close Sticky Popup">×</button>
+        <button class="close-button" @click="closeElement" aria-label="Close Sticky Popup">
+          ×
+        </button>
       </header>
       <div class="sticky-content" id="popup-description">
         <slot></slot>
@@ -24,21 +26,21 @@ export default {
   props: {
     zIndex: {
       type: Number,
-      default: 1000,
+      default: 1000
     },
     backgroundColor: {
       type: String,
-      default: 'white',
+      default: 'white'
     },
     threshold: {
       type: Number,
-      default: 0, // The distance from the top of the viewport to trigger the sticky state
-    },
+      default: 0 // The distance from the top of the viewport to trigger the sticky state
+    }
   },
   data() {
     return {
-      isVisible: true, // Control visibility of the element
-    };
+      isVisible: true // Control visibility of the element
+    }
   },
   computed: {
     computedStyle() {
@@ -49,16 +51,16 @@ export default {
         transform: 'translateX(-50%)',
         zIndex: this.zIndex,
         backgroundColor: this.backgroundColor,
-        transition: 'all 0.3s ease', // Transition for smooth appearance
-      };
-    },
+        transition: 'all 0.3s ease' // Transition for smooth appearance
+      }
+    }
   },
   methods: {
     closeElement() {
-      this.isVisible = false; // Hide the sticky element
-      this.$emit('close'); // Emit close event
-    },
-  },
+      this.isVisible = false // Hide the sticky element
+      this.$emit('close') // Emit close event
+    }
+  }
 }
 </script>
 

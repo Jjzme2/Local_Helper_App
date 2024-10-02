@@ -12,19 +12,19 @@
 
       <!-- LTO Popup -->
       <StickyElement
-      position="top"
-      :zIndex="2000"
-      backgroundColor="lightgrey"
-      :threshold="100"
-      @close="handleClose"
-    >
-    <template #header>Limited Time Offer!</template>
-      <template #default>
-        <CountdownTimer
-          :targetDate="new Date('2024-10-05T10:00:00')"
-          displayText="Something Spooky (and cute) is coming October 5th, 2024!"
-      /></template>
-    </StickyElement>
+        position="top"
+        :zIndex="2000"
+        backgroundColor="lightgrey"
+        :threshold="100"
+        @close="handleClose"
+      >
+        <template #header>Limited Time Offer!</template>
+        <template #default>
+          <CountdownTimer
+            :targetDate="new Date('2024-10-05T10:00:00')"
+            displayText="Something Spooky (and cute) is coming October 5th, 2024!"
+        /></template>
+      </StickyElement>
 
       <!-- Hero Image -->
       <section class="component-heading-container">
@@ -32,7 +32,7 @@
       </section>
 
       <!-- Libraries -->
-	       <hr class="divider" />
+      <hr class="divider" />
 
       <productLibrary></productLibrary>
 
