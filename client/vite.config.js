@@ -14,5 +14,11 @@ export default defineConfig({
       '@models': fileURLToPath(new URL('../server/_models', import.meta.url)),
       '@services': fileURLToPath(new URL('../server/_services', import.meta.url))
     }
+  },
+  server: {
+    proxy: {
+      // Proxy API requests to Express server
+      '/api': 'http://localhost:4200' // Make sure your Express server is running on port 4200
+    }
   }
 })

@@ -4,7 +4,7 @@
 
     <div class="product-image">
       <!-- Display the default image -->
-      <img :src="getDefaultImage()" alt="Product Image" />
+      <img :src="getDefaultImage()" alt="Product Image" class="product-icon" />
     </div>
 
     <div class="product-details">

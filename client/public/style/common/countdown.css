@@ -6,7 +6,6 @@
   font-size: 2em;
   font-family: 'Arial', sans-serif;
   color: #444;
-  background-color: #f9f9f9;
   border: 2px solid #007bff;
   border-radius: 10px;
   padding: 20px;
@@ -21,8 +20,12 @@
 }
 
 .time-left {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four equal-width columns */
   gap: 15px;
+  align-items: start;
+  justify-items: start;
+  height: auto; /* Ensures content fits dynamically */
 }
 
 .time-unit {

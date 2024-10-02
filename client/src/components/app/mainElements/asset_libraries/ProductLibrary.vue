@@ -2,10 +2,13 @@
   <section class="product-library" id="productLibrary">
     <hr class="divider" />
 
+	<!-- !Potentially move to a popup type display --Sticky-- -->
+	 <StickyElement>
     <CountdownTimer
       :targetDate="new Date('2024-10-05T10:00:00')"
       displayText="Something Spooky (and cute) is coming October 5th, 2024!"
     />
+	</StickyElement>
 
     <div class="container clear no-shadow">
       <PromotionText
@@ -48,6 +51,7 @@ import PromotionText from '../text/PromotionText.vue'
 import CountdownTimer from '@/components/app/mainElements/display/CountdownDisplay.vue'
 import ProductCard from '@/components/app/mainElements/cards/ProductCard.vue'
 import LoadingIcon from '@/components/app/mainElements/display/LoadingIcon.vue'
+import StickyElement from '@/components/app/mainElements/display/StickyElement.vue'
 
 export default {
   name: 'ProductLibrary',
@@ -55,7 +59,8 @@ export default {
     PromotionText,
     CountdownTimer,
     ProductCard,
-    LoadingIcon
+    LoadingIcon,
+	StickyElement
   },
   setup() {
     const productStore = useProductStore()
