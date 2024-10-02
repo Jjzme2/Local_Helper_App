@@ -16,3 +16,14 @@
   border-radius: 5px;
   text-align: center;
 }
+
+  .library-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    width: fit-content;
+    padding: 10px;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+  }

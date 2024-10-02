@@ -8,8 +8,9 @@ class ProductController extends BaseController {
 
   async getByVisibility(req, res) {
     const visibility = req.query.visibility
+	const limit = req.query.limit || 3
     try {
-      const products = await this.service.getByVisibility(visibility, 3)
+      const products = await this.service.getByVisibility(visibility, limit)
       res.json(products)
     } catch (error) {
       res.status(500).send(error)

@@ -7,6 +7,7 @@
       <img :src="getDefaultImage()" alt="Product Image" class="product-icon" />
     </div>
 
+	<div class="product-body">
     <div class="product-details">
       <!-- Product description (safely rendering HTML) -->
       <p v-html="evaluatedDescription"></p>
@@ -17,6 +18,7 @@
     <div class="cta-buttons">
       <button @click="navigateToProduct" class="primary-button">View Product</button>
     </div>
+	</div>
   </div>
 </template>
 

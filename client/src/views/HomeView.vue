@@ -32,7 +32,9 @@
       </section>
 
       <!-- Libraries -->
-      <productLibrary class="margin-top-5"></productLibrary>
+	       <hr class="divider" />
+
+      <productLibrary></productLibrary>
 
       <!-- Sign up -->
       <NewsLetter />

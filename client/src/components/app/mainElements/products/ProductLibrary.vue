@@ -1,10 +1,9 @@
 <template>
   <section class="product-library" id="productLibrary">
-    <hr class="divider" />
 
-    <div class="container clear no-shadow">
+    <div class="container clear no-shadow" v-if="isPromotionActive">
       <PromotionText
-        v-if="isPromotionActive"
+
         :percentOff="promotion.discount"
         :startDate="promotion.startDate"
         :endDate="promotion.endDate"
@@ -15,7 +14,7 @@
 
     <div class="product-highlights" v-if="products.length > 0">
       <h3>Products</h3>
-      <div class="grid-container">
+      <div class="library-grid-container">
         <ProductCard
           v-for="product in products"
           :key="product.id"

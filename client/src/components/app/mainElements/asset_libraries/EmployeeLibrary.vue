@@ -2,8 +2,6 @@
   <section>
     <contentCard>
       <h2>Employees</h2>
-      <hr class="divider" />
-
       <div class="grid-container">
         <div
           v-for="employee in employees"
