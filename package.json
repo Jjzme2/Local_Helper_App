@@ -11,6 +11,7 @@
   "scripts": {
     "build": "npm run clean && npm run lint && npm run format && cd client && vite build",
     "clean": "rimraf client/dist",
+    "cleanInstall": "rimraf node_modules && npm install",
     "start": "npm run build && npm run server",
     "server": "nodemon ./server/server.js",
     "client": "cd client && vite",

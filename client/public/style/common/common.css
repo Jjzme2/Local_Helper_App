@@ -177,14 +177,22 @@ h6 {
   animation: spin 1.5s linear infinite;
 }
 
-.top-margin-1 {
+.margin-top-1 {
   margin-top: 1rem;
 }
 
-.top-margin-2 {
+.margin-top-2 {
   margin-top: 2rem;
 }
 
-.top-margin-3 {
+.margin-top-3 {
   margin-top: 3rem;
+}
+
+.margin-top-5 {
+  margin-top: 5rem;
+}
+
+.margin-top-10 {
+  margin-top: 10rem;
 }

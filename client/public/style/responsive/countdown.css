@@ -17,12 +17,6 @@
   .time-label {
     font-size: 0.7em;
   }
-
-  /* Maintain 4 columns for tablet-sized screens */
-  .time-left {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-  }
 }
 
 /* Responsive styles for mobile screens */
@@ -31,12 +25,6 @@
     font-size: 1.2em;
     padding: 1.25rem;
     width: 95%;
-  }
-
-  /* Adjust time-left to display in 2 columns and 2 rows */
-  .time-left {
-    grid-template-columns: repeat(2, 1fr); /* Two columns, two rows */
-    gap: 15px;
   }
 
   .time-unit {

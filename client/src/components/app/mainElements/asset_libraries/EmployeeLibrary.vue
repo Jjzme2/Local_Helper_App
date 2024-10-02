@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import contentCard from '../cards/Content_Cards/ContentCard.vue'
+import contentCard from '@/components/app/mainElements/general/cards/ContentCard.vue'
 import { computed } from 'vue'
 import { useEmployeeStore } from '@/stores/employees'
 

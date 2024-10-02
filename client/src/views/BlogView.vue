@@ -11,7 +11,7 @@
 <script>
 import { computed } from 'vue'
 import BaseView from './BaseView.vue'
-import BlogCover from '@/components/app/mainElements/cards/BlogCover.vue'
+import BlogCover from '@/components/app/mainElements/blog/BlogCover.vue'
 import usePostStore from '@/stores/posts'
 
 export default {

@@ -2,14 +2,6 @@
   <section class="product-library" id="productLibrary">
     <hr class="divider" />
 
-	<!-- !Potentially move to a popup type display --Sticky-- -->
-	 <StickyElement>
-    <CountdownTimer
-      :targetDate="new Date('2024-10-05T10:00:00')"
-      displayText="Something Spooky (and cute) is coming October 5th, 2024!"
-    />
-	</StickyElement>
-
     <div class="container clear no-shadow">
       <PromotionText
         v-if="isPromotionActive"
@@ -47,11 +39,11 @@
 <script>
 import { computed, ref, watch, onBeforeMount } from 'vue'
 import { useProductStore } from '@/stores/products'
-import PromotionText from '../text/PromotionText.vue'
-import CountdownTimer from '@/components/app/mainElements/display/CountdownDisplay.vue'
-import ProductCard from '@/components/app/mainElements/cards/ProductCard.vue'
-import LoadingIcon from '@/components/app/mainElements/display/LoadingIcon.vue'
-import StickyElement from '@/components/app/mainElements/display/StickyElement.vue'
+import PromotionText from '@/components/app/subElements/text/PromotionText.vue'
+import CountdownTimer from '@/components/app/mainElements/general/display/CountdownDisplay.vue'
+import ProductCard from '@/components/app/mainElements/products/ProductCard.vue'
+import LoadingIcon from '@/components/app/mainElements/general/display/LoadingIcon.vue'
+import StickyElement from '@/components/app/mainElements/general/display/StickyElement.vue'
 
 export default {
   name: 'ProductLibrary',
@@ -60,7 +52,7 @@ export default {
     CountdownTimer,
     ProductCard,
     LoadingIcon,
-	StickyElement
+    StickyElement
   },
   setup() {
     const productStore = useProductStore()
@@ -106,13 +98,18 @@ export default {
       window.open(addressToNavigateTo.includes('https') ? addressToNavigateTo : shopURL, '_blank')
     }
 
+    const handleClose = () => {
+      console.log('Closing sticky element')
+    }
+
     return {
       products,
       shopURL,
       getImagePath,
       isPromotionActive,
       promotion,
-      sendToURL
+      sendToURL,
+      handleClose
     }
   }
 }
