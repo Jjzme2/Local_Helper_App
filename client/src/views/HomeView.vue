@@ -11,7 +11,7 @@
       ></alertBox>
 
       <!-- LTO Popup -->
-      <StickyElement
+      <!-- <StickyElement
         position="top"
         :zIndex="2000"
         backgroundColor="lightgrey"
@@ -24,7 +24,7 @@
             :targetDate="new Date('2024-10-05T10:00:00')"
             displayText="Something Spooky (and cute) is coming October 5th, 2024!"
         /></template>
-      </StickyElement>
+      </StickyElement> -->
 
       <!-- Hero Image -->
       <section class="component-heading-container">
@@ -45,8 +45,9 @@
 import BaseView from './BaseView.vue'
 // Optional displays
 import alertBox from '@/components/app/mainElements/general/alerts/alertBox.vue'
-import StickyElement from '@/components/app/mainElements/general/display/StickyElement.vue'
-import CountdownTimer from '@/components/app/mainElements/general/display/CountdownDisplay.vue'
+
+// import StickyElement from '@/components/app/mainElements/general/display/StickyElement.vue'
+// import CountdownTimer from '@/components/app/mainElements/general/display/CountdownDisplay.vue'
 
 // Libraries
 import productLibrary from '@/components/app/mainElements/products/ProductLibrary.vue'
@@ -59,8 +60,8 @@ export default {
   components: {
     // Optional
     alertBox,
-    StickyElement,
-    CountdownTimer,
+    // StickyElement,
+    // CountdownTimer,
     // Common
     BaseView,
     HeroImage,
