@@ -3,7 +3,9 @@
     <div class="hero-content">
       <h1>Discover Unique, Thoughtful Designs</h1>
       <img src="/images/logo.png" alt="Hero Image" />
-      <p>Beautiful products made with care – from fashion to home decor.</p>
+      <p>
+        Unique. Creative. <span><em>Yours.</em></span>
+      </p>
       <div class="hero-buttons">
         <a :href="shopURL" class="primary-button" target="_blank">Shop Now</a>
         <button @click="scrollToFeatures" class="secondary-button">Learn More</button>
