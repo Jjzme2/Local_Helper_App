@@ -98,7 +98,6 @@
   background-color: #218838;
 }
 
-
 /* Custom Carousel Wrapper */
 .product-carousel-wrapper {
   padding: 40px;
@@ -126,7 +125,9 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .custom-product-card:hover {
