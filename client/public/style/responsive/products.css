@@ -1,5 +1,9 @@
 /* For tablets and medium screens (768px and below) */
 @media (max-width: 768px) {
+
+  .custom-carousel-wrapper {
+	max-width: 768px;
+  }
   .product-card {
     height: auto;
     padding: 15px;
@@ -20,6 +24,20 @@
 
   .product-price {
     font-size: 1.1rem;
+  }
+}
+
+/* Adjust the size and spacing for smaller screens */
+@media (max-width: 600px) {
+  .custom-navigation > * {
+    padding: 6px;
+    margin: 0 4px;
+  }
+
+    .custom-pagination > * {
+    width: 8px;
+    height: 8px;
+    margin: 0 3px;
   }
 }
 

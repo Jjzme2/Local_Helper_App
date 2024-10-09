@@ -8,7 +8,7 @@ class ProductController extends BaseController {
 
   async getByVisibility(req, res) {
     const visibility = req.query.visibility
-    const limit = req.query.limit || 3
+    const limit = req.query.limit || 0
     try {
       const products = await this.service.getByVisibility(visibility, limit)
       res.json(products)

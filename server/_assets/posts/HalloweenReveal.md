@@ -3,11 +3,11 @@ id: a3160c76-ed92-4528-8b02-f3aae8782e98
 title: October 5th, 2024
 description: We will have a new collection drop on October 5th, 2024. Stay tuned for more details.
 categories: Reaveal
-author: Jj Zettler
+author: ILYTAT Designs
 date: 2024-09-30
 coverImage: halloween-chibi-reveal-2024.png
-tags: Reveal,Marketing,Collection,Drop,October5th
-active: 0
+tags: Reveal,Marketing,Collection,Drop,October5th,Promotional
+active: 1
 ---
 
 # Something Spooky (and Cute) is Coming Soon! 🎃👻

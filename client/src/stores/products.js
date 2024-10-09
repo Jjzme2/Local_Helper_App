@@ -4,7 +4,8 @@ import api from './apiService'
 export const useProductStore = defineStore('products', {
   state: () => ({
     allItems: [],
-    visibleItems: [],
+    allVisibleItems: [],
+    limitedItems: [],
     hiddenItems: []
     // categories: []
   }),
@@ -13,8 +14,12 @@ export const useProductStore = defineStore('products', {
       const items = state.allItems
       return items
     },
-    getVisibleItems: (state) => {
-      const items = state.visibleItems
+    getLimitedItems: (state) => {
+      const items = state.limitedItems
+      return items
+    },
+    getAllVisibleItems: (state) => {
+      const items = state.allVisibleItems
       return items
     },
     getHiddenItems: (state) => {
@@ -33,33 +38,29 @@ export const useProductStore = defineStore('products', {
         const res = await api.get('/products')
         this.allItems = res.data
       } catch (error) {
-        console.error('Error fetching items:', error) // Log the error for debugging
-        // Optional: Set a state variable to indicate an error or reset items
-        this.allItems = [] // Clear items or set to an appropriate value on error
-        // Optionally, you might want to show a user-friendly message
+        console.error('Error fetching items:', error)
+        this.allItems = []
       }
     },
-    // async fetchItemById(id) {
-    //   try {
-    // 	const res = await api.get(`/products/${id}`)
-    // 	console.log('Data Retrieved.')
-    // 	this.items = res.data
-    //   } catch (error) {
-    // 	console.error('Error fetching items:', error) // Log the error for debugging
-    // 	// Optional: Set a state variable to indicate an error or reset items
-    // 	this.items = [] // Clear items or set to an appropriate value on error
-    // 	// Optionally, you might want to show a user-friendly message
-    //   }
-    // },
-    async fetchVisible() {
+
+    async fetchLimited(limit) {
+      try {
+        const res = await api.get('/products/visibility?visibility=true&&limit=' + limit)
+        this.limitedItems = res.data
+      } catch (error) {
+        console.log('Error fetching limited items:', error)
+        this.limitedItems = []
+      }
+    },
+
+    async fetchAllVisible() {
       try {
         const res = await api.get('/products/visibility?visibility=true')
-        this.visibleItems = res.data
+        this.allVisibleItems = res.data
+        console.log('Res:', res.data)
       } catch (error) {
-        console.error('Error fetching visible items:', error) // Log the error for debugging
-        // Optional: Set a state variable to indicate an error or reset items
-        this.visibleItems = [] // Clear items or set to an appropriate value on error
-        // Optionally, you might want to show a user-friendly message
+        console.error('Error fetching visible items:', error)
+        this.allVisibleItems = []
       }
     },
     async fetchHidden() {
@@ -67,10 +68,8 @@ export const useProductStore = defineStore('products', {
         const res = await api.get('/products/visibility?visibility=false')
         this.hiddenItems = res.data
       } catch (error) {
-        console.error('Error fetching hidden items:', error) // Log the error for debugging
-        // Optional: Set a state variable to indicate an error or reset items
-        this.hiddenItems = [] // Clear items or set to an appropriate value on error
-        // Optionally, you might want to show a user-friendly message
+        console.error('Error fetching hidden items:', error)
+        this.hiddenItems = []
       }
     }
   }

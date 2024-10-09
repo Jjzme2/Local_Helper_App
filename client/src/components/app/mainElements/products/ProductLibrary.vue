@@ -10,22 +10,14 @@
       />
     </div>
 
-    <div class="product-highlights" v-if="products.length > 0">
+    <div v-if="products.length > 0">
       <h3>Products</h3>
-      <div class="library-grid-container">
-        <ProductCard
-          v-for="product in products"
-          :key="product.id"
-          :product="product"
-          :imagePath="getImagePath(product)"
-          @navigate="sendToURL(product)"
-        />
-      </div>
-
+      <ProductCarousel :products="products" />
       <div class="container clear no-shadow">
         <a class="primary-button" :href="shopURL" target="_blank">View full store</a>
       </div>
     </div>
+
     <div v-else class="loading-message">
       <LoadingIcon />
       <p>Loading products...</p>
@@ -37,25 +29,24 @@
 import { computed, ref, watch, onBeforeMount } from 'vue'
 import { useProductStore } from '@/stores/products'
 import PromotionText from '@/components/app/subElements/text/PromotionText.vue'
-
-import ProductCard from '@/components/app/mainElements/products/ProductCard.vue'
+import ProductCarousel from '@/components/app/mainElements/products/ProductCarousel.vue' // Import the carousel component
 import LoadingIcon from '@/components/app/mainElements/general/display/LoadingIcon.vue'
 
 export default {
   name: 'ProductLibrary',
   components: {
     PromotionText,
-    ProductCard,
+    ProductCarousel, // Add the carousel component here
     LoadingIcon
   },
   setup() {
     const productStore = useProductStore()
-    const products = computed(() => productStore.getVisibleItems)
+    const products = computed(() => productStore.getLimitedItems)
     const shopURL = import.meta.env.VITE_PRODUCT_URL
 
     onBeforeMount(() => {
       if (products.value.length === 0) {
-        productStore.fetchVisible()
+        productStore.fetchLimited(10) // Only fetch the top 10
       }
     })
 
@@ -67,8 +58,6 @@ export default {
       category: 'apparel'
     })
 
-    const getImagePath = (product) => `images/app/products/${product.imageName}.png`
-
     const isPromotionActive = computed(() => {
       const today = new Date()
       return (
@@ -76,34 +65,21 @@ export default {
       )
     })
 
-    // Fetch products if they are not already loaded
     watch(
       products,
       (newProducts) => {
         if (newProducts.length === 0) {
-          productStore.fetchItems()
+          productStore.fetchLimited(10)
         }
       },
       { immediate: true }
     )
 
-    const sendToURL = (product) => {
-      const addressToNavigateTo = product.url || shopURL
-      window.open(addressToNavigateTo.includes('https') ? addressToNavigateTo : shopURL, '_blank')
-    }
-
-    const handleClose = () => {
-      console.log('Closing sticky element')
-    }
-
     return {
       products,
       shopURL,
-      getImagePath,
       isPromotionActive,
-      promotion,
-      sendToURL,
-      handleClose
+      promotion
     }
   }
 }
