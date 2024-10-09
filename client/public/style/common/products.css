@@ -18,7 +18,7 @@
     box-shadow 0.3s ease;
   text-align: center;
   padding: 20px;
-  max-width: 75%;
+  max-width: 75vw;
   margin: 20px;
   background-color: #fff;
   display: flex;
@@ -96,4 +96,115 @@
 
 .primary-button:hover {
   background-color: #218838;
+}
+
+
+/* Custom Carousel Wrapper */
+.product-carousel-wrapper {
+  padding: 40px;
+  background-color: #00000018;
+  max-width: 80vw;
+  margin: auto;
+  border-radius: 15px;
+}
+
+/* Custom Carousel Styling */
+.custom-carousel {
+  width: 100%;
+}
+
+.custom-slide {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Custom Product Card */
+.custom-product-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.custom-product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.custom-product-icon {
+  width: 80%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.custom-product-card:hover .custom-product-icon {
+  transform: scale(1.05);
+}
+
+.custom-product-details {
+  margin-top: 15px;
+}
+
+.custom-product-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.custom-product-description {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.custom-product-price {
+  font-size: 1.25rem;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.custom-primary-button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.custom-primary-button:hover {
+  background-color: #218838;
+}
+
+/* Custom Navigation & Pagination */
+.custom-navigation > * {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 8px;
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+
+.custom-pagination {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.custom-pagination > * {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.custom-pagination > *.active {
+  background-color: #28a745;
 }

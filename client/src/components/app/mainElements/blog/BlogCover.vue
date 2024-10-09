@@ -5,14 +5,16 @@
     <div class="post-details">
       <h1 class="post-title">{{ post.title }}</h1>
 
-      <h3>Links</h3>
-      <hr />
-      <div class="post-elements">
-        <!-- Links -->
-        <span v-for="link in post.elements.links" :key="link">
-          <span>Links</span>
-          <MarkdownLink :href="link.href" :text="link.text" />
-        </span>
+      <div v-if="post.elements.links.length > 0">
+        <h3>Links</h3>
+        <hr />
+        <div class="post-elements">
+          <!-- Links -->
+          <span v-for="link in post.elements.links" :key="link">
+            <span>Links</span>
+            <MarkdownLink :href="link.href" :text="link.text" />
+          </span>
+        </div>
       </div>
     </div>
 

@@ -52,6 +52,7 @@ import alertBox from '@/components/app/mainElements/general/alerts/alertBox.vue'
 // Libraries
 import productLibrary from '@/components/app/mainElements/products/ProductLibrary.vue'
 
+// Other
 import HeroImage from '@/components/app/mainElements/general/cards/HeroImage.vue'
 import NewsLetter from '@/components/app/mainElements/general/tools/NewsLetter.vue'
 
