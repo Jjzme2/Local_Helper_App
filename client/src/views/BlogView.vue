@@ -1,11 +1,11 @@
 <template>
   <BaseView>
     <template #default>
-		<div class="grid-container">
-      <div v-for="post in posts" :key="post.id">
-        <BlogCover :post="post" />
+      <div class="grid-container">
+        <div v-for="post in posts" :key="post.id">
+          <BlogCover :post="post" />
+        </div>
       </div>
-	  </div>
     </template>
   </BaseView>
 </template>

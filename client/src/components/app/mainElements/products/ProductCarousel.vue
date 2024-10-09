@@ -6,9 +6,14 @@
           <img :src="getDefaultImage(product)" :alt="product.title" class="custom-product-icon" />
           <div class="custom-product-details">
             <h3 class="custom-product-title">{{ product.title }}</h3>
-            <div class="custom-product-description" v-html="sanitizeDescription(product.description)"></div>
+            <div
+              class="custom-product-description"
+              v-html="sanitizeDescription(product.description)"
+            ></div>
             <p class="custom-product-price">$ {{ priceMin(product) }}</p>
-            <button class="custom-primary-button" @click="navigateToProduct(product)">Buy Now</button>
+            <button class="custom-primary-button" @click="navigateToProduct(product)">
+              Buy Now
+            </button>
           </div>
         </div>
       </slide>
@@ -22,9 +27,9 @@
 </template>
 
 <script>
-import DOMPurify from 'dompurify';
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
-import 'vue3-carousel/dist/carousel.css';
+import DOMPurify from 'dompurify'
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
+import 'vue3-carousel/dist/carousel.css'
 
 export default {
   name: 'ProductCarousel',
@@ -32,37 +37,37 @@ export default {
   props: {
     products: {
       type: Array,
-      required: true,
-    },
+      required: true
+    }
   },
-  setup(props) {
+  setup() {
     const priceMin = (product) => {
-      if (!product || !product.variants || product.variants.length === 0) return '0.00';
+      if (!product || !product.variants || product.variants.length === 0) return '0.00'
 
-      const minPrice = Math.min(...product.variants.map((variant) => variant.price));
-      return (minPrice / 100).toFixed(2);
-    };
+      const minPrice = Math.min(...product.variants.map((variant) => variant.price))
+      return (minPrice / 100).toFixed(2)
+    }
 
     const getDefaultImage = (product) => {
-      const defaultImage = product.images.find((image) => image.is_default);
-      return defaultImage ? defaultImage.src : '';
-    };
+      const defaultImage = product.images.find((image) => image.is_default)
+      return defaultImage ? defaultImage.src : ''
+    }
 
     const sanitizeDescription = (description) => {
-      return DOMPurify.sanitize(description);
-    };
+      return DOMPurify.sanitize(description)
+    }
 
     const navigateToProduct = (product) => {
-      const url = product.external.handle;
-      window.open(url, '_blank'); // Open in a new tab
-    };
+      const url = product.external.handle
+      window.open(url, '_blank') // Open in a new tab
+    }
 
     return {
       priceMin,
       getDefaultImage,
       sanitizeDescription,
-      navigateToProduct,
-    };
-  },
-};
+      navigateToProduct
+    }
+  }
+}
 </script>
