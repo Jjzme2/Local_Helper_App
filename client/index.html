@@ -19,9 +19,21 @@
       property="og:description"
       content="Explore our unique, personalized designs that reflect your style. Shop custom apparel and home decor today!"
     />
-    <meta property="og:image" content="URL_to_your_image" />
+    <meta property="og:image" content="/images/logo.png" />
     <meta property="og:url" content="https://www.ilytat.com" />
     <meta name="author" content="ILYTAT Designs" />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=VITE_GOOGLE_ANALYTICS_ID"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', import.meta.env.VITE_GOOGLE_ANALYTICS_ID);
+    </script>
   </head>
   <body>
     <div id="app"></div>

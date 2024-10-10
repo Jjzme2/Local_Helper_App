@@ -6,10 +6,6 @@
           <img :src="getDefaultImage(product)" :alt="product.title" class="custom-product-icon" />
           <div class="custom-product-details">
             <h3 class="custom-product-title">{{ product.title }}</h3>
-            <div
-              class="custom-product-description"
-              v-html="sanitizeDescription(product.description)"
-            ></div>
             <p class="custom-product-price">$ {{ priceMin(product) }}</p>
             <button class="custom-primary-button" @click="navigateToProduct(product)">
               Buy Now
@@ -27,7 +23,7 @@
 </template>
 
 <script>
-import DOMPurify from 'dompurify'
+// import DOMPurify from 'dompurify'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 import 'vue3-carousel/dist/carousel.css'
 
@@ -53,10 +49,6 @@ export default {
       return defaultImage ? defaultImage.src : ''
     }
 
-    const sanitizeDescription = (description) => {
-      return DOMPurify.sanitize(description)
-    }
-
     const navigateToProduct = (product) => {
       const url = product.external.handle
       window.open(url, '_blank') // Open in a new tab
@@ -65,7 +57,6 @@ export default {
     return {
       priceMin,
       getDefaultImage,
-      sanitizeDescription,
       navigateToProduct
     }
   }
