@@ -6,6 +6,17 @@ import router from './router'
 // import hljs from 'highlight.js'
 import hljsVuePlugin from '@highlightjs/vue-plugin'
 
+// Import environment variable for Google Analytics ID
+const GA_ID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID
+
+window.addEventListener('load', () => {
+  let dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
+  }
+  gtag('js', new Date())
+  gtag('config', GA_ID)
+})
 const app = createApp(App)
 
 const appName = import.meta.env.VITE_APP_NAME || 'ILYTAT'
@@ -25,4 +36,5 @@ router.onError((error, to, from) => {
   console.error(errorMessage, error)
 })
 
+// Use Pinia, Vue Router, and Highlight.js Vue Plugin
 app.use(createPinia()).use(router).use(hljsVuePlugin).mount('#app')
