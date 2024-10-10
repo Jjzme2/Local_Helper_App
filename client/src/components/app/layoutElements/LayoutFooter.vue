@@ -3,6 +3,7 @@
     <div class="footer-section">
       <nav class="footer-nav">
         <router-link to="/contact" aria-label="Contact Us for Feedback">Got Feedback?</router-link>
+        <a href="?cmpscreen" class="cmpfooterlink cmpfooterlinkcmp">Privacy</a>
         <socials aria-label="Follow us on Social Media"></socials>
       </nav>
     </div>
