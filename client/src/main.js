@@ -7,16 +7,8 @@ import router from './router'
 import hljsVuePlugin from '@highlightjs/vue-plugin'
 
 // Import environment variable for Google Analytics ID
-const GA_ID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID
+// const GA_ID = import.meta.env.VITE_GOOGLE_ANALYTICS_ID
 
-window.addEventListener('load', () => {
-  let dataLayer = window.dataLayer || []
-  function gtag() {
-    dataLayer.push(arguments)
-  }
-  gtag('js', new Date())
-  gtag('config', GA_ID)
-})
 const app = createApp(App)
 
 const appName = import.meta.env.VITE_APP_NAME || 'ILYTAT'

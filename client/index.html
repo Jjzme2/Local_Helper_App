@@ -1,16 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Consent Manager Script -->
-    <script
-      type="text/javascript"
-      data-cmp-ab="1"
-      src="https://cdn.consentmanager.net/delivery/autoblocking/31e273ada1a1c.js"
-      data-cmp-host="a.delivery.consentmanager.net"
-      data-cmp-cdn="cdn.consentmanager.net"
-      data-cmp-codesrc="0"
-    ></script>
-
     <!-- Google Tag Manager -->
     <script>
       ;(function (w, d, s, l, i) {
@@ -20,10 +10,11 @@
           j = d.createElement(s),
           dl = l != 'dataLayer' ? '&l=' + l : ''
         j.async = true
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=gtmId' + dl
         f.parentNode.insertBefore(j, f)
-      })(window, document, 'script', 'dataLayer', 'GTM-WWQ4XKSH')
+      })(window, document, 'script', 'dataLayer', '%gtmId%')
     </script>
+    <!-- End Google Tag Manager -->
 
     <meta charset="UTF-8" />
     <link rel="icon" href="images/favicon.ico" />
@@ -47,32 +38,12 @@
     <meta property="og:image" content="/images/logo.png" />
     <meta property="og:url" content="https://www.ilytat.com" />
     <meta name="author" content="ILYTAT Designs" />
-
-    <!-- Load Google Analytics Only After Consent -->
-    <script>
-          // Wait for consentManager to be fully initialized
-      consentManager.onConsentChange((consent) => {
-        if (consent.analytics === true) {
-          let gaScript = document.createElement('script');
-          gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${import.meta.env.VITE_GOOGLE_ANALYTICS_ID}`;
-          gaScript.async = true;
-          document.head.appendChild(gaScript);
-
-          window.dataLayer = window.dataLayer || [];
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-          gtag('js', new Date());
-          gtag('config', import.meta.env.VITE_GOOGLE_ANALYTICS_ID);
-        }
-      });
-    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-WWQ4XKSH"
+        src="https://www.googletagmanager.com/ns.html?id=%gtmId%"
         height="0"
         width="0"
         style="display: none; visibility: hidden"

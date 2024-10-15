@@ -39,6 +39,7 @@
     "pinia": "^2.1.7",
     "serve": "^14.2.3",
     "vite": "^5.3.1",
+    "vite-plugin-html": "^3.2.2",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3",
     "vue3-carousel": "^0.3.4"
