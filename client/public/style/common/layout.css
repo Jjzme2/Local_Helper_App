@@ -12,8 +12,19 @@
   grid-template-columns: 1fr 1fr 1fr;
   padding: 1em;
   background-color: #222;
-  color: #fff;
+  color: var(--white);
   text-align: center;
+}
+
+.footer-alt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer a {
+  color: var(--white);
+  margin: 0.25rem auto;
 }
 
 .footer-section {
