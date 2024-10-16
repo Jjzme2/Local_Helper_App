@@ -7,7 +7,7 @@
           <div class="custom-product-details">
             <h3 class="custom-product-title">{{ product.title }}</h3>
             <p class="custom-product-price">$ {{ priceMin(product) }}</p>
-            <button class="custom-primary-button" @click="navigateToProduct(product)">
+            <button :id="'button_product_' + product.title" class="custom-primary-button" @click="navigateToProduct(product)">
               Buy Now
             </button>
           </div>
