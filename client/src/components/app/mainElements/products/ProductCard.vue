@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card" :id='product_{{product.title}}'>
+  <div class="product-card" :id="'product_' + product.title">
     <h2>{{ product.title }}</h2>
 
     <div class="product-image">
