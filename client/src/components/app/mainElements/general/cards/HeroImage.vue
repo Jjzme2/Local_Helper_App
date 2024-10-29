@@ -1,17 +1,20 @@
 <template>
-  <section class="hero">
-    <div class="hero-content">
+  <div class="card no-background no-shadow centered">
+    <div class="card-inner">
       <h1>Discover Unique, Thoughtful Designs</h1>
-      <img src="/images/logo.png" alt="Hero Image" />
+      <img class="cover-image" src="/images/logo.png" alt="Hero Image" />
       <p>
         Unique. Creative. <span><em>Yours.</em></span>
       </p>
-      <div class="hero-buttons">
-        <a :href="shopURL" class="primary-button" target="_blank">Shop Now</a>
-        <button @click="scrollToFeatures" class="secondary-button">Learn More</button>
+
+      <div class="button-group">
+        <form :action="shopURL" target="_blank">
+          <button type="submit" class="button primary">Shop Now</button>
+        </form>
+        <button @click="scrollToFeatures" class="button secondary">Learn More</button>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

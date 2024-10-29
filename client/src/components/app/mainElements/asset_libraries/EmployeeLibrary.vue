@@ -1,22 +1,20 @@
 <template>
-  <section>
-    <contentCard>
-      <h2>Employees</h2>
-      <div class="grid-container">
-        <div
-          v-for="employee in employees"
-          :key="employee.id"
-          class="employee-card grid-item clear no-border no-shadow"
-        >
-          <img class="employee-icon" :src="getImagePath(employee)" alt="Profile Pic" />
-          <div class="employee-details">
-            <p class="employee-name">{{ employee.goByName }} {{ employee.lastName }}</p>
-            <p class="employee-email">{{ employee.email }}</p>
-          </div>
+  <contentCard class="centered">
+    <h2>Employees</h2>
+    <div class="grid-container">
+      <div
+        v-for="employee in employees"
+        :key="employee.id"
+        class="card grid-item clear no-border no-shadow"
+      >
+        <img class="icon" :src="getImagePath(employee)" alt="Profile Pic" />
+        <div class="employee-details">
+          <p class="employee-name">{{ employee.goByName }} {{ employee.lastName }}</p>
+          <p class="employee-email">{{ employee.email }}</p>
         </div>
       </div>
-    </contentCard>
-  </section>
+    </div>
+  </contentCard>
 </template>
 
 <script>

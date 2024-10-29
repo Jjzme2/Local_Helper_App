@@ -5,6 +5,7 @@ import BlogView from '@/views/BlogView.vue'
 import BlogRenderView from '@/views/BlogRenderView.vue'
 import ContactView from '../views/ContactView.vue'
 import HomeView from '../views/HomeView.vue'
+// import VideoView from '../views/VideoView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -43,6 +44,13 @@ const router = createRouter({
       name: 'post',
       component: BlogRenderView
     },
+
+    // Video Routes
+    // {
+    //   path: '/videos',
+    //   name: 'VideoLibrary',
+    //   component: VideoView
+    // },
 
     // Catch All
     {

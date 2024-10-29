@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Creates a grid with 3 equal-width columns */
   grid-gap: 10px; /* Adds a gap between grid items */
+  align-items: center;
+  margin: 2.5vw;
 }
 
 .grid-container-lg {

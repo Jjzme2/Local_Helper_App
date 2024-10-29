@@ -1,6 +1,6 @@
 <template>
   <div v-if="visible" class="alert-box" :class="type">
-    <span class="alert-icon">{{ icon }}</span>
+    <span class="icon">{{ icon }}</span>
     <p>{{ message }}</p>
   </div>
 </template>

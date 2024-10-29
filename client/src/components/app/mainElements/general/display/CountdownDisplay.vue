@@ -1,6 +1,6 @@
 <template>
   <div class="countdown-display centered">
-    <div v-if="displayText" class="display-text">
+    <div v-if="displayText" class="text-med">
       <p>{{ displayText }}</p>
     </div>
 
@@ -29,7 +29,7 @@
       <span>Time's up!</span>
     </div>
 
-    <button @click="scrollToNewsletter" class="primary-button top-margin-3 centered">
+    <button @click="scrollToNewsletter" class="button primary top-margin-3 centered">
       {{ timeLeft ? 'Be among the first to know' : 'Sign up now!' }}
     </button>
   </div>

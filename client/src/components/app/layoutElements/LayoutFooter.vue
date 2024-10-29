@@ -1,15 +1,23 @@
 <template>
   <footer class="footer">
     <div class="footer-section">
-      <nav class="footer-nav">
-        <div class="footer-alt">
-          <router-link to="/contact" aria-label="Contact Us for Feedback"
-            >Got Feedback?</router-link
-          >
-          <a href="?cky_preview=true" class="cmpfooterlink">Privacy</a>
+      <div class="grid-container">
+        <div
+          class="grid-item"
+          style="padding-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px"
+        >
+          <router-link to="/contact" aria-label="Contact Us for Feedback">Feedback</router-link>
+          <br />
+          <a href="?cky_preview=true">Privacy</a>
         </div>
-        <socials aria-label="Follow us on Social Media"></socials>
-      </nav>
+        <div>
+          <socials
+            class="grid-item"
+            style="padding-left: 0px; padding-top: 0px; padding-bottom: 0px; padding-right: 0px"
+            aria-label="Follow us on Social Media"
+          ></socials>
+        </div>
+      </div>
     </div>
 
     <div class="footer-section">

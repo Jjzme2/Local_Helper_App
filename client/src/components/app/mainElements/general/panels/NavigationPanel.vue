@@ -1,10 +1,10 @@
 <template>
-  <div class="nav-panel align-right-spaced">
+  <div class="nav-panel button-group centered" style="width: 60%">
     <button
       v-for="route in routes"
       :key="route.name"
       @click="showComponent(route.pathTo)"
-      class="primary-button"
+      class="button primary"
     >
       {{ route.readableName }}
     </button>
