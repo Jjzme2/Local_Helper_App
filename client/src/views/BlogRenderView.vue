@@ -1,8 +1,10 @@
 <template>
   <BaseView targetDestination="/thoughts">
-    <h1 class="post-title">{{ post.title }}</h1>
+    <div v-if="post">
+      <h1 class="post-title">{{ post.title }}</h1>
 
-    <div class="post-body" v-html="post.content"></div>
+      <div class="post-body" v-html="post.content"></div>
+    </div>
   </BaseView>
 </template>
 
@@ -18,24 +20,18 @@ export default {
     const store = usePostStore()
     const route = useRoute() // Access the current route
 
-    // !Router is not found on page refresh with post ID.
-    // !t.push is not a function
-    // !e.getPosts is undefined
-    // !s.post is undefined
-
     // Get the post from the store
-    const post = computed(() => store.getItemById(route.params.postId))
+    const post = computed(() => store?.getItemById(route.params.postId))
 
     // If the posts have not been fetched, fetch them
     onBeforeMount(() => {
-      if (!store.getPosts.length) {
-        store.fetchPosts()
+      if (!store.getItems.length) {
+        store.fetchAll()
       }
     })
 
-    // If the post is not found still, go back to thoughts
     if (!post.value) {
-      route.push('/thoughts')
+      this.$router.push('/thoughts')
     }
 
     return {

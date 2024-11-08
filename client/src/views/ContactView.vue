@@ -1,7 +1,7 @@
 <template>
   <BaseView>
     <template #default>
-      <div class="container">
+      <div class="container" style="margin: 5vh auto">
         <div>
           <h3>Happy to hear from you!</h3>
           <p>Feel free to reach out to us with any questions or concerns you may have.</p>
@@ -40,7 +40,7 @@
             ></textarea>
           </div>
 
-          <button type="submit" class="primary-button">Submit</button>
+          <button type="submit" class="button primary centered">Submit</button>
         </form>
       </div>
     </template>

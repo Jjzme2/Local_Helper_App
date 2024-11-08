@@ -27,9 +27,9 @@
       </StickyElement> -->
 
       <!-- Hero Image -->
-      <section class="component-heading-container">
+      <div>
         <HeroImage />
-      </section>
+      </div>
 
       <!-- Libraries -->
       <hr class="divider" />

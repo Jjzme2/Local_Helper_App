@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const PRINTIFY_TOKEN = process.env.PRINTIFY_TOKEN
-const shopId = process.env.ILYTAT_ID
+const shopId = process.env.ILYTAT_SHOP_ID
 const USER_AGENT = 'ilytat_designs'
 const PRINTIFY_API_URL = 'https://api.printify.com/v1'
 

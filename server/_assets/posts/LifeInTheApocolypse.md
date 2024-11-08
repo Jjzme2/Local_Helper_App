@@ -10,8 +10,6 @@ tags: Positivity,Perspective,Growth
 active: 1
 ---
 
-# You Live the Apocalypse Every Day: Why a Shift in Perspective Can Change Your World
-
 It’s easy to get caught up in the chaos. Headlines scream about disaster, your phone buzzes with negativity, and the world feels like it’s spiraling out of control. You live the apocalypse every day, or at least it feels that way. And to the person who sees the world as more negative than positive, I get it. I’ve been there.
 
 In those moments, it feels safe to expect the worst, like we’re protecting ourselves from disappointment or hurt. It becomes second nature—our mind’s way of shielding us from the scary things we hear about daily. But over time, these small “protections” build up, leaving us trapped in a world that feels overwhelming and, yes, apocalyptic.

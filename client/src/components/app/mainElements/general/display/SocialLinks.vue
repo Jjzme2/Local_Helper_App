@@ -1,11 +1,14 @@
 <template>
-  <div class="grid-container">
-    <div v-for="link in links" :key="link.network" class="grid-item no-padding no-shadow">
-      <a :href="link.link" target="_blank" rel="noopener noreferrer" class="footer-text">
-        {{ link.displayText }}
-      </a>
-    </div>
-  </div>
+  <a
+    v-for="link in links"
+    :key="link.network"
+    :href="link.link"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {{ link.displayText }}
+    <br />
+  </a>
 </template>
 
 <script>
@@ -33,11 +36,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
-  gap: 1rem; /* Space between items */
-}
-</style>

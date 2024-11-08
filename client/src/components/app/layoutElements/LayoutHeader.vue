@@ -1,8 +1,10 @@
 <template>
-  <section>
-    <img src="/images/logo.png" alt="logo" class="header-logo" />
+  <div>
+    <div class="container v-small no-border no-shadow" style="float: left">
+      <img src="/images/logo.png" alt="logo" class="icon" />
+    </div>
 
-    <button @click="toggleNav" class="primary-button no-padding" style="float: right; width: 15%">
+    <button @click="toggleNav" class="button primary no-padding" style="float: right; width: 15%">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="24"
@@ -17,7 +19,7 @@
         />
       </svg>
     </button>
-  </section>
+  </div>
 
   <div :class="{ 'is-visible': isNavVisible }">
     <navigationPanel v-if="isNavVisible" :routes="customRoutes"></navigationPanel>
@@ -39,8 +41,9 @@ export default {
       customRoutes: [
         new NavigationOption('Home', 'home'),
         new NavigationOption('Blog', 'blog'),
-        new NavigationOption('Contact Us', 'contact'),
-        new NavigationOption('About Us', 'about')
+        // new NavigationOption('Videos', 'VideoLibrary'),
+        new NavigationOption('Contact', 'contact'),
+        new NavigationOption('About', 'about')
       ]
     }
   },

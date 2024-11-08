@@ -1,5 +1,5 @@
 <template>
-  <div class="promotion-text">
+  <div class="text-med">
     <p class="promotion-message">{{ message }}</p>
     <p class="promotion-details">
       <span v-if="percentOff">{{ percentOff }}% off {{ category }}</span>
@@ -59,17 +59,6 @@ export default {
 </script>
 
 <style scoped>
-.promotion-text {
-  background-color: #ff9800;
-  color: #fff;
-  padding: 5px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin: 20px 0;
-  animation: fadeIn 1s ease-in-out;
-}
-
 .promotion-message {
   font-size: 1.25rem;
   font-weight: bold;

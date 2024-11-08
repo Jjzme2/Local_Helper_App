@@ -1,5 +1,5 @@
 <template>
-  <section class="product-library" id="productLibrary">
+  <div class="product-library" id="productLibrary">
     <div class="container clear no-shadow" v-if="isPromotionActive">
       <PromotionText
         :percentOff="promotion.discount"
@@ -14,7 +14,9 @@
       <h3>Products</h3>
       <ProductCarousel :products="products" />
       <div class="container clear no-shadow">
-        <a class="primary-button" :href="shopURL" target="_blank">View full store</a>
+        <form :action="shopURL" target="_blank">
+          <button type="submit" class="button primary">Browse</button>
+        </form>
       </div>
     </div>
 
@@ -22,7 +24,7 @@
       <LoadingIcon />
       <p>Loading products...</p>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>

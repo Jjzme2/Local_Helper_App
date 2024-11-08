@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 import api from './apiService'
-import model from '@models/app_models/post.js'
+import model from '@models/app_models/Video.js'
 
-export const usePostStore = defineStore('posts', {
+export const useVideoStore = defineStore('videos', {
   state: () => ({
     items: []
   }),
@@ -13,6 +13,10 @@ export const usePostStore = defineStore('posts', {
       for (let i = 0; i < items.length; i++) {
         console.log('Creating new model from item: ', items[i])
         itemMap.push(new model(items[i]))
+      }
+
+      if (itemMap.length === 0) {
+        console.log('No videos found')
       }
       return itemMap
     },
@@ -25,7 +29,7 @@ export const usePostStore = defineStore('posts', {
   actions: {
     async fetchAll() {
       this.items = await api
-        .get('/posts')
+        .get('/videos')
         .then((res) => res.data)
         .catch((error) => {
           throw error
@@ -34,4 +38,4 @@ export const usePostStore = defineStore('posts', {
   }
 })
 
-export default usePostStore
+export default useVideoStore

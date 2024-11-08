@@ -1,9 +1,11 @@
+/* ----------------------------------------
+   Global Styles & Resets
+---------------------------------------- */
 #app {
   font-family: var(--primary-font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /* padding: 1rem; */
 }
 
 body {
@@ -15,6 +17,9 @@ a {
   text-decoration: none;
 }
 
+/* ----------------------------------------
+   Headings
+---------------------------------------- */
 h1,
 h2,
 h3,
@@ -26,20 +31,28 @@ h6 {
   margin: 1rem 0;
 }
 
-.background-primary {
+/* ----------------------------------------
+   Background Colors
+---------------------------------------- */
+.background-color-primary {
   background-color: var(--primary-background-color);
 }
 
-.background-secondary {
+.background-color-secondary {
   background-color: var(--secondary-background-color);
 }
 
+.no-background {
+  background-color: transparent;
+}
+
+/* ----------------------------------------
+   Utility Classes
+---------------------------------------- */
 .boxed {
   border: 1px solid var(--primary-border-color);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  margin: 1rem;
-  padding: 1rem;
 }
 
 .centered {
@@ -50,6 +63,9 @@ h6 {
   margin: auto;
 }
 
+/* ----------------------------------------
+   Text Colors
+---------------------------------------- */
 .colored-text-primary {
   color: var(--primary-text-color);
 }
@@ -58,33 +74,63 @@ h6 {
   color: var(--secondary-text-color);
 }
 
+/* ----------------------------------------
+   Containers
+---------------------------------------- */
 .container {
-  max-width: 600px;
+  max-width: 35vw;
+  height: auto;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1vh 1vw;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
 
+.container.v-small {
+  max-width: 2.5vw;
+}
+
+/* ----------------------------------------
+   Divider
+---------------------------------------- */
 .divider {
-  border: none; /* Remove the default border */
-  height: 3px; /* Increase the thickness */
-  margin: 2rem auto; /* Adjust the margin for better spacing */
-  background: linear-gradient(to right, var(--mint), var(--dark-slate-gray)); /* Gradient effect */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
-  border-radius: 2px; /* Slightly round the edges */
-  position: relative;
+  border: none;
+  height: 3px;
+  margin: 2rem auto;
+  background: linear-gradient(to right, var(--mint), var(--dark-slate-gray));
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
   width: 45%;
 }
 
+/* ----------------------------------------
+   Flexbox Utilities
+---------------------------------------- */
 .flex {
   display: flex;
 }
 
-.flex-col {
+.vertical {
   flex-direction: column;
 }
 
+.horizontal {
+  flex-direction: row;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+/* ----------------------------------------
+   Heights
+---------------------------------------- */
 .height-min-50 {
   min-height: 50vh;
 }
@@ -93,6 +139,19 @@ h6 {
   min-height: 100vh;
 }
 
+/* ----------------------------------------
+   Icon Styling
+---------------------------------------- */
+.icon {
+  width: 50%;
+  height: auto;
+  border-radius: 1.5vh;
+  transition: transform 0.3s ease;
+}
+
+/* ----------------------------------------
+   Shadows and Effects
+---------------------------------------- */
 .pop {
   box-shadow: var(--box-shadow);
 }
@@ -105,7 +164,9 @@ h6 {
   box-shadow: inset 3px 3px 10px rgba(251, 255, 0, 0.733);
 }
 
-/* Text Types */
+/* ----------------------------------------
+   Typography - Text Sizes
+---------------------------------------- */
 .mini-text {
   font-size: 0.75rem;
 }
@@ -122,7 +183,9 @@ h6 {
   font-size: 2rem;
 }
 
-/* Tables */
+/* ----------------------------------------
+   Table Styling
+---------------------------------------- */
 .common-table {
   border-collapse: collapse;
   margin: 1rem auto;
@@ -143,7 +206,9 @@ h6 {
   padding: 1rem;
 }
 
-/* Widths */
+/* ----------------------------------------
+   Width Utilities
+---------------------------------------- */
 .width-full {
   width: 100%;
 }
@@ -156,15 +221,9 @@ h6 {
   width: 33%;
 }
 
-.vertical {
-  flex-direction: column;
-}
-
-.horizontal {
-  flex-direction: row;
-}
-
-/* Loading Icon */
+/* ----------------------------------------
+   Loading Icon
+---------------------------------------- */
 .loading-icon {
   display: flex;
   justify-content: center;
@@ -181,6 +240,9 @@ h6 {
   animation: spin 1.5s linear infinite;
 }
 
+/* ----------------------------------------
+   Margins
+---------------------------------------- */
 .margin-top-1 {
   margin-top: 1rem;
 }
@@ -199,4 +261,12 @@ h6 {
 
 .margin-top-10 {
   margin-top: 10rem;
+}
+
+/* ----------------------------------------
+SHADOWS
+---------------------------------------- */
+
+.no-shadow {
+  box-shadow: none !important;
 }

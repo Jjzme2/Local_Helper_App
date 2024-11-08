@@ -3,9 +3,9 @@
     <div v-if="markdown">
       <div class="markdown-content" v-html="renderedMarkdown" @click="openFile"></div>
       <div class="view-post-button">
-        <button class="primary-button" @click="openFile">View Post</button>
+        <button class="button primary" @click="openFile">View Post</button>
       </div>
-      <button class="secondary-button" @click="downloadAsHtml">Download</button>
+      <button class="button secondary" @click="downloadAsHtml">Download</button>
       <ContactCard message="Let's talk about this post!"></ContactCard>
     </div>
     <div v-else>
@@ -79,12 +79,12 @@ export default {
 	     </head>
 	     <body>
 	       <div class="button-container no-print centered">
-	         <button class="primary-button" onclick="window.print()">Print</button>
-	         <button class="primary-button" onclick="window.close()">Close</button>
+	         <button class="button primary" onclick="window.print()">Print</button>
+	         <button class="button primary" onclick="window.close()">Close</button>
 	       </div>
 
 		   <div class="centered boxed shadow-emerald width-third">
-		     <p class="centered large-text colored-text-primary">ILYTAT</p>
+		     <p class="centered text-lg colored-text-primary">ILYTAT</p>
 			 </div>
 
 	       <div class="markdown-content">
