@@ -1,18 +1,17 @@
 <template>
   <div class="card centered no-background no-shadow space-between" id="newsletterSignup">
-	<div class="card-inner">
-    <h2>Stay Updated!</h2>
-    <p>Sign up to get exclusive offers, product updates, and early access to new designs.</p>
+    <div class="card-inner">
+      <h2>Stay Updated!</h2>
+      <p>Sign up to get exclusive offers, product updates, and early access to new designs.</p>
 
-	<form @submit.prevent="handleSubmit">
+      <form @submit.prevent="handleSubmit">
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" v-model="email" required />
+        </div>
 
-		<div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" v-model="email" required />
-      </div>
-
-	  <button type="submit" class="button primary" style="margin: 1rem auto;">Enroll</button>
-	      </form>
+        <button type="submit" class="button primary" style="margin: 1rem auto">Enroll</button>
+      </form>
 
       <div class="trust-indicator">
         <p>No spam, unsubscribe anytime.</p>
@@ -20,7 +19,7 @@
           >We try to send an email update each Friday, regarding new products and promotions.</sub
         > -->
       </div>
-  </div>
+    </div>
   </div>
 </template>
 

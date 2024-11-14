@@ -1,16 +1,15 @@
 <template>
   <BaseView targetDestination="/thoughts">
     <div v-if="post">
-      <h1 class="post-title">{{ post.title }}</h1>
-
-      <div class="post-body" v-html="post.content"></div>
+      <h1 class="text-lg">{{ post.title }}</h1>
+      <div class="container wide markdown" v-html="post.content"></div>
     </div>
   </BaseView>
 </template>
 
 <script>
 import { computed, onBeforeMount } from 'vue'
-import { useRoute } from 'vue-router' // Import useRoute to access route params
+import { useRoute, useRouter } from 'vue-router' // Import useRoute to access route params
 import BaseView from './BaseView.vue'
 import usePostStore from '@/stores/posts'
 
@@ -19,6 +18,7 @@ export default {
   setup() {
     const store = usePostStore()
     const route = useRoute() // Access the current route
+    const router = useRouter() // Access the current router for navigation
 
     // Get the post from the store
     const post = computed(() => store?.getItemById(route.params.postId))
@@ -31,7 +31,8 @@ export default {
     })
 
     if (!post.value) {
-      this.$router.push('/thoughts')
+      router.push('/thoughts')
+      //   this.$router.push('/thoughts')
     }
 
     return {

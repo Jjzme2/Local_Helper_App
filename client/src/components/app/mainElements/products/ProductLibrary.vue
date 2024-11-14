@@ -48,7 +48,7 @@ export default {
 
     onBeforeMount(() => {
       if (products.value.length === 0) {
-        productStore.fetchLimited(10) // Only fetch the top 10
+        productStore.fetchLimited(25) // Only fetch the top 10
       }
     })
 
@@ -71,7 +71,7 @@ export default {
       products,
       (newProducts) => {
         if (newProducts.length === 0) {
-          productStore.fetchLimited(10)
+          productStore.fetchLimited(25)
         }
       },
       { immediate: true }

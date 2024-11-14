@@ -45,4 +45,5 @@ playwright-report/
 .dev/_book/
 
 # Environment variables
+*.env
 */.env
