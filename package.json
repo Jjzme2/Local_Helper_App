@@ -11,6 +11,7 @@
   "scripts": {
     "build": "npm run clean && npm run lint && npm run format && cd client && vite build",
     "clean": "rimraf client/dist",
+	"cleanCode": "npm run lint && npm run format",
     "cleanInstall": "rimraf node_modules && npm install",
     "start": "npm run build && npm run server",
     "server": "nodemon ./server/server.js",
@@ -34,6 +35,9 @@
     "express": "^4.20.0",
     "highlight.js": "^11.10.0",
     "markdown-it": "^14.1.0",
+    "markdown-it-attrs": "^4.2.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-toc-done-right": "^4.2.0",
     "mitt": "^3.0.1",
     "nodemon": "^3.1.4",
     "pinia": "^2.1.7",

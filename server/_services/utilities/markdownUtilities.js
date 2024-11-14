@@ -1,5 +1,8 @@
 import MarkdownIt from 'markdown-it'
 import hljs from 'highlight.js'
+import markdownItAttrs from 'markdown-it-attrs'
+import markdownItFootnote from 'markdown-it-footnote'
+import markdownItTocDoneRight from 'markdown-it-toc-done-right'
 
 // const MarkdownIt = require('markdown-it')
 // const hljs = require('highlight.js')
@@ -22,6 +25,9 @@ class MarkdownUtil {
         return '' // use external default escaping
       }
     })
+      .use(markdownItAttrs) // Enable custom classes
+      .use(markdownItFootnote) // Enable footnotes
+      .use(markdownItTocDoneRight) // Enable Table of Contents
   }
 
   // Function to create a metadata object from a metadata block
